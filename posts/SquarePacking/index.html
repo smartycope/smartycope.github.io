@@ -147,6 +147,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <h1 class="title">Square Packing</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">project</div>
+                <div class="quarto-category">awesome</div>
+                <div class="quarto-category">steward of greatness</div>
+                <div class="quarto-category">computer goblin</div>
               </div>
                   </div>
   </div>
@@ -183,7 +186,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<p>My senior project is to attempt to use a reinforcement learning algorithm based on a <a href="https://spinningup.openai.com/en/latest/algorithms/ddpg.html">Deep Deterministic Policy Gradient</a> model for use with a continuous observation <em>and</em> action space, in order to solve the <a href="https://en.wikipedia.org/wiki/Square_packing"><em>Square Packing in a Square</em></a> problem for N=11 squares.</p>
+<p>My senior project is to attempt to use a reinforcement learning algorithm based on a <a href="https://spinningup.openai.com/en/latest/algorithms/ddpg.html">Deep Deterministic Policy Gradient</a> model for use with a continuous observation <em>and</em> action space, in order to solve the <a href="https://en.wikipedia.org/wiki/Square_packing">Square Packing in a Square</a> problem for N=11 squares.</p>
 <p>That was a very intelligent sounding sentence. Let’s break it down:</p>
 <section id="square-packing-in-a-square" class="level3">
 <h3 class="anchored" data-anchor-id="square-packing-in-a-square">Square Packing in a Square</h3>
@@ -195,6 +198,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>I’m not going to be solving that. Instead I’m going to attempt to use Reinforcement Learning (RL) to attempt to figure out a better solution for me. I have no idea how well it will work.</p>
 <p>There are known configurations for N=1-10 squares, but 11 (and some others) are only approximately solved. This tries to find a more optimal configuration for N=11 squares by using RL instead of pure math.</p>
 <p>The theoretial optimal packing has a side length of 3.789, but the best known is 3.877084</p>
+<p><img src="wiki_snip.png" class="img-fluid"></p>
 </section>
 <section id="ddpg" class="level3">
 <h3 class="anchored" data-anchor-id="ddpg">DDPG</h3>
@@ -206,8 +210,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="implementation" class="level3">
 <h3 class="anchored" data-anchor-id="implementation">Implementation</h3>
+<p>Both the action and observation spaces will have the shape <code>(3*N, )</code> (N is the number of squares, so 11) where each square has an x, y and rotation values. The actor’s actions simply get added to the current square positions and rotations (since the actor actions can be negative), so the actor can make small adjustments to squeze the squares closer to each other.</p>
+<p>The reward function hasn’t been developed yet, but it will involve something like steeply punishing overlapping squares, and incentivizing smaller “bounding square” side lengths (like a bounding rectangle, but a square).</p>
 <p>I’ll be using <a href="https://pypi.org/project/shapely/">Shapely</a> for the geometry handling:</p>
-<div id="cell-7" class="cell" data-execution_count="7">
+<div id="cell-8" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is an example of converting the action space into a shapely object</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>MultiPolygon(convert2shapely([(random.uniform(<span class="dv">0</span>, space), random.uniform(<span class="dv">0</span>, space), random.uniform(<span class="dv">1</span>, <span class="dv">2</span><span class="op">*</span>math.pi)) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(N)], side_len<span class="op">=</span>scale))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
@@ -218,11 +224,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p><a href="https://www.tensorflow.org/">Tensorflow</a> for the models, and the <a href="https://gymnasium.farama.org/">Gymnasium</a> library for the RL enviorment, specifically my own personal SimpleGym class:</p>
-<p><img src="../../home/anastasia/Documents/Class/senior project/posts/SquarePacking/index.ipynb" class="img-fluid"></p>
-<p>/home/anastasia/Documents/Class/senior project/posts/SquarePacking/index.ipynb</p>
-<p><img src="posts/SquarePacking/wiki_snip.png" class="img-fluid"></p>
-<p><img src="../../home/anastasia/Documents/Class/senior project/posts/SquarePacking/wiki_snip.png" class="img-fluid"></p>
+<p>I’ll use <a href="https://www.tensorflow.org/">Tensorflow</a> for the models, this is my proposed actor network structure:</p>
+<p><img src="model.png" class="img-fluid"></p>
+<p>And for the RL enviorment, I’ll use the popular <a href="https://gymnasium.farama.org/">Gymnasium</a> library, specifically my own personal SimpleGym class which is a helpful abstraction on top of gymnasium:</p>
+<p><img src="SimpleGymDemo.png" class="img-fluid"></p>
 
 
 </section>
