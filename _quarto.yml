@@ -1,19 +1,15 @@
 project:
   type: website
+  output-dir: docs
 
 website:
   title: "senior project"
   navbar:
     right:
       - about.qmd
-      - icon: github
-        href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
+      - icon: smartycope
+        href: https://avatars.githubusercontent.com/u/60020173?v=4
 format:
   html:
     theme: cosmo
     css: styles.css
-
-
-
