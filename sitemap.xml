@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://smartycope.github.io/senior-project/posts/SquarePacking/index.html</loc>
-    <lastmod>2024-05-15T16:28:13.255Z</lastmod>
+    <loc>https://smartycope.github.io/senior-project/posts/GeoDoodle/index.html</loc>
+    <lastmod>2024-05-21T20:58:43.829Z</lastmod>
   </url>
   <url>
-    <loc>https://smartycope.github.io/senior-project/posts/post-with-code/index.html</loc>
-    <lastmod>2024-05-15T16:28:13.259Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smartycope.github.io/senior-project/index.html</loc>
-    <lastmod>2024-05-15T16:28:13.255Z</lastmod>
+    <loc>https://smartycope.github.io/senior-project/posts/InstallingTensorflow/index.html</loc>
+    <lastmod>2024-05-21T20:58:43.833Z</lastmod>
   </url>
   <url>
     <loc>https://smartycope.github.io/senior-project/about.html</loc>
-    <lastmod>2024-05-15T16:28:13.247Z</lastmod>
+    <lastmod>2024-05-21T20:58:43.765Z</lastmod>
   </url>
   <url>
-    <loc>https://smartycope.github.io/senior-project/posts/GeoDoodle/index.html</loc>
-    <lastmod>2024-05-15T18:25:12.634Z</lastmod>
+    <loc>https://smartycope.github.io/senior-project/index.html</loc>
+    <lastmod>2024-05-21T20:58:43.805Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smartycope.github.io/senior-project/posts/SquarePacking/index.html</loc>
+    <lastmod>2024-05-21T20:58:43.833Z</lastmod>
   </url>
 </urlset>

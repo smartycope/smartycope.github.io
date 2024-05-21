@@ -2,9 +2,9 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/InstallingTensorflow/index.html",
       "/posts/GeoDoodle/index.html",
-      "/posts/SquarePacking/index.html",
-      "/posts/post-with-code/index.html"
+      "/posts/SquarePacking/index.html"
     ]
   }
 ]
