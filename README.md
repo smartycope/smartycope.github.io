@@ -1,3 +1,4 @@
-# Cope's blog
+# Copeland Carter
+	Software Engineer | Full Stack Developer | Data Engineer
 
-<-- To publish: `quarto publish` -->
+<!-- To publish: `quarto publish` -->
