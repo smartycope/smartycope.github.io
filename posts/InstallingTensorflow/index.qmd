@@ -1,0 +1,23 @@
+---
+title: "Installing Tensorflow"
+author: "Copeland Carter"
+date: "5-21-24"
+categories: [python]
+image: "image.jpg"
+---
+
+1. Followed this link: https://medium.com/nerd-for-tech/installing-tensorflow-with-gpu-acceleration-on-linux-f3f55dd15a9
+2. Used python3.11, cuDNN==8.8, CUDA==11.8, tensorflow==2.14
+3. Used this table for versions: https://www.tensorflow.org/install/source#gpu
+4. my gpu specs, my computer specs, my os specs
+5. Used miniconda
+5.5. Had to install nvidia-drivers (the package on the tutorial, double check) 550, and then had to restart (not in tutorial), but according to this page: https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html, anything >=520.61.05 should work (I ended up installing 525 as well, along the way)
+6. couldn't find cuDNN==8.7 (doesn't exist on conda for some reason) or CUDA==12.* (not released on conda yet), so had to downgrade python version and fudge some package versions, which worked out
+7. Used https://stackoverflow.com/questions/68614547/tensorflow-libdevice-not-found-why-is-it-not-found-in-the-searched-path to find what to put for `export XLA_FLAGS=--xla_gpu_cuda_data_dir=/usr/lib/cuda`
+8. Had to sudo apt install cuda-toolkit on computer, not mentioned in tutorial
+9. benchmarks:
+Time taken for GPU: 17.93414807319641
+Time taken for CPU: 219.7570071220398
+12.253551505492416x speedup!
+
+<footer><h6>Photo courtesy of Coding for Entrepreneurs</h6></footer>
