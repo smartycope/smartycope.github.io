@@ -9,6 +9,9 @@ listing:
   filter-ui: false
 page-layout: full
 title-block-banner: true
+format:
+    html:
+        theme:
+            light: flatly
+            dark: darkly
 ---
-
-
