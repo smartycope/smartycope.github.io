@@ -1,3 +1,3 @@
 # Cope's blog
 
-To publish: `quarto publish`
+<-- To publish: `quarto publish` -->
