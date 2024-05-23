@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -113,6 +113,7 @@ ul.task-list li input[type="checkbox"] {
       <h1 class="title">Installing Tensorflow</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">python</div>
+                <div class="quarto-category">ML</div>
               </div>
                   </div>
   </div>
@@ -149,24 +150,44 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<ol type="1">
-<li>Followed this link: https://medium.com/nerd-for-tech/installing-tensorflow-with-gpu-acceleration-on-linux-f3f55dd15a9</li>
-<li>Used python3.11, cuDNN==8.8, CUDA==11.8, tensorflow==2.14</li>
-<li>Used this table for versions: https://www.tensorflow.org/install/source#gpu</li>
-<li>my gpu specs, my computer specs, my os specs</li>
-<li>Used miniconda 5.5. Had to install nvidia-drivers (the package on the tutorial, double check) 550, and then had to restart (not in tutorial), but according to this page: https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html, anything &gt;=520.61.05 should work (I ended up installing 525 as well, along the way)</li>
-<li>couldn’t find cuDNN==8.7 (doesn’t exist on conda for some reason) or CUDA==12.* (not released on conda yet), so had to downgrade python version and fudge some package versions, which worked out</li>
-<li>Used https://stackoverflow.com/questions/68614547/tensorflow-libdevice-not-found-why-is-it-not-found-in-the-searched-path to find what to put for <code>export XLA_FLAGS=--xla_gpu_cuda_data_dir=/usr/lib/cuda</code></li>
-<li>Had to sudo apt install cuda-toolkit on computer, not mentioned in tutorial</li>
-<li>benchmarks: Time taken for GPU: 17.93414807319641 Time taken for CPU: 219.7570071220398 12.253551505492416x speedup!</li>
-</ol>
-<footer>
-<h6 class="anchored">
+<p>Getting tensorflow to use hardware acceleration is challenging. There’s plenty of tutorials to show you how to do it, but I’ve found that most of them lack sufficient detail, aren’t targeted towards what I’m doing (they’re made for super computing clusters or fine-grain control, or something), or are outdated. The ML field is moving fast right now, and things get outdated fast.</p>
+<p>Well, here’s yet another blog post. This is what <em>I</em> did to get tensorflow to connect to <em>my</em> GPU, maybe it’ll help you.</p>
+<section id="hardware" class="level3">
+<h3 class="anchored" data-anchor-id="hardware">Hardware</h3>
+<p>First off, some hardware. Tensorflow seems to work best on NVIDIA GPUs. I’m told it’s <em>possible</em> to get it to work on an AMD GPU, but the one time I tried, I couldn’t get it to work. You can see <a href="https://medium.com/analytics-vidhya/install-tensorflow-2-for-amd-gpus-87e8d7aeb812">this for-pay article</a> for more guidance, in that case.</p>
+<p>Here’s my screenfetch: <img src="screenfetch.png" class="img-fluid" alt="screenfetch"></p>
+</section>
+<section id="guide" class="level3">
+<h3 class="anchored" data-anchor-id="guide">Guide</h3>
+<p>When I set it up, I followed <a href="https://medium.com/nerd-for-tech/installing-tensorflow-with-gpu-acceleration-on-linux-f3f55dd15a9">this blog post</a>. It contains a lot of good detail, so instead of repeating everything it says, just follow it, and I’ll tell you what I had to change to get it to work.</p>
+<p>When installing drivers, I installed nvidia-driver-550, and then had to restart to activate it, which isn’t in the tutorial. According to <a href="https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html">this page</a>, anything &gt;=520.;61.05 should work. Later on, while trying to debug the later steps, I ended up installing 525 as well, however, I don’t think that actually fixed anything.</p>
+<p>I also had to install the cuda-toolkit package (<code>sudo apt install cuda-toolkit</code>) to get it to run, which isn’t mentioned in the post.</p>
+<p>Instead of the versions specified in the post, I used these versions specifically:</p>
+<ul>
+<li>python3.11</li>
+<li>cuDNN==8.8</li>
+<li>cudatoolkit==11.8</li>
+<li>tensorflow==2.14</li>
+</ul>
+<p>NOTE: The cudatoolkit version is the version of the Python package; upon running <code>nvidia-smi</code>, my driver says it’s CUDA version 12.2. This didn’t seem to cause problems.</p>
+<p>I used <a href="https://www.tensorflow.org/install/source#gpu">this table</a> from the post to align all the versions. I had a bit of a problem, because as of 5/22/24, cuDNN==8.7 doesn’t exist on conda for some reason, and cudatoolkit&gt;=12 was not released on conda yet, so had to use python3.11 and guess at some of the package versions, but the ones I used worked out.</p>
+<p>After following all the steps in the post and running the benchmark test mentioned, it threw and error with a <em>bunch</em> of warnings and errors and traceback and other stuff. After digging through it and some research, I found <a href="https://stackoverflow.com/questions/68614547/tensorflow-libdevice-not-found-why-is-it-not-found-in-the-searched-path">this stackoverflow post</a> that advised running this command:</p>
+<p><code>export XLA_FLAGS=--xla_gpu_cuda_data_dir=/usr/lib/cuda</code></p>
+<p>which worked. You may want to follow the steps in the article to find your specific cuda installation path, but it’s likely <code>/usr/lib/cuda</code>. You’ll also likely want to put that line in your ~/.bashrc file, so it will work in other terminals as well.</p>
+<p>My benchmarks were:</p>
+<ul>
+<li>GPU: 17.934 seconds</li>
+<li>CPU: 219.757 seconds</li>
+</ul>
+<p>A 12.25x speedup! Not bad!</p>
+<footer style="bottom: 0px; margin-top: 80px;">
+<h6 style="font-size: xx-small;" class="anchored">
 Photo courtesy of Coding for Entrepreneurs
 </h6>
 </footer>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -250,7 +271,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/smartycope\.github\.io\/smartycope\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

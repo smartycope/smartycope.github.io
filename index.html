@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>senior project</title>
+<title>senior project - smartycope</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -168,7 +168,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">senior project</h1>
+      <h1 class="title">smartycope</h1>
                       </div>
   </div>
     
@@ -186,7 +186,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="awesome">awesome <span class="quarto-category-count">(1)</span></div><div class="category" data-category="computer goblin">computer goblin <span class="quarto-category-count">(1)</span></div><div class="category" data-category="javascript">javascript <span class="quarto-category-count">(1)</span></div><div class="category" data-category="open source">open source <span class="quarto-category-count">(1)</span></div><div class="category" data-category="project">project <span class="quarto-category-count">(1)</span></div><div class="category" data-category="projects">projects <span class="quarto-category-count">(1)</span></div><div class="category" data-category="python">python <span class="quarto-category-count">(1)</span></div><div class="category" data-category="steward of greatness">steward of greatness <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="ML">ML <span class="quarto-category-count">(1)</span></div><div class="category" data-category="awesome">awesome <span class="quarto-category-count">(1)</span></div><div class="category" data-category="computer goblin">computer goblin <span class="quarto-category-count">(1)</span></div><div class="category" data-category="javascript">javascript <span class="quarto-category-count">(1)</span></div><div class="category" data-category="open source">open source <span class="quarto-category-count">(1)</span></div><div class="category" data-category="project">project <span class="quarto-category-count">(1)</span></div><div class="category" data-category="projects">projects <span class="quarto-category-count">(1)</span></div><div class="category" data-category="python">python <span class="quarto-category-count">(1)</span></div><div class="category" data-category="steward of greatness">steward of greatness <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -199,8 +199,33 @@ window.Quarto = {
 
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-title" data-direction="asc">
+          Title
+        </option>
+         <option value="listing-date-sort" data-direction="asc">
+          Date - Oldest
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Date - Newest
+        </option>
+         <option value="listing-author" data-direction="asc">
+          Author
+        </option>
+     </select>
+  </div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="python" data-listing-date-sort="1790208000000" data-listing-file-modified-sort="1716326420062" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="135">
+<div class="quarto-post image-right" data-index="0" data-categories="python,ML" data-listing-date-sort="1790229600000" data-listing-file-modified-sort="1716432501175" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="460">
 <div class="thumbnail">
 <p><a href="./posts/InstallingTensorflow/index.html" class="no-external"></a></p><a href="./posts/InstallingTensorflow/index.html" class="no-external">
 <p><img src="./posts/InstallingTensorflow/image.jpg" class="thumbnail-image"></p>
@@ -217,11 +242,12 @@ window.Quarto = {
 <div class="listing-category" onclick="window.quartoListingCategory('python'); return false;">
 python
 </div>
+<div class="listing-category" onclick="window.quartoListingCategory('ML'); return false;">
+ML
+</div>
 </div>
 <div class="listing-description">
-<a href="./posts/InstallingTensorflow/index.html" class="no-external">
-<li>Followed this link: https://medium.com/nerd-for-tech/installing-tensorflow-with-gpu-acceleration-on-linux-f3f55dd15a9</li>
-<li>Used python3.11, cuDNN==8.8, CUDA==11.8…</li><li></li><li></li><li></li><li></li><li><code></code></li><li></li><li></li></a>
+<a href="./posts/InstallingTensorflow/index.html" class="no-external">Getting tensorflow to use hardware acceleration is challenging. There’s plenty of tutorials to show you how to do it, but I’ve found that most of them lack sufficient…</a>
 </div>
 </div>
 <div class="metadata">
@@ -235,7 +261,7 @@ Copeland Carter
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="projects,open source,javascript" data-listing-date-sort="1715731200000" data-listing-file-modified-sort="1716326420062" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1422">
+<div class="quarto-post image-right" data-index="1" data-categories="projects,open source,javascript" data-listing-date-sort="1715752800000" data-listing-file-modified-sort="1715797894416" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1422">
 <div class="thumbnail">
 <p><a href="./posts/GeoDoodle/index.html" class="no-external"></a></p><a href="./posts/GeoDoodle/index.html" class="no-external">
 <p class="card-img-top"><img src="posts/GeoDoodle/thumbnail.png"  class="thumbnail-image card-img"/></p>
@@ -274,7 +300,7 @@ Copeland Carter
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="project,awesome,steward of greatness,computer goblin" data-listing-date-sort="1714435200000" data-listing-file-modified-sort="1716326420062" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="549">
+<div class="quarto-post image-right" data-index="2" data-categories="project,awesome,steward of greatness,computer goblin" data-listing-date-sort="1714456800000" data-listing-file-modified-sort="1715790493255" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="549">
 <div class="thumbnail">
 <p><a href="./posts/SquarePacking/index.html" class="no-external"></a></p><a href="./posts/SquarePacking/index.html" class="no-external">
 <p class="card-img-top"><img src="posts/SquarePacking/wiki_snip.png"  class="thumbnail-image card-img"/></p>
@@ -402,7 +428,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/smartycope\.github\.io\/smartycope\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
