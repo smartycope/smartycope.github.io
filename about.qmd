@@ -6,19 +6,28 @@ about:
   links:
     - icon: linkedin
       text: LinkedIn
-      href: https://linkedin.com
+      href: https://linkedin.com/in/smartycope
     - icon: github
       text: Github
-      href: https://github.com
-
+      href: https://github.com/smartycope
+    - text: Resumé
+      href: "Resumé v6.1.2.ds.pdf"
+      icon: file-earmark-person
+    - icon: envelope
+      href: emailto:smartycope@gmail.com
+      text: Email
 ---
+
+<script src="../../index.js"></script>
 
 # Copeland Carter
-### Software Engineer | Full Stack Developer | Data Engineer
+### Data Scientist | Software Engineer | Full Stack Developer
 ---
-Check out my projects [on GitHub](https://github.com/smartycope), or some of my published projects:
+<!-- Check out my projects [on GitHub](https://github.com/smartycope), or some of my published projects:
 
 - Regular Expression genererator, and more: [EZRegex](http://ezregex.org)
-- A unique drawing program that acts like graph paper: [GeoDoodle](http://smartycope.github.io/geodoodle)
+- A unique drawing program that acts like graph paper: [GeoDoodle](http://smartycope.github.io/geodoodle) -->
 
-Feel free to email me at [smartycope@gmail.com](emailto:smartycope@gmail.com)
+<!-- Feel free to email me at [smartycope@gmail.com](emailto:smartycope@gmail.com) -->
+
+Copeland Carter (smartycope) loves his wife, his [personal programming projects](https://github.com/smartycope), [Brandon Sanderson novels](https://brandonsanderson.com), rollerblading, and data science.

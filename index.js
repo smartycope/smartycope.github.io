@@ -1,6 +1,6 @@
-// This is the only way I can figure out so far to customize CSS
+// This is the only way I can figure out so far to customize CSS. It works for now.
 const links = document.querySelector('.quarto-other-links')
-links.style.marginTop = '20px'
+links.style.marginTop = '25px'
 const other_links = document.querySelector('.quarto-other-links > h2')
 other_links.innerText = 'Quick Links'
 other_links.style.fontSize = 'large'

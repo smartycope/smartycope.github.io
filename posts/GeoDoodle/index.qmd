@@ -2,7 +2,7 @@
 title: "GeoDoodle"
 author: "Copeland Carter"
 date: "2024-05-15"
-categories: [projects, open source, javascript]
+categories: [projects, open source, javascript, highlighted]
 ---
 
 <script src="../../index.js"></script>

@@ -12,3 +12,23 @@ title-block-banner: true
 ---
 
 <script src="index.js"></script>
+
+
+<!--
+Posts to add:
+    Rose
+    Mathland
+    pyquation
+    AntAI
+    Sonix
+    About client graphs
+    A combined post about all the little projects?
+        Abusive error messages?
+        Cope package?
+        Autofiller?
+    Lenny?
+    My CopeScript idea
+    Doornifer!
+    DnD character Sheet?
+    Mindustry compiler?
+-->
