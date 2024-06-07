@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://smartycope.github.io/posts/SquarePacking/index.html</loc>
+    <lastmod>2024-06-07T19:56:20.099Z</lastmod>
+  </url>
+  <url>
     <loc>https://smartycope.github.io/posts/GeoDoodle/index.html</loc>
-    <lastmod>2024-06-07T18:00:53.773Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smartycope.github.io/posts/InstallingTensorflow/index.html</loc>
-    <lastmod>2024-06-07T18:00:53.773Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smartycope.github.io/about.html</loc>
-    <lastmod>2024-06-07T18:00:53.705Z</lastmod>
+    <lastmod>2024-06-07T19:56:02.302Z</lastmod>
   </url>
   <url>
     <loc>https://smartycope.github.io/index.html</loc>
-    <lastmod>2024-06-07T18:00:53.745Z</lastmod>
+    <lastmod>2024-06-07T18:06:00.049Z</lastmod>
   </url>
   <url>
-    <loc>https://smartycope.github.io/posts/SquarePacking/index.html</loc>
-    <lastmod>2024-06-07T18:00:53.777Z</lastmod>
+    <loc>https://smartycope.github.io/about.html</loc>
+    <lastmod>2024-06-07T19:54:23.377Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smartycope.github.io/posts/Rose/index.html</loc>
+    <lastmod>2024-06-07T19:56:23.211Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smartycope.github.io/posts/InstallingTensorflow/index.html</loc>
+    <lastmod>2024-06-07T17:06:17.224Z</lastmod>
   </url>
 </urlset>
