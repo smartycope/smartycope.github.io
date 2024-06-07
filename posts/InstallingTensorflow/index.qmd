@@ -6,6 +6,8 @@ categories: [python, ML]
 image: "image.jpg"
 ---
 
+<script src="../../index.js"></script>
+
 Getting tensorflow to use hardware acceleration is challenging. There's plenty of tutorials to show you how to do it, but I've found that most of them lack sufficient detail, aren't targeted towards what I'm doing (they're made for super computing clusters or fine-grain control, or something), or are outdated. The ML field is moving fast right now, and things get outdated fast.
 
 Well, here's yet another blog post. This is what *I* did to get tensorflow to connect to *my* GPU, maybe it'll help you.

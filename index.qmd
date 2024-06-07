@@ -11,11 +11,4 @@ page-layout: full
 title-block-banner: true
 ---
 
-<script type="text/javascript">
-// This is the only way I can figure out so far to customize CSS
-const links = document.querySelector('.quarto-other-links')
-links.style.marginTop = '20px'
-const other_links = document.querySelector('.quarto-other-links > h2')
-other_links.innerText = 'Quick Links'
-other_links.style.fontSize = 'large'
-</script>
+<script src="index.js"></script>

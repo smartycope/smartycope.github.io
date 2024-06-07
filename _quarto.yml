@@ -1,6 +1,7 @@
 project:
   type: website
   output-dir: docs
+  resources: "Resumé v6.1.2.ds.pdf"
 
 website:
   title: "smartycope"
@@ -41,9 +42,10 @@ website:
     - text: LinkedIn Profile
       href: https://www.linkedin.com/in/smartycope/
       icon: linkedin
-    # - text: My Resumé
+    - text: My Resumé
+      href: "Resumé v6.1.2.ds.pdf"
       # href: resume.pdf
-      # icon: file-earmark-person
+      icon: file-earmark-person
     - text: Live Projects
       icon: wifi
       href: /
@@ -66,7 +68,7 @@ website:
       href: https://github.com/smartycope/geodoodle
       # icon: github
       icon: dash
-    - text: Signature Published Packages
+    - text: Published Packages
       icon: box
       href: https://pypi.org/project/ezregex/
     - text: EZRegex Package
