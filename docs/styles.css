@@ -5,3 +5,12 @@
     color: white;
     fill: rgb(40,40,40);
 } */
+
+
+/* .quarto-other-links{ */
+#quarto-margin-sidebar > div.quarto-other-links{
+    margin-top: 20px;
+    font-size: large;
+    color: red;
+    background-color: green;
+}

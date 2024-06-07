@@ -9,9 +9,76 @@ website:
       - about.qmd
       - icon: smartycope
         href: https://avatars.githubusercontent.com/u/60020173?v=4
+    collapse: true
+  # sidebar:
+  #   style: docked
+  #   search: true
+  #   contents: auto
+      # - section: Projects
+      #   contents:
+      #     - text: GeoDoodle
+      #       href: GeoDoodle/index.qmd
+      # - text: Installing Tensorflow
+      #   href: InstallingTensorflow/index.qmd
+  back-to-top-navigation: false
+  bread-crumbs: true
+  page-navigation: true
+  description: Test description
+  image: profile.png
+  favicon: profile.png
+  issue-url: emailto:smartycope@gmail.com
+  reader-mode: false
+  page-footer: Copeland Carter, 2024
+  repo-url: https://github.com/smartycope/smartycope.github.io
+  repo-actions: issue
+  search: true
+  site-url: https://smartycope.github.io
+  open-graph: true
+  other-links:
+    - text: GitHub Profile
+      href: https://github.com/smartycope
+      icon: github
+    - text: LinkedIn Profile
+      href: https://www.linkedin.com/in/smartycope/
+      icon: linkedin
+    # - text: My Resumé
+      # href: resume.pdf
+      # icon: file-earmark-person
+    - text: Live Projects
+      icon: wifi
+      href: /
+    - text: EZRegex
+      href: https://ezregex.org/
+      # icon: regex
+      icon: dash
+    - text: GeoDoodle
+      href: https://smartycope.github.io/geodoodle/
+      # icon: easel2-fill
+      icon: dash
+    - text: Signature GitHub Repos
+      href: https://github.com/smartycope
+      icon: github
+    - text: EZRegex Repo
+      href: https://github.com/smartycope/ezregex
+      # icon: github
+      icon: dash
+    - text: GeoDoodle Repo
+      href: https://github.com/smartycope/geodoodle
+      # icon: github
+      icon: dash
+    - text: Signature Published Packages
+      icon: box
+      href: https://pypi.org/project/ezregex/
+    - text: EZRegex Package
+      href: https://pypi.org/project/ezregex/
+      # icon: filetype-py
+      icon: dash
 format:
   html:
     theme:
       dark: darkly
       light: flatly
     css: styles.css
+    code-fold: true
+    # author: Copeland Carter
+    code-link: true
