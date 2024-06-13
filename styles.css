@@ -8,26 +8,9 @@
 
 
 /* .quarto-other-links{ */
-/* #quarto-margin-sidebar > div.quarto-other-links{
+#quarto-margin-sidebar > div.quarto-other-links{
     margin-top: 20px;
     font-size: large;
     color: red;
     background-color: green;
-}
- */
-
-.quarto-other-links {
-    margin-top: 25px;
-}
-
-.quarto-other-links > ul > li:nth-child(4),
-.quarto-other-links > ul > li:nth-child(7),
-.quarto-other-links > ul > li:nth-child(10) {
-    margin-top: 10px;
-    font-size: large;
-}
-
-#quarto-margin-sidebar > div.quarto-other-links > h2{
-    /* content: 'Quick Links'; */
-    font-size: large;
 }
