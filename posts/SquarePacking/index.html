@@ -196,7 +196,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<script src="../../index.js"></script>
 <p>My senior project is to attempt to use a reinforcement learning algorithm based on a <a href="https://spinningup.openai.com/en/latest/algorithms/ddpg.html">Deep Deterministic Policy Gradient</a> model for use with a continuous observation <em>and</em> action space, in order to solve the <a href="https://en.wikipedia.org/wiki/Square_packing">Square Packing in a Square</a> problem for N=11 squares.</p>
 <p>That was a very intelligent sounding sentence. Let’s break it down:</p>
 <section id="square-packing-in-a-square" class="level3">
@@ -217,14 +216,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>An actor-critic setup has 2 models (though the DDPG setup has 4, for training purposes). One model is the actor, which takes in an observation from the enviorment, learns to outputs actions to take in the enviorment, optimized to some reward function. The other model takes in an observation from the enviorment and the action taken by the actor for that observation, and learns to output the reward that that action will get for that observation. The actor model can then use the output of the critic model to train itself.</p>
 <p>It’s kind of like learning to dance to a song on a stage based on some guy in the back either clapping or yelling “boooo!”. Eventually you can start to understand what the critic is asking for.</p>
 <p>This is the fundemental equation behind the DDPG algorithm. I understood it at one point, but have since forgot. See the above links for a real explanation.</p>
-<p><img src="index_files/figure-html/cell-5-1-image.png" class="img-fluid"></p>
+<p><img src="index_files/figure-html/cell-4-1-image.png" class="img-fluid"></p>
 </section>
 <section id="implementation" class="level3">
 <h3 class="anchored" data-anchor-id="implementation">Implementation</h3>
 <p>Both the action and observation spaces will have the shape <code>(3*N, )</code> (N is the number of squares, so 11) where each square has an x, y and rotation values. The actor’s actions simply get added to the current square positions and rotations (since the actor actions can be negative), so the actor can make small adjustments to squeze the squares closer to each other.</p>
 <p>The reward function hasn’t been developed yet, but it will involve something like steeply punishing overlapping squares, and incentivizing smaller “bounding square” side lengths (like a bounding rectangle, but a square).</p>
 <p>I’ll be using <a href="https://pypi.org/project/shapely/">Shapely</a> for the geometry handling:</p>
-<div id="cell-9" class="cell" data-execution_count="7">
+<div id="cell-8" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is an example of converting the action space into a shapely object</span></span>
