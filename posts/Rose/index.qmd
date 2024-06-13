@@ -9,7 +9,6 @@ format:
         execute: false
 ---
 
-<script src="../../index.js"></script>
 
 Being single is hard. At least, it was for me. Some people are jerks. Some people are your future relationships. Hopefully, one person is your future spouse. How can you tell the difference?
 

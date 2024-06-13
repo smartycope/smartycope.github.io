@@ -5,7 +5,6 @@ date: "2024-05-15"
 categories: [projects, open source, javascript, highlighted]
 ---
 
-<script src="../../index.js"></script>
 
 <img src="thumbnail.png" width="400"></img>
 
