@@ -1,7 +1,10 @@
 project:
   type: website
   output-dir: docs
-  resources: "Resumé v6.1.2.ds.pdf"
+  resources:
+    - "Resumé v6.1.2.ds.pdf"
+    - test.html
+
 
 website:
   title: "smartycope"
