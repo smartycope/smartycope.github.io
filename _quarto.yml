@@ -4,7 +4,7 @@ project:
   resources:
     - "Resumé v6.1.2.ds.pdf"
     - leaflet.html
-
+    - interactive_dygraph.html
 
 website:
   title: "smartycope"
