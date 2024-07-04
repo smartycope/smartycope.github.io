@@ -1,0 +1,1782 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Copeland Carter">
+<meta name="dcterms.date" content="2024-07-04">
+
+<title>smartycope - Final Project Data</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./profile.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="styles.css">
+<meta property="og:title" content="smartycope - Final Project Data">
+<meta property="og:image" content="https://smartycope.github.io/profile.png">
+<meta property="og:site_name" content="smartycope">
+<meta property="og:image:height" content="512">
+<meta property="og:image:width" content="512">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">smartycope</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://avatars.githubusercontent.com/u/60020173?v=4"> <i class="bi bi-smartycope" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="https://github.com/smartycope"><i class="bi bi-github"></i>GitHub Profile</a></li><li><a href="https://www.linkedin.com/in/smartycope/"><i class="bi bi-linkedin"></i>LinkedIn Profile</a></li><li><a href="Resumé v6.1.2.ds.pdf"><i class="bi bi-file-earmark-person"></i>My Resumé</a></li><li><a href="/"><i class="bi bi-wifi"></i>Live Projects</a></li><li><a href="https://ezregex.org/"><i class="bi bi-dash"></i>EZRegex</a></li><li><a href="https://smartycope.github.io/geodoodle/"><i class="bi bi-dash"></i>GeoDoodle</a></li><li><a href="https://github.com/smartycope"><i class="bi bi-github"></i>Signature GitHub Repos</a></li><li><a href="https://github.com/smartycope/ezregex"><i class="bi bi-dash"></i>EZRegex Repo</a></li><li><a href="https://github.com/smartycope/geodoodle"><i class="bi bi-dash"></i>GeoDoodle Repo</a></li><li><a href="https://pypi.org/project/ezregex/"><i class="bi bi-box"></i>Published Packages</a></li><li><a href="https://pypi.org/project/ezregex/"><i class="bi bi-dash"></i>EZRegex Package</a></li></ul></div></div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Final Project Data</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Copeland Carter </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 4, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!-- # Data for the Final Project
+Over the semester, I've gone through multiple ideas for what to do for the final project.
+
+* I started wanting to look at global warming/emissions/fossile fuel data
+* I then wanted to look at death rate data, and I found some decent data sources for it
+* Now, we have a family reunion coming up, and I gave everyone a survey to fill out, so I could gather data to get some fun stats. I want to make a funny presentation and/or a Family Fued-style presentation to give at the family reunion. I also made a website for it, so I want to put it on there. The data for it is in the link below, I made a Google Form to collect it all. Since it's *kind of* personal data, I don't know if I should share it. There's nothing too personal, but I didn't ask permission.
+* My grandma also showed me a sprawling 30+ page Microsoft word document of every significant event since she got married, so I wrote some code to parse it, clean it, then make an interactive timeline of it, and also published it on the family reunion website. Only problem with that is that I already did that, and I did it in Python. But it could use some more work, so I might come back to it. I definitely shouldn't share that data without permission.
+* I *also* really loved the interactive treemap of the size of files on a computer that was shown in class briefly, so I wrote a script to see that. I started on that, but I started it in Python, because I couldn't find an interactive treemap library for ggplot, and I really wanted it to be interactive. Plotly has one, but I couldn't find an R version of it. At first I used the `du` command to generate a .tsv file of all the files, but then decided I wanted more info, like the file type and when it was last accessed, and things like that, so I wrote a python script (using `os.walk()`) to get more detailed data. I really like the idea of generating a dataset, instead of collecting one.
+* My dad also had me make some graphs to help him make a business decision, specifically a graph of the population growth in a few specific counties in Idaho, with the optometrists in each county plotted. I made a graph for that, also in Python, because I did it before the week on leaflet and graphs, and because I wanted to publish it using Streamlit. I could redo it in R. The data for that I got by downloading and parsing census data by hand. I found an R package that can automatically download and clean census data for you, but it only works up to 2019, because apparently in 2020 the goverment changed how they formatted the census data, and my dad wanted the newest population data possible. I ended up using both census data and ACS data combined. My dad said he'd get me the dataset for the optometrists, but he hasn't gotten it to me yet.
+
+This file is making some graphs and stats (sometimes *intentionally* bad, for comedic effect) for the family reunion -->
+<div id="cell-4" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="492">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># data = gsheet2tbl('https://docs.google.com/spreadsheets/d/1oUMIpE_Elh_CYD7DFbT1vbYxFZNYUDK2QxFqFDk4xII/edit#gid=2008169700') # Original Data</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">=</span> <span class="fu">gsheet2tbl</span>(<span class="st">'https://docs.google.com/spreadsheets/d/1oUMIpE_Elh_CYD7DFbT1vbYxFZNYUDK2QxFqFDk4xII/edit?gid=0#gid=0'</span>) <span class="co"># Manually cleaned data (it was easier to edit it in the spreadsheet)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div id="cell-5" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="493">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>questions <span class="ot">=</span> <span class="fu">colnames</span>(data)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(data) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">'timestamp'</span>, <span class="st">'name'</span>, <span class="st">'birthday'</span>, <span class="st">'parents'</span>, <span class="st">'names.indexed'</span>, <span class="st">'ordinances.self'</span>, <span class="st">'ordinances.dead'</span>, <span class="st">'fav.recipe'</span>, <span class="st">'gen'</span>, <span class="st">'tech.savviness'</span>, <span class="st">'injuries'</span>, <span class="st">'num.trips'</span>, <span class="st">'trips'</span>, <span class="st">'num.pets'</span>, <span class="st">'pets'</span>, <span class="st">'fav.part'</span>, <span class="st">'suggested.activity'</span>, <span class="st">'suggested.reunion.location'</span>, <span class="st">'jobs'</span>, <span class="st">'most.told.story'</span>, <span class="st">'oldest'</span>, <span class="st">'rating'</span>, <span class="st">'fav.game'</span>, <span class="st">'secret'</span>, <span class="st">'best.advice'</span>, <span class="st">'worst.advice'</span>, <span class="st">'coming'</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>age <span class="ot">=</span> <span class="fu">floor</span>((<span class="fu">today</span>() <span class="sc">-</span> <span class="fu">mdy</span>(data<span class="sc">$</span>birthday)) <span class="sc">/</span> <span class="dv">365</span>) <span class="sc">|&gt;</span> <span class="fu">as.integer</span>()</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>first.name.raw <span class="ot">=</span> <span class="fu">str_split</span>(data<span class="sc">$</span>name, <span class="at">pattern=</span><span class="st">' '</span>) <span class="sc">|&gt;</span> <span class="fu">map</span>(<span class="sc">~</span> .x[[<span class="dv">1</span>]]) <span class="sc">|&gt;</span> <span class="fu">as.character</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div id="cell-6" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="494">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to make names unique</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>make_names_unique <span class="ot">&lt;-</span> <span class="cf">function</span>(names) {</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create a data frame to store the unique names and their counts</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    name_counts <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(names, <span class="at">count =</span> <span class="fu">ave</span>(names, names, <span class="at">FUN =</span> seq_along))</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Append the count to the names if count &gt; 1</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    name_counts <span class="ot">&lt;-</span> name_counts <span class="sc">%&gt;%</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="fu">mutate</span>(<span class="at">unique_names =</span> <span class="fu">ifelse</span>(count <span class="sc">==</span> <span class="dv">1</span>, names, <span class="fu">str_c</span>(names, <span class="st">" #"</span>, count)))</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(name_counts<span class="sc">$</span>unique_names)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>first.name <span class="ot">=</span> <span class="fu">make_names_unique</span>(data<span class="sc">$</span>first.name.raw)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div id="cell-7" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="495">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Some people (the Hardy's) put in ridiculous data</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This is fun for some graphs, but not others</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>serious_data <span class="ot">=</span> data <span class="sc">|&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(tech.savviness <span class="sc">!=</span> <span class="dv">10</span> <span class="sc">|</span> first.name <span class="sc">==</span> <span class="st">'Copeland'</span>) <span class="sc">|&gt;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span>(first.name.raw <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'Bethany'</span>, <span class="st">'Trump'</span>, <span class="st">'Biden'</span>, <span class="st">'Wuss'</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div id="cell-8" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="496">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_xkcd</span>())</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_update</span>(</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">'#222222'</span>),</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major =</span> <span class="fu">element_line</span>(<span class="at">color=</span><span class="st">'#807f7f'</span>),</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">'#3f3f3f'</span>),</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">color=</span><span class="st">'gray90'</span>),</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">color=</span><span class="st">'gray90'</span>, <span class="at">size=</span><span class="dv">25</span>),</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">color=</span><span class="st">'gray90'</span>, <span class="at">size=</span><span class="dv">20</span>),</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># plot.subtitle = text,</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># legend.text = text,</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># axis.text.x = text,</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># axis.text.y = text,</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">text=</span><span class="fu">element_text</span>(<span class="at">color=</span><span class="st">'gray90'</span>, <span class="at">size=</span><span class="dv">20</span>),</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>color <span class="ot">=</span> <span class="st">'#226796'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div id="cell-9" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="497">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># I got sick of repeatedly doing this by hand</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>geom_arrow <span class="ot">=</span> <span class="cf">function</span>(x, y, dx, dy, <span class="at">text=</span><span class="st">''</span>, <span class="at">head=</span><span class="st">'closed'</span>, <span class="at">text_dx=</span><span class="dv">0</span>, <span class="at">text_dy=</span><span class="dv">0</span>, <span class="at">arrow_head_len_in=</span>.<span class="dv">15</span>){</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">list</span>(</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">annotate</span>(<span class="st">'segment'</span>, <span class="at">xend=</span>x, <span class="at">yend=</span>y, <span class="at">x=</span>x<span class="sc">+</span>dx, <span class="at">y=</span>y<span class="sc">+</span>dy,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">arrow=</span><span class="fu">arrow</span>(<span class="at">type =</span> head, <span class="at">length=</span><span class="fu">unit</span>(arrow_head_len_in, <span class="st">'inches'</span>)),</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">color=</span><span class="fu">theme_get</span>()<span class="sc">$</span>text<span class="sc">$</span>colour,</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>        <span class="fu">annotate</span>(<span class="st">'text'</span>, <span class="at">x=</span>x<span class="sc">+</span>dx<span class="sc">+</span>text_dx, <span class="at">y=</span>y<span class="sc">+</span>dy<span class="sc">+</span>text_dy,</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">label=</span>text,</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">family=</span><span class="fu">theme_get</span>()<span class="sc">$</span>text<span class="sc">$</span>family,</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>            <span class="at">size=</span><span class="fu">theme_get</span>()<span class="sc">$</span>text<span class="sc">$</span>size <span class="sc">/</span> <span class="dv">3</span>,</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span><span class="fu">theme_get</span>()<span class="sc">$</span>text<span class="sc">$</span>colour,</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    ))</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div id="cell-10" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="533">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>mean.age <span class="ot">=</span> <span class="fu">mean</span>((data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(., <span class="sc">!</span><span class="fu">is.na</span>(age)))<span class="sc">$</span>age)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x=</span>age)) <span class="sc">+</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">color=</span><span class="st">'white'</span>) <span class="sc">+</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_histogram</span>(<span class="at">bins=</span><span class="dv">25</span>, <span class="at">fill=</span>color, <span class="at">color=</span><span class="fu">theme_get</span>()<span class="sc">$</span>panel.background<span class="sc">$</span>fill) <span class="sc">+</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># scale_x_binned(transform = 'sqrt')</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_arrow</span>(<span class="at">x=</span><span class="dv">1000</span>, <span class="at">y=</span><span class="dv">2</span>, <span class="at">dx=</span><span class="sc">-</span><span class="dv">40</span>, <span class="at">dy=</span><span class="dv">2</span>, <span class="at">text=</span><span class="st">'2/3 Nephites'</span>, <span class="at">text_dy=</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> mean.age, <span class="at">color=</span><span class="st">'red'</span>) <span class="sc">+</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">annotate</span>(<span class="st">'text'</span>, <span class="at">x=</span>mean.age <span class="sc">+</span> <span class="dv">130</span>, <span class="at">y=</span><span class="dv">18</span>, <span class="at">label=</span><span class="fu">paste0</span>(<span class="st">'Average age is: '</span>, <span class="fu">round</span>(mean.age, <span class="dv">1</span>)), <span class="at">color=</span><span class="fu">theme_get</span>()<span class="sc">$</span>text<span class="sc">$</span>colour, <span class="at">size=</span><span class="dv">6</span>, <span class="at">family=</span><span class="fu">theme_get</span>()<span class="sc">$</span>text<span class="sc">$</span>family,) <span class="sc">+</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_arrow</span>(<span class="at">x=</span><span class="sc">-</span><span class="dv">73</span>, <span class="at">y=</span><span class="dv">1</span>, <span class="at">dx=</span><span class="dv">80</span>, <span class="at">dy=</span><span class="dv">10</span>, <span class="at">text=</span><span class="st">'One person from the future'</span>, <span class="at">text_dy=</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">title=</span><span class="st">'The Distrobution of Ages at the Family Reunion'</span>,</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">y=</span><span class="st">'Number of People'</span>,</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">x=</span><span class="st">'Age'</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="familyGraphs_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-11" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="499">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(age)) <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">8</span>) <span class="sc">|&gt;</span> <span class="fu">select</span>(name, age) <span class="sc">|&gt;</span> clipr<span class="sc">::</span><span class="fu">write_clip</span>(<span class="at">allow_non_interactive =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div id="cell-12" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="500">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(rating)) <span class="sc">|&gt;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>rating)) <span class="sc">+</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_histogram</span>(<span class="at">bins=</span><span class="dv">11</span>, <span class="at">color=</span><span class="fu">theme_get</span>()<span class="sc">$</span>panel.background<span class="sc">$</span>fill, <span class="at">fill=</span>color) <span class="sc">+</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_binned</span>(<span class="at">breaks =</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">10</span>) <span class="sc">+</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"How much Everyone Enjoys the Family Reunion"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="familyGraphs_files/figure-html/cell-12-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-13" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="501">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>serious_data <span class="sc">%&gt;%</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(injuries <span class="sc">&gt;</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(first.name, <span class="fu">desc</span>(injuries)), <span class="at">y=</span>injuries)) <span class="sc">+</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_col</span>(<span class="at">fill=</span>color) <span class="sc">+</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_arrow</span>(<span class="at">x=</span><span class="fl">3.5</span>, <span class="at">y=</span><span class="dv">8</span>, <span class="at">dx=</span><span class="dv">3</span>, <span class="at">dy=</span><span class="sc">-</span>.<span class="dv">5</span>, <span class="at">text=</span><span class="st">'Clearly, I underestimated how much some people get hurt (TYLER)'</span>, <span class="at">text_dy=</span><span class="sc">-</span>.<span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle=</span><span class="dv">45</span>,<span class="at">vjust =</span> .<span class="dv">7</span>)) <span class="sc">+</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title=</span><span class="st">'People who were Injured the Most in the Last Year'</span>, <span class="at">x=</span><span class="st">''</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="familyGraphs_files/figure-html/cell-13-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-14" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="502">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(serious_data <span class="sc">|&gt;</span> <span class="fu">filter</span>(num.trips <span class="sc">&gt;</span> <span class="dv">2</span>), <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(first.name, <span class="fu">desc</span>(num.trips)), <span class="at">y=</span>num.trips)) <span class="sc">+</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_col</span>(<span class="at">fill=</span>color) <span class="sc">+</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle=</span><span class="dv">45</span>, <span class="at">vjust =</span> .<span class="dv">9</span>, <span class="at">hjust =</span> .<span class="dv">5</span>)) <span class="sc">+</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">9</span>, <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">'Who takes the Most Trips'</span>, <span class="at">x=</span><span class="st">''</span>, <span class="at">y=</span><span class="st">'Number of trips'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="familyGraphs_files/figure-html/cell-14-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-15" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># eval: false</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># echo: false</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># I cannot for the life of me figure out why it's doing this. It just started doing it randomly. I'm starting</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># to seriously suspect a bug in ggplot2.</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>honorable_mentions <span class="ot">=</span> <span class="fu">c</span>(<span class="st">'Rice and butter'</span>, <span class="st">'Pinto beans, Kale, and herbs on sourdough bread toasted with cheese on top.'</span>, <span class="st">'Mash sauce'</span>, <span class="st">'I love food'</span>, <span class="st">'Horse apple'</span>, <span class="st">'Danaes famous Grilled salmon'</span>, <span class="st">'Chaos'</span>, <span class="st">'Chinese takeout'</span>, <span class="st">'Anything grandma makes'</span>, <span class="st">'Black bean, rice, bell pepper, and mango with a lime dressing'</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co"># honorable_mentions = c()</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(fav.recipe) <span class="sc">%&gt;%</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">order =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(fav.recipe)) <span class="sc">|&gt;</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(order <span class="sc">&gt;</span> <span class="dv">1</span> <span class="sc">|</span> fav.recipe <span class="sc">%in%</span> honorable_mentions) <span class="sc">|&gt;</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y=</span><span class="fu">reorder</span>(fav.recipe, order))) <span class="sc">+</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="at">orientation =</span> <span class="st">'y'</span>, <span class="at">stat=</span><span class="st">'count'</span>, <span class="at">fill=</span>color) <span class="sc">+</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span><span class="dv">0</span><span class="sc">:</span><span class="dv">6</span>) <span class="sc">+</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">annotate</span>(<span class="st">'text'</span>, <span class="at">x=</span><span class="dv">3</span>, <span class="at">y=</span><span class="fl">10.7</span>, <span class="at">label=</span><span class="st">'Honorable Mentions'</span>) <span class="sc">+</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">10.5</span>, <span class="at">color=</span><span class="st">'#cc312c'</span>) <span class="sc">+</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">'Everyone</span><span class="sc">\'</span><span class="st">s Favorite Family Recipies'</span>, <span class="at">y=</span><span class="st">''</span>, <span class="at">x=</span><span class="st">'Number of people who say it</span><span class="sc">\'</span><span class="st">s their favorite'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div id="cell-16" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="504">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(first.name.raw) <span class="sc">%&gt;%</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">order =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(order <span class="sc">&gt;</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(first.name.raw)) <span class="sc">|&gt;</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y=</span><span class="fu">reorder</span>(first.name.raw, order))) <span class="sc">+</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="at">fill=</span>color) <span class="sc">+</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_arrow</span>(<span class="at">x=</span><span class="fl">3.5</span>, <span class="at">y=</span><span class="fl">2.6</span>, <span class="at">dx=</span><span class="sc">-</span>.<span class="dv">5</span>, <span class="at">dy=</span><span class="sc">-</span>.<span class="dv">7</span>, <span class="at">text=</span><span class="st">'Bethany is REALLY coming'</span>, <span class="at">text_dy =</span> <span class="sc">-</span>.<span class="dv">08</span>) <span class="sc">+</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">'How Many of Us Share the Same First Name'</span>, <span class="at">y=</span><span class="st">''</span>, <span class="at">x=</span><span class="st">'How many times someone with that first name took the survey'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="familyGraphs_files/figure-html/cell-16-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-17" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="535">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_split</span>(<span class="fu">na.omit</span>(serious_data<span class="sc">$</span>ordinances.self), <span class="st">','</span>) <span class="sc">|&gt;</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">flatten</span>() <span class="sc">|&gt;</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tibble</span>() <span class="sc">|&gt;</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rename</span>(<span class="at">Ordinance=</span><span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">Ordinance=</span><span class="fu">str_trim</span>(Ordinance)) <span class="sc">|&gt;</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">count</span>(Ordinance) <span class="sc">|&gt;</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rename</span>(<span class="at">count=</span>n) <span class="sc">|&gt;</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">count =</span> <span class="fu">as.character</span>(count), <span class="at">Ordinance=</span><span class="fu">as.character</span>(Ordinance)) <span class="sc">|&gt;</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>Ordinance, <span class="at">y=</span>count)) <span class="sc">+</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_col</span>(<span class="at">fill=</span>color) <span class="sc">+</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_arrow</span>(<span class="at">x=</span><span class="dv">3</span>, <span class="at">y=</span><span class="dv">0</span>, <span class="at">dx=</span><span class="dv">0</span>, <span class="at">dy=</span>.<span class="dv">5</span>, <span class="st">"I totally know how to spell initiatiories"</span>, <span class="at">text_dy=</span>.<span class="dv">05</span>) <span class="sc">+</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># scale_y_continuous(breaks = 0:6) +</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">'How many live ordinances have happened this year?'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="familyGraphs_files/figure-html/cell-17-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-18" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="506">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>serious_data <span class="sc">|&gt;</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(age <span class="sc">&lt;</span> <span class="dv">200</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(age) <span class="sc">|&gt;</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>age, <span class="at">y=</span>tech.savviness)) <span class="sc">+</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">color=</span>color, <span class="at">size=</span><span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">'lm'</span>, <span class="at">se=</span>F, <span class="at">na.rm=</span>T) <span class="sc">+</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">annotate</span>(<span class="st">'text'</span>, <span class="at">x=</span><span class="dv">92</span>, <span class="at">y=</span><span class="fl">4.6</span>, <span class="at">label=</span><span class="st">'Surprisingly, there doesn</span><span class="sc">\'</span><span class="st">t seem to be a significant correlation between age and tech savviness'</span>, <span class="at">size=</span><span class="dv">5</span>, <span class="at">family=</span><span class="fu">theme_get</span>()<span class="sc">$</span>text<span class="sc">$</span>family, <span class="at">color=</span><span class="fu">theme_get</span>()<span class="sc">$</span>text<span class="sc">$</span>colour) <span class="sc">+</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">y=</span><span class="st">"Tech Savviness"</span>, <span class="at">title=</span><span class="st">'Tech Savviness vs. Age'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="familyGraphs_files/figure-html/cell-18-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-19" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="519">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># No idea why it's adding bars unless I size it just right</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">repr.plot.width=</span><span class="fl">7.56</span>,</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">repr.plot.height=</span><span class="dv">8</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(names.indexed)) <span class="sc">|&gt;</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">indexed =</span> <span class="fu">ifelse</span>(names.indexed <span class="sc">&gt;</span> <span class="dv">0</span>, <span class="st">'did'</span>, <span class="st">"didn't"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(indexed, <span class="at">label=</span>indexed) <span class="sc">|&gt;</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">indexed =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y=</span>indexed, <span class="at">x=</span><span class="st">''</span>, <span class="at">fill=</span>label, <span class="at">label=</span><span class="fu">glue</span>(<span class="st">'{indexed} People {label}'</span>))) <span class="sc">+</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>        <span class="co"># axis.text.y = element_blank(),</span></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>        <span class="co"># axis.text = element_blank(),</span></span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">'none'</span>,</span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust=</span>.<span class="dv">5</span>),</span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_text</span>(<span class="at">position=</span><span class="fu">position_stack</span>(<span class="at">vjust=</span>.<span class="dv">5</span>), <span class="at">family=</span><span class="fu">theme_get</span>()<span class="sc">$</span>text<span class="sc">$</span>family, <span class="at">size=</span><span class="dv">7</span>) <span class="sc">+</span></span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_polar</span>(<span class="at">theta=</span><span class="st">'y'</span>) <span class="sc">+</span></span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x=</span><span class="st">''</span>, <span class="at">y=</span><span class="st">''</span>, <span class="at">title=</span><span class="st">'How many People did Indexing this Year'</span>, <span class="at">caption=</span><span class="st">"Sorry, I used the wrong input on the survey"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="familyGraphs_files/figure-html/cell-19-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-20" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="524">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># No idea why it's adding bars unless I size it just right</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">repr.plot.width=</span><span class="fl">7.59</span>,</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">repr.plot.height=</span><span class="dv">8</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(oldest)) <span class="sc">|&gt;</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(oldest, <span class="at">label=</span>oldest) <span class="sc">|&gt;</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">oldest =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y=</span>oldest, <span class="at">x=</span><span class="st">''</span>, <span class="at">fill=</span>label, <span class="at">label=</span><span class="fu">glue</span>(<span class="st">'{oldest} said {label}'</span>))) <span class="sc">+</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>        <span class="co"># axis.text.y = element_blank(),</span></span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>        <span class="co"># axis.text = element_blank(),</span></span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">'none'</span>,</span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>        <span class="co"># plot.title = element_text(hjust=.5, family=theme_get()$text$family, size=15),</span></span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>        <span class="co"># plot.subtitle = element_text(hjust=.5, family=theme_get()$text$family, size=15),</span></span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_text_repel</span>(<span class="at">position=</span><span class="fu">position_stack</span>(<span class="at">vjust=</span>.<span class="dv">5</span>), <span class="at">family=</span><span class="fu">theme_get</span>()<span class="sc">$</span>text<span class="sc">$</span>family, <span class="at">size=</span><span class="dv">6</span>) <span class="sc">+</span></span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_polar</span>(<span class="at">theta=</span><span class="st">'y'</span>) <span class="sc">+</span></span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x=</span><span class="st">''</span>, <span class="at">y=</span><span class="st">''</span>, <span class="at">subtitle=</span><span class="st">'Blair is 83% the oldest sibling'</span>, <span class="at">title=</span><span class="st">'Who is the oldest sibling?'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="familyGraphs_files/figure-html/cell-20-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="interesting-lists" class="level2">
+<h2 class="anchored" data-anchor-id="interesting-lists">Interesting Lists</h2>
+<div id="cell-22" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="509">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>lists <span class="ot">=</span> data <span class="sc">|&gt;</span> <span class="fu">select</span>(<span class="st">'name'</span>, <span class="st">'worst.advice'</span>, <span class="st">'best.advice'</span>, <span class="st">'secret'</span>, <span class="st">'fav.game'</span>, <span class="st">'most.told.story'</span>, <span class="st">'suggested.reunion.location'</span>, <span class="st">'suggested.activity'</span>, <span class="st">'fav.part'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div id="cell-23" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="510">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">repr.matrix.max.rows=</span><span class="dv">200</span>,</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">repr.matrix.max.cols=</span><span class="dv">200</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>lists</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>A tibble: 56 × 9</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col">name</th>
+<th data-quarto-table-cell-role="th" scope="col">worst.advice</th>
+<th data-quarto-table-cell-role="th" scope="col">best.advice</th>
+<th data-quarto-table-cell-role="th" scope="col">secret</th>
+<th data-quarto-table-cell-role="th" scope="col">fav.game</th>
+<th data-quarto-table-cell-role="th" scope="col">most.told.story</th>
+<th data-quarto-table-cell-role="th" scope="col">suggested.reunion.location</th>
+<th data-quarto-table-cell-role="th" scope="col">suggested.activity</th>
+<th data-quarto-table-cell-role="th" scope="col">fav.part</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span style="white-space:pre-wrap">Amy </span></td>
+<td><span style="white-space:pre-wrap">Spank your kid </span></td>
+<td><span style="white-space:pre-wrap">When angry with spouse go to sleep </span></td>
+<td><span style="white-space:pre-wrap">I love car chases in movies </span></td>
+<td><span style="white-space:pre-wrap">Water fight </span></td>
+<td><span style="white-space:pre-wrap">My birth story </span></td>
+<td><span style="white-space:pre-wrap">Fiji </span></td>
+<td><span style="white-space:pre-wrap">Fishing </span></td>
+<td><span style="white-space:pre-wrap">Programs &amp; laughing with everyone </span></td>
+</tr>
+<tr class="even">
+<td>Danae Weber</td>
+<td>Sleep when the baby sleeps... Do the dishes when the baby does the dishes. Do the laundry when the baby does the laundry.</td>
+<td>Don't be an idiot. Changed my life.</td>
+<td>I'm a pretty good event planner</td>
+<td>Spin the bottle</td>
+<td>Grandma being tired of her boys fighting, so she tossed them in the yard with boxing gloves and told them to duke it out</td>
+<td>Hawaii</td>
+<td>Strong gene games</td>
+<td>Staying up late</td>
+</tr>
+<tr class="odd">
+<td>Jaren</td>
+<td>I recommend buying a fleet of transports right now</td>
+<td>Praise in public</td>
+<td>I love writing poetry</td>
+<td>Strip crib</td>
+<td>Grandpa Dee ALMOST catching a jack rabbit with his bare hands</td>
+<td>Holland</td>
+<td>Water skiing</td>
+<td>Staying up late</td>
+</tr>
+<tr class="even">
+<td>Blair</td>
+<td>NA</td>
+<td>Cause that is what we do</td>
+<td>Ham radio operator</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>Pickleball</td>
+<td>Renewing friendships</td>
+</tr>
+<tr class="odd">
+<td>McKelle</td>
+<td>Just take care of yourself</td>
+<td>Thuesons love and serve one another!!</td>
+<td>I’m missing the reunion because I’m in Peru!</td>
+<td>NA</td>
+<td>NA</td>
+<td>Camping somewhere new</td>
+<td>NA</td>
+<td>Games</td>
+</tr>
+<tr class="even">
+<td>Katelan Shakespear</td>
+<td>It’s ok to go to bed mad at each other</td>
+<td>Don’t let your kids sleep in your bed.</td>
+<td>I hate olives</td>
+<td>Relays, volleyball, pickleball</td>
+<td>When she was having babies!</td>
+<td>Anywhere, as long as we have it!</td>
+<td>Big group games</td>
+<td>Talking around the camp fire</td>
+</tr>
+<tr class="odd">
+<td>Kelli Thueson</td>
+<td>Don’t go to the doctor’s office if you only have one problem. Wait until you have four or five; that’s how you get the most bang for your buck.'</td>
+<td>My feelings don’t have an IQ</td>
+<td>I can roll my tongue into the shape of a cover</td>
+<td>Pickleball</td>
+<td>Baby Blair throwing up root beer float (i think) on her busty grandma in the car and it going down said grandmother’s blouse.</td>
+<td>Hawaii</td>
+<td>Steak on rocks</td>
+<td>Games at night</td>
+</tr>
+<tr class="even">
+<td>Jenelle Thueson</td>
+<td>NA</td>
+<td>Keep smiling</td>
+<td>How many missions have I been on so far?</td>
+<td>NA</td>
+<td>Teton Dam flood</td>
+<td>Place doesn’t matter to me</td>
+<td>NA</td>
+<td>Being together sharing testimonies</td>
+</tr>
+<tr class="odd">
+<td>Lyndee</td>
+<td>NA</td>
+<td>NA</td>
+<td>How many fake teeth I have</td>
+<td>Signs</td>
+<td>Grandpa catching the rabbit</td>
+<td>NA</td>
+<td>Eat scones</td>
+<td>Rafting and sunshine</td>
+</tr>
+<tr class="even">
+<td>Lauren</td>
+<td>Don't be helpful</td>
+<td>Be brave</td>
+<td>I have no secrets</td>
+<td>Shaving cream on pop</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>Swimming, okay with cousins</td>
+</tr>
+<tr class="odd">
+<td>Matt</td>
+<td>Try it you might like it.</td>
+<td>Just because it’s fun doesn’t mean it’s not dumb</td>
+<td>I don’t like hand and foot</td>
+<td>Pickleball</td>
+<td>Living in mud lake</td>
+<td>On Cruise ship</td>
+<td>Family cruise</td>
+<td>Relaxing / pickleball</td>
+</tr>
+<tr class="even">
+<td>Lydia</td>
+<td>be yourself</td>
+<td>you can’t put a price on feeling ✨bonita✨</td>
+<td>i’m the funniest person ever i just don’t show it so i don’t make everyone’s brain explode</td>
+<td>night games with cousins</td>
+<td>great grandma Annie in the pot</td>
+<td>BEACH (Ryan Gosling 2024💖🇺🇸)</td>
+<td>float a different river</td>
+<td>floating the river</td>
+</tr>
+<tr class="odd">
+<td>Steve Thueson</td>
+<td>“Don’t be dumb, even if it’s fun!” Grandma Thueson. JK</td>
+<td>‘Cause that’s what we do” Grandpa Dee</td>
+<td>When I was eight me and my friend went skinny-dipping in the canal around the Rexburg golf course!</td>
+<td>Water fight</td>
+<td>Related to William Bradford</td>
+<td>Philippines</td>
+<td>Just be there</td>
+<td>Catching up, seeing young cousins play, testimony meeting, karaoke</td>
+</tr>
+<tr class="even">
+<td>Deidra</td>
+<td>You like seafood, try the calamari 🤮</td>
+<td>Enjoy every part of raising little kids🤗 even the exhausting parts, they’ll be big before you know it!</td>
+<td>I never had a date try for a goodnight kiss without being asked first 🙅🏼‍♀️😘</td>
+<td>💦Water games are always fun!</td>
+<td>😍 How Grandpa Dee is the most amazingly handsome guy there is! Nobody’s got muscles and those gorgeous blue eyes like grandpa 🥰</td>
+<td>Somewhere 😎 sunny, by hiking and swimming, call about the 🇵🇭Philippines?</td>
+<td>Hugs all around 🥰</td>
+<td>😁Visiting, catching up with everyone.</td>
+</tr>
+<tr class="odd">
+<td>Donna Burrows Thueson</td>
+<td>If somebody gave me bad advice, I put it out of my mind forever when I discovered its value</td>
+<td>Treat your husband like a king and he will treat you like a queen</td>
+<td>I was a champion Jack’s player in the fourth grade</td>
+<td>Hand and Foot</td>
+<td>NA</td>
+<td>France for the Olympics</td>
+<td>Talk some genealogy</td>
+<td>All of it</td>
+</tr>
+<tr class="even">
+<td>Tacy Kirkham</td>
+<td>Eat that</td>
+<td>Connection is not too much and not too little.</td>
+<td>I have a book I would like to publish one day</td>
+<td>9 square</td>
+<td>Grandpa and her kissin</td>
+<td>DA Ranch</td>
+<td>Gestures</td>
+<td>The peeps!!</td>
+</tr>
+<tr class="odd">
+<td>Susan</td>
+<td>Don’t go to bed angry</td>
+<td>Believe in God</td>
+<td>I feel guilt about how much I love clay</td>
+<td>Pickleball</td>
+<td>William Bradford</td>
+<td>Stanley</td>
+<td>Painting, carving</td>
+<td>Talking around a fire</td>
+</tr>
+<tr class="even">
+<td>Sup</td>
+<td>Don’t go to bed angry</td>
+<td>Pick your battles</td>
+<td>Owned 32 cars in 25 years of marriage</td>
+<td>Pickleball</td>
+<td>Living in a pig sty when first married</td>
+<td>Oregon Coast</td>
+<td>4 wheeling</td>
+<td>Floating the river</td>
+</tr>
+<tr class="odd">
+<td>Copeland Carter</td>
+<td>Do unto others as you would have others do unto you (not a joke, terrible advice)</td>
+<td>If you're standing on train tracks, and there's a train coming, you don't dig in your heals, you get off the tracks.</td>
+<td>I love rollerblading</td>
+<td>Poo Head</td>
+<td>The time she and grandpa were in the cemetery and grandpa ran off and tried to lose her</td>
+<td>The moon</td>
+<td>Skeet Shooting</td>
+<td>Free food</td>
+</tr>
+<tr class="even">
+<td>Monty</td>
+<td>Don’t let the son go down on your wrath in a marriage</td>
+<td>Your most valuable asset is your own capacity to earn. Or fight naked.</td>
+<td>I sneak raisins</td>
+<td>9 square</td>
+<td>Something about Governor Bradford</td>
+<td>Mount Vernon</td>
+<td>Patriotic moments</td>
+<td>Catching up conversations</td>
+</tr>
+<tr class="odd">
+<td>Madilyn</td>
+<td>Don't join the moshpit</td>
+<td>Don't fall down in a moshpit</td>
+<td>Like to be in the center of the moshpit</td>
+<td>Moshpit</td>
+<td>Dave's conception</td>
+<td>The club</td>
+<td>Moshpit</td>
+<td>The moshpit</td>
+</tr>
+<tr class="even">
+<td>Biden</td>
+<td>Work at the homestead</td>
+<td>Coconut oil</td>
+<td>My name</td>
+<td>Kube</td>
+<td>Dave’s conception</td>
+<td>Anywhere but sams</td>
+<td>Mock congress</td>
+<td>Copeland</td>
+</tr>
+<tr class="odd">
+<td>Trump</td>
+<td>Work at the homestead</td>
+<td>Coconut oil</td>
+<td>Who I am</td>
+<td>Avoiding the aunts</td>
+<td>Dave’s conception</td>
+<td>Anywhere but Sam’s</td>
+<td>Blair and Amy debat</td>
+<td>Watching Blair and Amy</td>
+</tr>
+<tr class="even">
+<td>Wuss boy</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>Dave’s conception</td>
+<td>Only Sam’s</td>
+<td>Scuba dive</td>
+<td>Copland</td>
+</tr>
+<tr class="odd">
+<td>Noah</td>
+<td>To ignore my dreams</td>
+<td>Probably shouldn’t kiss me cousins</td>
+<td>I think there are hot cousins</td>
+<td>Spin bottle</td>
+<td>Dave’s conception</td>
+<td>My house</td>
+<td>Spin the bottle</td>
+<td>The hot cousins</td>
+</tr>
+<tr class="even">
+<td>Brigham</td>
+<td>Don’t marry Kali</td>
+<td>Don’t be a dancer</td>
+<td>I had a crush on Hannah</td>
+<td>Free babysitting</td>
+<td>Dave’s conception</td>
+<td>The temple</td>
+<td>Pee into a toilet at the same time</td>
+<td>The end</td>
+</tr>
+<tr class="odd">
+<td>Ammon</td>
+<td>Come to earth</td>
+<td>Talk to Blake about insurance</td>
+<td>I’m gay</td>
+<td>Won’t be there</td>
+<td>Dave’s conception</td>
+<td>Amy’s backyard</td>
+<td>Who’s the best kisser</td>
+<td>Starring at noah</td>
+</tr>
+<tr class="even">
+<td>Kali</td>
+<td>Try everything</td>
+<td>Love everyone</td>
+<td>How wise I am</td>
+<td>Art</td>
+<td>Dave’s conception</td>
+<td>The sawtooths</td>
+<td>Card games</td>
+<td>Talking</td>
+</tr>
+<tr class="odd">
+<td>Bethany</td>
+<td>Don’t swear</td>
+<td>Always ALWAYS keep your garments on</td>
+<td>It’s a wig</td>
+<td>Shaving cream in my hair</td>
+<td>Dave’s conception</td>
+<td>On the beach</td>
+<td>End early</td>
+<td>Leaving</td>
+</tr>
+<tr class="even">
+<td>Bethany</td>
+<td>Choose female</td>
+<td>Don’t eat the yellow snow</td>
+<td>I’m bald</td>
+<td>Back rubs</td>
+<td>Dave’s conception</td>
+<td>Sawtooths</td>
+<td>Seeing all your beautiful faces</td>
+<td>Everything</td>
+</tr>
+<tr class="odd">
+<td>Bethany</td>
+<td>Listen to others.</td>
+<td>I have only given good advice. Never taken it.</td>
+<td>I am filled with hate</td>
+<td>Fighting</td>
+<td>Dave’s conception</td>
+<td>On the river</td>
+<td>Kayaking</td>
+<td>Fighting</td>
+</tr>
+<tr class="even">
+<td>Dave</td>
+<td>Do unto other as was done unto toy</td>
+<td>Correct way to conceive</td>
+<td>Definitely not my conception</td>
+<td>Talking to my family</td>
+<td>My conception</td>
+<td>Here on the mission</td>
+<td>Pork and beans</td>
+<td>Blair and Amy arguing</td>
+</tr>
+<tr class="odd">
+<td>Jordan Hardy</td>
+<td>Don’t live by Blake</td>
+<td>Be like Blake</td>
+<td>I love Blake</td>
+<td>Anything with Blake</td>
+<td>Dave’s conception</td>
+<td>Blake’s house</td>
+<td>Talk to blake</td>
+<td>Blake</td>
+</tr>
+<tr class="even">
+<td>Autum Hardy</td>
+<td>Don’t vote Biden</td>
+<td>Vote biden</td>
+<td>I’m a liberal</td>
+<td>Poo Head</td>
+<td>Dave’s conception</td>
+<td>The abortion clinic</td>
+<td>Chew on one piece of jerky all day</td>
+<td>Hearing about Dave’s conception</td>
+</tr>
+<tr class="odd">
+<td>Jordan Hardy</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>Hand and Foot</td>
+<td>NA</td>
+<td>Boise</td>
+<td>A group run/walk</td>
+<td>The Family</td>
+</tr>
+<tr class="even">
+<td>Savannah Hardy</td>
+<td>Twins are easy</td>
+<td>Be yourself and the people who love that personality will be never force you to change for them</td>
+<td>Both my thumbs are double jointed</td>
+<td>Hand and Foot</td>
+<td>When she forced her husband to get up one night to help when everyone was vomiting and other than that he never helped with the kids</td>
+<td>The Boise area ranch</td>
+<td>Skits with mixed family teams</td>
+<td>The family games</td>
+</tr>
+<tr class="odd">
+<td>Bethany</td>
+<td>Get a dog</td>
+<td>Get a dog</td>
+<td>I really really want to do some arctic kayaking. Probably in Svalbard.</td>
+<td>Spoons</td>
+<td>Making her sons beat each other up</td>
+<td>Some awesome national park like Glacier or Zions or Yosemite</td>
+<td>Something water based</td>
+<td>Catching up</td>
+</tr>
+<tr class="even">
+<td>Carlene</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>Visiting</td>
+</tr>
+<tr class="odd">
+<td>Shane Ririe</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+</tr>
+<tr class="even">
+<td>Addi Hardy</td>
+<td>Alex tells me not to list w to good people.</td>
+<td>Mom lets me play video games with her.</td>
+<td>I’m a princess. When I grow up I will live in a castle.</td>
+<td>Candyland</td>
+<td>She’s never told me a story</td>
+<td>The beach</td>
+<td>Snow cones</td>
+<td>The little sand excavator toy</td>
+</tr>
+<tr class="odd">
+<td>Kali</td>
+<td>That McDonald’s has good fries… 🥴</td>
+<td>Don’t go to bed mad at your spouse.</td>
+<td>I was offered a college scholarship to play soccer way back when!</td>
+<td>NA</td>
+<td>Kim sitting cross legged on the floor days after the twin’s birth.</td>
+<td>Anywhere in the Mountains</td>
+<td>Evening bonfires</td>
+<td>Catching up with everyone</td>
+</tr>
+<tr class="even">
+<td>Alex Hardy</td>
+<td>That Addi and I aren’t twins, and we shouldn’t be with each other, and we should be a part, and we don’t eat with each other</td>
+<td>NA</td>
+<td>They don’t know how old I am, or my name, and they don’t know what I have in my house, or where my house is.</td>
+<td>Freeze tag</td>
+<td>NA</td>
+<td>NA</td>
+<td>Sand</td>
+<td>The sand and the water and the food and paying</td>
+</tr>
+<tr class="odd">
+<td>Mia Hardy</td>
+<td>Idk</td>
+<td>Go on a mission</td>
+<td>Idk</td>
+<td>I don’t really play games</td>
+<td>How grandpa proposed to grandma</td>
+<td>Where I live</td>
+<td>Volleyball</td>
+<td>The food</td>
+</tr>
+<tr class="even">
+<td>Braden Pittman</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+</tr>
+<tr class="odd">
+<td>Qelvin Kirkham</td>
+<td>Everything happens for a reason/No use crying over spilled milk.</td>
+<td>Say, Go, Be, Do.</td>
+<td>I have two living grandparents, neither related to me by blood.</td>
+<td>All of them</td>
+<td>Boxing Gloves</td>
+<td>Florida</td>
+<td>Airsoft/Nerf battle</td>
+<td>Games</td>
+</tr>
+<tr class="even">
+<td>Shan</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>Unstructured time for chatting</td>
+</tr>
+<tr class="odd">
+<td>Cam</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>Unstructured time for chatting</td>
+</tr>
+<tr class="even">
+<td>Rudi</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>Unstructured time for chatting</td>
+</tr>
+<tr class="odd">
+<td>Nori</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>Unstructured time for chatting</td>
+</tr>
+<tr class="even">
+<td>Lacey</td>
+<td>Follow the food pyramid</td>
+<td>Go to the temple every week.</td>
+<td>NA</td>
+<td>Hand and Foot</td>
+<td>NA</td>
+<td>Doesn’t matter where to me, as long as I get to see everyone!</td>
+<td>Paint</td>
+<td>Visiting</td>
+</tr>
+<tr class="odd">
+<td>Tyler Thueson</td>
+<td>Idk</td>
+<td>If your gonna be dumb you better be tough</td>
+<td>I’m a open book</td>
+<td>Water fight</td>
+<td>Being poor</td>
+<td>Camping true camping like palisades big elk creek or moddy Medows or felt or Kilgore</td>
+<td>Indian rug races</td>
+<td>The uncles</td>
+</tr>
+<tr class="even">
+<td>Dax Thueson</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+</tr>
+<tr class="odd">
+<td>Ava Thueson</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+</tr>
+<tr class="even">
+<td>Tate Thueson</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+</tr>
+<tr class="odd">
+<td>Mikaela Thueson</td>
+<td>Just do it</td>
+<td>NA</td>
+<td>I’m terrified of hights</td>
+<td>NA</td>
+<td>How naughty Tyler was as a little boy ;)</td>
+<td>Camping in the mountains</td>
+<td>Fun minute to win it games</td>
+<td>Testimony meeting</td>
+</tr>
+<tr class="even">
+<td>Moriah Carter</td>
+<td>It's too late to learn something new</td>
+<td>Nobody gives me advice: I do my own research</td>
+<td>I completed high school and college in six years total</td>
+<td>Rummikub</td>
+<td>Dee not liking onion or celery at the beginning of their marriage. One day he saw her getting onion and celery ready for fricassee and he said don't put it in so she didn't and he said it didn't taste right and she shouldn't make it like that ever again</td>
+<td>Durango, Colorado</td>
+<td>Switching out my fair style lemonade for hard lemonade</td>
+<td>The unholy amount of fair style lemonade I will consume</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = true;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/smartycope\.github\.io");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Copeland Carter, 2024</p>
+<div class="toc-actions"><ul><li><a href="emailto:smartycope@gmail.com" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
