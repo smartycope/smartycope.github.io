@@ -154,7 +154,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
+    <div class="quarto-title column-body">
       <div class="quarto-title-block"><div><h1 class="title">Senior Project</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button" data-quarto-source-url="https://github.com/smartycope/SquarePacking/blob/master/Attempt4.ipynb">View Source</a></li></ul></div></div>
                                 <div class="quarto-categories">
                 <div class="quarto-category">projects</div>
@@ -166,7 +166,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
       <div>
       <div class="quarto-title-meta-heading">Author</div>
@@ -186,7 +186,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -202,7 +202,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#configuration-enviorment" id="toc-configuration-enviorment" class="nav-link" data-scroll-target="#configuration-enviorment">Configuration &amp; Enviorment</a></li>
   <li><a href="#ddpg-buffer" id="toc-ddpg-buffer" class="nav-link" data-scroll-target="#ddpg-buffer">DDPG Buffer</a></li>
   <li><a href="#define-actor-critic-models" id="toc-define-actor-critic-models" class="nav-link" data-scroll-target="#define-actor-critic-models">Define Actor &amp; Critic Models</a></li>
-  <li><a href="#hyperparameters" id="toc-hyperparameters" class="nav-link" data-scroll-target="#hyperparameters">Hyperparameters</a></li>
+  <li><a href="#config" id="toc-config" class="nav-link" data-scroll-target="#config">Config</a></li>
   <li><a href="#main-loop" id="toc-main-loop" class="nav-link" data-scroll-target="#main-loop">Main Loop</a></li>
   <li><a href="#example-log" id="toc-example-log" class="nav-link" data-scroll-target="#example-log">Example Log</a></li>
   </ul></li>
@@ -215,7 +215,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="toc-actions"><ul><li><a href="emailto:smartycope@gmail.com" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div><div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="https://github.com/smartycope"><i class="bi bi-github"></i>GitHub Profile</a></li><li><a href="https://www.linkedin.com/in/smartycope/"><i class="bi bi-linkedin"></i>LinkedIn Profile</a></li><li><a href="../../Resumé v6.1.2.ds.pdf"><i class="bi bi-file-earmark-person"></i>My Resumé</a></li><li><a href="/"><i class="bi bi-wifi"></i>Live Projects</a></li><li><a href="https://ezregex.org/"><i class="bi bi-dash"></i>EZRegex</a></li><li><a href="https://smartycope.github.io/geodoodle/"><i class="bi bi-dash"></i>GeoDoodle</a></li><li><a href="https://github.com/smartycope"><i class="bi bi-github"></i>Signature GitHub Repos</a></li><li><a href="https://github.com/smartycope/ezregex"><i class="bi bi-dash"></i>EZRegex Repo</a></li><li><a href="https://github.com/smartycope/geodoodle"><i class="bi bi-dash"></i>GeoDoodle Repo</a></li><li><a href="https://pypi.org/project/ezregex/"><i class="bi bi-box"></i>Published Packages</a></li><li><a href="https://pypi.org/project/ezregex/"><i class="bi bi-dash"></i>EZRegex Package</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
@@ -235,11 +235,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>I created a custom RL enviorment, built off the <a href="https://gymnasium.farama.org/">Gymnasium</a> library, specifically my own personal SimpleGym class, published my own <a href="https://pypi.org/project/Cope/">Cope</a> package.</p>
 <p>Both the action and observation spaces have the shape <code>(3*N, )</code> (N is the number of squares, so 11) where each square has an x, y and rotation values. The actor’s actions simply get added to the current square positions and rotations (since the actor actions can be negative), so the actor can make small adjustments to squeze the squares closer to each other.</p>
 <p>I went though several different versions of the reward function. Here’s my final version, with explanations of what each part is doing:</p>
-<div id="cell-5" class="cell" data-execution_count="19">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Reward Function</strong></pre>
-</div>
+<div id="cell-5" class="cell" data-code-block-border-left="true" data-code-block-bg="false" data-highlight-style="breezedark" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> _get_reward(<span class="va">self</span>):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># The score starts off as positive, because we generally prefer longer episodes</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    score <span class="op">=</span> <span class="dv">100</span> <span class="co"># Linear</span></span>
@@ -303,61 +299,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> score</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
 </section>
 <section id="dependant-code" class="level2">
 <h2 class="anchored" data-anchor-id="dependant-code">Dependant Code</h2>
 <p>For reproducibility’s sake, here is the rest of the relevant custom code I used in this project (because although my Cope package is published, it’s <em>not</em> stable):</p>
-<div id="cell-8" class="cell" data-execution_count="2">
+<div id="cell-8" class="cell" data-execution_count="20">
 <div class="code-with-filename">
 <details class="code-fold">
 <summary>RedirectStd</summary>
 <div class="code-with-filename-file">
 <pre><strong>misc.py</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> io, sys</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> random <span class="im">import</span> randint</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> RedirectStd:</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, stdout<span class="op">=</span><span class="va">None</span>, stderr<span class="op">=</span><span class="va">None</span>):</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">isinstance</span>(stdout, io.TextIOBase):</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>._stdout <span class="op">=</span> stdout</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>._stdout <span class="op">=</span> <span class="bu">open</span>(stdout <span class="kw">or</span> os.devnull, <span class="st">'w'</span>)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">isinstance</span>(stderr, io.TextIOBase):</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>._stderr <span class="op">=</span> stderr</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>._stderr <span class="op">=</span> <span class="bu">open</span>(stderr <span class="kw">or</span> os.devnull, <span class="st">'w'</span>)</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__enter__</span>(<span class="va">self</span>):</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.old_stdout, <span class="va">self</span>.old_stderr <span class="op">=</span> sys.stdout, sys.stderr</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.old_stdout.flush()<span class="op">;</span> <span class="va">self</span>.old_stderr.flush()</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>        sys.stdout, sys.stderr <span class="op">=</span> <span class="va">self</span>._stdout, <span class="va">self</span>._stderr</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__exit__</span>(<span class="va">self</span>, exc_type, exc_value, traceback):</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>._stdout.flush()<span class="op">;</span> <span class="va">self</span>._stderr.flush()</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>._stdout.close()<span class="op">;</span> <span class="va">self</span>._stderr.close()</span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>        sys.stdout <span class="op">=</span> <span class="va">self</span>.old_stdout</span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>        sys.stderr <span class="op">=</span> <span class="va">self</span>.old_stderr</span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> interpret_percentage(percentage:<span class="bu">int</span> <span class="op">|</span> <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">isinstance</span>(percentage, <span class="bu">bool</span>):</span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">float</span>(percentage)</span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> percentage <span class="op">&gt;</span> <span class="dv">1</span>:</span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> percentage <span class="op">/</span> <span class="dv">100</span></span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> percentage</span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> percent(percentage:<span class="bu">int</span> <span class="op">|</span> <span class="bu">float</span>):</span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>    <span class="co">''' Usage:</span></span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="co">        if (percent(50)):</span></span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a><span class="co">            &lt;code that has a 50% chance of running&gt;</span></span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a><span class="co">        </span><span class="al">NOTE</span><span class="co">: .5 works as well as 50</span></span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a><span class="co">    '''</span></span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> randint(<span class="dv">1</span>, <span class="dv">100</span>) <span class="op">&lt;</span> interpret_percentage(percentage)<span class="op">*</span><span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> RedirectStd:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, stdout<span class="op">=</span><span class="va">None</span>, stderr<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">isinstance</span>(stdout, io.TextIOBase):</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>._stdout <span class="op">=</span> stdout</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>._stdout <span class="op">=</span> <span class="bu">open</span>(stdout <span class="kw">or</span> os.devnull, <span class="st">'w'</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">isinstance</span>(stderr, io.TextIOBase):</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>._stderr <span class="op">=</span> stderr</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>._stderr <span class="op">=</span> <span class="bu">open</span>(stderr <span class="kw">or</span> os.devnull, <span class="st">'w'</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__enter__</span>(<span class="va">self</span>):</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.old_stdout, <span class="va">self</span>.old_stderr <span class="op">=</span> sys.stdout, sys.stderr</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.old_stdout.flush()<span class="op">;</span> <span class="va">self</span>.old_stderr.flush()</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>        sys.stdout, sys.stderr <span class="op">=</span> <span class="va">self</span>._stdout, <span class="va">self</span>._stderr</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__exit__</span>(<span class="va">self</span>, exc_type, exc_value, traceback):</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>._stdout.flush()<span class="op">;</span> <span class="va">self</span>._stderr.flush()</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>._stdout.close()<span class="op">;</span> <span class="va">self</span>._stderr.close()</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>        sys.stdout <span class="op">=</span> <span class="va">self</span>.old_stdout</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>        sys.stderr <span class="op">=</span> <span class="va">self</span>.old_stderr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </div>
-<div id="cell-9" class="cell" data-execution_count="4">
+<div id="cell-9" class="cell" data-execution_count="21">
 <div class="code-with-filename">
 <details class="code-fold">
 <summary>SimpleGym</summary>
@@ -776,7 +753,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 </div>
-<div id="cell-10" class="cell" data-execution_count="5">
+<div id="cell-10" class="cell" data-execution_count="22">
 <div class="code-with-filename">
 <details class="code-fold">
 <summary>SquareEnv</summary>
@@ -1299,35 +1276,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># At first, I figured allowing overlap, but having a steep cost to squares overlaping would help</span></span>
 <span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># because when the squares get packed too tight, they can just overlap to a different state,</span></span>
 <span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># instead of having to back out and come back in, valid all the time</span></span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>    <span class="co"># I'm unsure which is better, to be honest, but disallowing overlap made tuning the reward</span></span>
-<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># function a little easier</span></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>    <span class="co"># I'm unsure which is better, to be honest, but disallowing overlap made tuning the reward function</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># a little easier</span></span>
 <span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>    disallow_overlap<span class="op">=</span><span class="va">True</span>,</span>
 <span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>    <span class="co"># The width of the areas on the sides of the search space that decrease the reward for each</span></span>
 <span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>    <span class="co"># square in it</span></span>
 <span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>    boundary<span class="op">=</span><span class="dv">2</span>,</span>
-<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>    <span class="co"># How much area we're allowed to overlap before we reset the episode (in units of "pixels"^2</span></span>
-<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>    <span class="co"># (see above))</span></span>
-<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>    max_overlap<span class="op">=</span><span class="dv">1</span>,</span>
-<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This defines we we reset the squares.</span></span>
-<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>    <span class="co"># random: the squares are randomly placed</span></span>
-<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>    <span class="co"># valid: the squares are randomly placed, but not overlapping</span></span>
-<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>    <span class="co"># array: the squares are arrayed in a grid, but are randomly "jiggled"</span></span>
-<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>    start_config<span class="op">=</span><span class="st">'array'</span>,</span>
-<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>    screen_size<span class="op">=</span>(<span class="dv">300</span>, <span class="dv">500</span>),</span>
-<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>num_states <span class="op">=</span> np.product(env.observation_space.shape)</span>
-<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Size of State Space -&gt; </span><span class="sc">{</span>num_states<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>num_actions <span class="op">=</span> np.product(env.action_space.shape)</span>
-<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Size of Action Space -&gt; </span><span class="sc">{</span>num_actions<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a>upper_bound <span class="op">=</span> env.action_space.high</span>
-<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a>lower_bound <span class="op">=</span> env.action_space.low</span>
-<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Max Value of an Action -&gt;"</span>)</span>
-<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a>display(upper_bound)</span>
-<span id="cb8-52"><a href="#cb8-52" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Min Value of an Action -&gt;"</span>)</span>
-<span id="cb8-53"><a href="#cb8-53" aria-hidden="true" tabindex="-1"></a>display(lower_bound)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>    <span class="co"># How much area we're allowed to overlap before we reset the episode (in units of "pixels"^2 (see above))</span></span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>    max_overlap<span class="op">=</span><span class="dv">1</span>,</span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This defines we we reset the squares.</span></span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>    <span class="co"># random: the squares are randomly placed</span></span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>    <span class="co"># valid: the squares are randomly placed, but not overlapping</span></span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>    <span class="co"># array: the squares are arrayed in a grid, but are randomly "jiggled"</span></span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>    start_config<span class="op">=</span><span class="st">'array'</span>,</span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>    screen_size<span class="op">=</span>(<span class="dv">300</span>, <span class="dv">500</span>),</span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>num_states <span class="op">=</span> np.product(env.observation_space.shape)</span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Size of State Space -&gt; </span><span class="sc">{</span>num_states<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a>num_actions <span class="op">=</span> np.product(env.action_space.shape)</span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Size of Action Space -&gt; </span><span class="sc">{</span>num_actions<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a>upper_bound <span class="op">=</span> env.action_space.high</span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a>lower_bound <span class="op">=</span> env.action_space.low</span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Max Value of an Action -&gt;"</span>)</span>
+<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a>display(upper_bound)</span>
+<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Min Value of an Action -&gt;"</span>)</span>
+<span id="cb8-52"><a href="#cb8-52" aria-hidden="true" tabindex="-1"></a>display(lower_bound)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Size of State Space -&gt; 33
 Size of Action Space -&gt; 33
@@ -1384,61 +1360,59 @@ Min Value of an Action -&gt;</code></pre>
 <span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Eager execution is turned on by default in TensorFlow 2. Decorating with tf.function allows</span></span>
 <span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>    <span class="co"># TensorFlow to build a static graph out of the logic and computations in our function.</span></span>
-<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This provides a large speed up for blocks of code that contain many small TensorFlow</span></span>
-<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># operations such as this one.</span></span>
-<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">@tf.function</span></span>
-<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> update(<span class="va">self</span>, state_batch, action_batch, reward_batch, next_state_batch):</span>
-<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a>        <span class="co"># print('update called')</span></span>
-<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Training and updating Actor &amp; Critic networks.</span></span>
-<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a>        <span class="cf">with</span> tf.GradientTape() <span class="im">as</span> tape:</span>
-<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a>            <span class="co"># What we think we should do</span></span>
-<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a>            target_actions <span class="op">=</span> target_actor(next_state_batch, training<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a>            <span class="co"># How good we think that is (the target Q-Network)</span></span>
-<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a>            target_evaluation <span class="op">=</span> target_critic([next_state_batch, target_actions], training<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a>            y <span class="op">=</span> reward_batch <span class="op">+</span> gamma <span class="op">*</span> target_evaluation</span>
-<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a>            critic_value <span class="op">=</span> critic_model([state_batch, action_batch], training<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Get the average amount we were off by in predicting how well we would do, squared,</span></span>
-<span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a>            <span class="co"># and that's the loss</span></span>
-<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a>            critic_loss <span class="op">=</span> tf.math.reduce_mean(tf.math.square(y <span class="op">-</span> critic_value))</span>
-<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a>        critic_grad <span class="op">=</span> tape.gradient(critic_loss, critic_model.trainable_variables)</span>
-<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Added Gradient clipping on this line</span></span>
-<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a>        clipped_grad <span class="op">=</span> [tf.clip_by_value(grad, <span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>) <span class="cf">for</span> grad <span class="kw">in</span> critic_grad]</span>
-<span id="cb12-52"><a href="#cb12-52" aria-hidden="true" tabindex="-1"></a>        critic_optimizer.apply_gradients(<span class="bu">zip</span>(clipped_grad, critic_model.trainable_variables))</span>
-<span id="cb12-53"><a href="#cb12-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-54"><a href="#cb12-54" aria-hidden="true" tabindex="-1"></a>        <span class="cf">with</span> tf.GradientTape() <span class="im">as</span> tape:</span>
-<span id="cb12-55"><a href="#cb12-55" aria-hidden="true" tabindex="-1"></a>            actions <span class="op">=</span> actor_model(state_batch, training<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb12-56"><a href="#cb12-56" aria-hidden="true" tabindex="-1"></a>            critic_value <span class="op">=</span> critic_model([state_batch, actions], training<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb12-57"><a href="#cb12-57" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Used `-value` as we want to maximize the value given by the critic for our actions</span></span>
-<span id="cb12-58"><a href="#cb12-58" aria-hidden="true" tabindex="-1"></a>            actor_loss <span class="op">=</span> <span class="op">-</span>tf.math.reduce_mean(critic_value)</span>
-<span id="cb12-59"><a href="#cb12-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-60"><a href="#cb12-60" aria-hidden="true" tabindex="-1"></a>        actor_grad <span class="op">=</span> tape.gradient(actor_loss, actor_model.trainable_variables)</span>
-<span id="cb12-61"><a href="#cb12-61" aria-hidden="true" tabindex="-1"></a>        actor_optimizer.apply_gradients(<span class="bu">zip</span>(actor_grad, actor_model.trainable_variables))</span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This provides a large speed up for blocks of code that contain many small TensorFlow operations such as this one.</span></span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">@tf.function</span></span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> update(<span class="va">self</span>, state_batch, action_batch, reward_batch, next_state_batch):</span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>        <span class="co"># print('update called')</span></span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Training and updating Actor &amp; Critic networks.</span></span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a>        <span class="cf">with</span> tf.GradientTape() <span class="im">as</span> tape:</span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a>            <span class="co"># What we think we should do</span></span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a>            target_actions <span class="op">=</span> target_actor(next_state_batch, training<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a>            <span class="co"># How good we think that is (the target Q-Network)</span></span>
+<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a>            target_evaluation <span class="op">=</span> target_critic([next_state_batch, target_actions], training<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a>            y <span class="op">=</span> reward_batch <span class="op">+</span> gamma <span class="op">*</span> target_evaluation</span>
+<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a>            critic_value <span class="op">=</span> critic_model([state_batch, action_batch], training<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Get the average amount we were off by in predicting how well we would do, squared, and that's the loss</span></span>
+<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a>            critic_loss <span class="op">=</span> tf.math.reduce_mean(tf.math.square(y <span class="op">-</span> critic_value))</span>
+<span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a>        critic_grad <span class="op">=</span> tape.gradient(critic_loss, critic_model.trainable_variables)</span>
+<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Added Gradient clipping on this line</span></span>
+<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a>        clipped_grad <span class="op">=</span> [tf.clip_by_value(grad, <span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>) <span class="cf">for</span> grad <span class="kw">in</span> critic_grad]</span>
+<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a>        critic_optimizer.apply_gradients(<span class="bu">zip</span>(clipped_grad, critic_model.trainable_variables))</span>
+<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-52"><a href="#cb12-52" aria-hidden="true" tabindex="-1"></a>        <span class="cf">with</span> tf.GradientTape() <span class="im">as</span> tape:</span>
+<span id="cb12-53"><a href="#cb12-53" aria-hidden="true" tabindex="-1"></a>            actions <span class="op">=</span> actor_model(state_batch, training<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb12-54"><a href="#cb12-54" aria-hidden="true" tabindex="-1"></a>            critic_value <span class="op">=</span> critic_model([state_batch, actions], training<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb12-55"><a href="#cb12-55" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Used `-value` as we want to maximize the value given by the critic for our actions</span></span>
+<span id="cb12-56"><a href="#cb12-56" aria-hidden="true" tabindex="-1"></a>            actor_loss <span class="op">=</span> <span class="op">-</span>tf.math.reduce_mean(critic_value)</span>
+<span id="cb12-57"><a href="#cb12-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-58"><a href="#cb12-58" aria-hidden="true" tabindex="-1"></a>        actor_grad <span class="op">=</span> tape.gradient(actor_loss, actor_model.trainable_variables)</span>
+<span id="cb12-59"><a href="#cb12-59" aria-hidden="true" tabindex="-1"></a>        actor_optimizer.apply_gradients(<span class="bu">zip</span>(actor_grad, actor_model.trainable_variables))</span>
+<span id="cb12-60"><a href="#cb12-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-61"><a href="#cb12-61" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> actor_loss, critic_loss</span>
 <span id="cb12-62"><a href="#cb12-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-63"><a href="#cb12-63" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> actor_loss, critic_loss</span>
-<span id="cb12-64"><a href="#cb12-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-65"><a href="#cb12-65" aria-hidden="true" tabindex="-1"></a>    <span class="co"># We compute the loss and update parameters</span></span>
-<span id="cb12-66"><a href="#cb12-66" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> learn(<span class="va">self</span>):</span>
-<span id="cb12-67"><a href="#cb12-67" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Get sampling range</span></span>
-<span id="cb12-68"><a href="#cb12-68" aria-hidden="true" tabindex="-1"></a>        record_range <span class="op">=</span> <span class="bu">min</span>(<span class="va">self</span>.buffer_counter, <span class="va">self</span>.buffer_capacity)</span>
-<span id="cb12-69"><a href="#cb12-69" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Randomly sample indices</span></span>
-<span id="cb12-70"><a href="#cb12-70" aria-hidden="true" tabindex="-1"></a>        batch_indices <span class="op">=</span> np.random.choice(record_range, <span class="va">self</span>.batch_size)</span>
-<span id="cb12-71"><a href="#cb12-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-72"><a href="#cb12-72" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Convert to tensors</span></span>
-<span id="cb12-73"><a href="#cb12-73" aria-hidden="true" tabindex="-1"></a>        state_batch <span class="op">=</span> tf.convert_to_tensor(<span class="va">self</span>.state_buffer[batch_indices])</span>
-<span id="cb12-74"><a href="#cb12-74" aria-hidden="true" tabindex="-1"></a>        action_batch <span class="op">=</span> tf.convert_to_tensor(<span class="va">self</span>.action_buffer[batch_indices])</span>
-<span id="cb12-75"><a href="#cb12-75" aria-hidden="true" tabindex="-1"></a>        reward_batch <span class="op">=</span> tf.convert_to_tensor(<span class="va">self</span>.reward_buffer[batch_indices])</span>
-<span id="cb12-76"><a href="#cb12-76" aria-hidden="true" tabindex="-1"></a>        reward_batch <span class="op">=</span> tf.cast(reward_batch, dtype<span class="op">=</span>tf.float32)</span>
-<span id="cb12-77"><a href="#cb12-77" aria-hidden="true" tabindex="-1"></a>        next_state_batch <span class="op">=</span> tf.convert_to_tensor(<span class="va">self</span>.next_state_buffer[batch_indices])</span>
+<span id="cb12-63"><a href="#cb12-63" aria-hidden="true" tabindex="-1"></a>    <span class="co"># We compute the loss and update parameters</span></span>
+<span id="cb12-64"><a href="#cb12-64" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> learn(<span class="va">self</span>):</span>
+<span id="cb12-65"><a href="#cb12-65" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Get sampling range</span></span>
+<span id="cb12-66"><a href="#cb12-66" aria-hidden="true" tabindex="-1"></a>        record_range <span class="op">=</span> <span class="bu">min</span>(<span class="va">self</span>.buffer_counter, <span class="va">self</span>.buffer_capacity)</span>
+<span id="cb12-67"><a href="#cb12-67" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Randomly sample indices</span></span>
+<span id="cb12-68"><a href="#cb12-68" aria-hidden="true" tabindex="-1"></a>        batch_indices <span class="op">=</span> np.random.choice(record_range, <span class="va">self</span>.batch_size)</span>
+<span id="cb12-69"><a href="#cb12-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-70"><a href="#cb12-70" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Convert to tensors</span></span>
+<span id="cb12-71"><a href="#cb12-71" aria-hidden="true" tabindex="-1"></a>        state_batch <span class="op">=</span> tf.convert_to_tensor(<span class="va">self</span>.state_buffer[batch_indices])</span>
+<span id="cb12-72"><a href="#cb12-72" aria-hidden="true" tabindex="-1"></a>        action_batch <span class="op">=</span> tf.convert_to_tensor(<span class="va">self</span>.action_buffer[batch_indices])</span>
+<span id="cb12-73"><a href="#cb12-73" aria-hidden="true" tabindex="-1"></a>        reward_batch <span class="op">=</span> tf.convert_to_tensor(<span class="va">self</span>.reward_buffer[batch_indices])</span>
+<span id="cb12-74"><a href="#cb12-74" aria-hidden="true" tabindex="-1"></a>        reward_batch <span class="op">=</span> tf.cast(reward_batch, dtype<span class="op">=</span>tf.float32)</span>
+<span id="cb12-75"><a href="#cb12-75" aria-hidden="true" tabindex="-1"></a>        next_state_batch <span class="op">=</span> tf.convert_to_tensor(<span class="va">self</span>.next_state_buffer[batch_indices])</span>
+<span id="cb12-76"><a href="#cb12-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-77"><a href="#cb12-77" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.update(state_batch, action_batch, reward_batch, next_state_batch)</span>
 <span id="cb12-78"><a href="#cb12-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-79"><a href="#cb12-79" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.update(state_batch, action_batch, reward_batch, next_state_batch)</span>
-<span id="cb12-80"><a href="#cb12-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-81"><a href="#cb12-81" aria-hidden="true" tabindex="-1"></a><span class="co"># This updates target parameters slowly</span></span>
-<span id="cb12-82"><a href="#cb12-82" aria-hidden="true" tabindex="-1"></a><span class="co"># Based on rate `tau`, which is much less than one.</span></span>
-<span id="cb12-83"><a href="#cb12-83" aria-hidden="true" tabindex="-1"></a><span class="at">@tf.function</span></span>
-<span id="cb12-84"><a href="#cb12-84" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> update_target(target_weights, weights, tau):</span>
-<span id="cb12-85"><a href="#cb12-85" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (a, b) <span class="kw">in</span> <span class="bu">zip</span>(target_weights, weights):</span>
-<span id="cb12-86"><a href="#cb12-86" aria-hidden="true" tabindex="-1"></a>        a.assign(b <span class="op">*</span> tau <span class="op">+</span> a <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> tau))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-79"><a href="#cb12-79" aria-hidden="true" tabindex="-1"></a><span class="co"># This updates target parameters slowly</span></span>
+<span id="cb12-80"><a href="#cb12-80" aria-hidden="true" tabindex="-1"></a><span class="co"># Based on rate `tau`, which is much less than one.</span></span>
+<span id="cb12-81"><a href="#cb12-81" aria-hidden="true" tabindex="-1"></a><span class="at">@tf.function</span></span>
+<span id="cb12-82"><a href="#cb12-82" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> update_target(target_weights, weights, tau):</span>
+<span id="cb12-83"><a href="#cb12-83" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (a, b) <span class="kw">in</span> <span class="bu">zip</span>(target_weights, weights):</span>
+<span id="cb12-84"><a href="#cb12-84" aria-hidden="true" tabindex="-1"></a>        a.assign(b <span class="op">*</span> tau <span class="op">+</span> a <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> tau))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -1446,53 +1420,52 @@ Min Value of an Action -&gt;</code></pre>
 <h3 class="anchored" data-anchor-id="define-actor-critic-models">Define Actor &amp; Critic Models</h3>
 <p>These are the main actor and critic neural nets</p>
 <div id="cell-21" class="cell" data-execution_count="27">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tells a later cell to reset the weights (since we might have changed how we initialize them in</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># this cell)</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>INIT_WEIGHTS <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>reg_str <span class="op">=</span> <span class="fl">.01</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_actor():</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Initialize weights</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># last_init = tf.random_uniform_initializer(minval=-env.shift_rate, maxval=env.shift_rate)</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># last_init = tf.random_uniform_initializer(minval=-3e-3, maxval=3e-3)</span></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    inputs <span class="op">=</span> layers.Input(shape<span class="op">=</span>(num_states,))</span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> layers.Dense(<span class="dv">750</span>, activation<span class="op">=</span><span class="st">"tanh"</span>, kernel_regularizer<span class="op">=</span>ks.regularizers.l2(reg_str))(inputs)</span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> layers.Dense(<span class="dv">1024</span>, activation<span class="op">=</span><span class="st">"tanh"</span>, kernel_regularizer<span class="op">=</span>ks.regularizers.l2(reg_str))(out)</span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># I expiremented with making this layer have an exponential activation function</span></span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> layers.Dense(<span class="dv">512</span>, activation<span class="op">=</span><span class="st">"tanh"</span>, kernel_regularizer<span class="op">=</span>ks.regularizers.l2(reg_str))(out)</span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> layers.Dense(<span class="dv">64</span>, activation<span class="op">=</span><span class="st">"tanh"</span>, kernel_regularizer<span class="op">=</span>ks.regularizers.l2(reg_str))(out)</span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> layers.Dense(<span class="dv">256</span>, activation<span class="op">=</span><span class="st">"tanh"</span>, kernel_regularizer<span class="op">=</span>ks.regularizers.l2(reg_str))(out)</span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># outputs = layers.Dense(num_actions, activation='softsign', kernel_initializer=last_init)(out)</span></span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>    outputs <span class="op">=</span> layers.Dense(num_actions, activation<span class="op">=</span><span class="st">'tanh'</span>)(out)</span>
-<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This is rescale the output from between -1 - 1 to the appropriate action space scale</span></span>
-<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>    outputs <span class="op">=</span> outputs <span class="op">*</span> upper_bound</span>
-<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> tf.keras.Model(inputs, outputs)</span>
-<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> model</span>
-<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_critic():</span>
-<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># State as input</span></span>
-<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>    state_input <span class="op">=</span> layers.Input(shape<span class="op">=</span>(num_states,))</span>
-<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>    state_out <span class="op">=</span> layers.Dense(<span class="dv">16</span>, activation<span class="op">=</span><span class="st">"tanh"</span>)(state_input)</span>
-<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a>    state_out <span class="op">=</span> layers.Dense(<span class="dv">32</span>, activation<span class="op">=</span><span class="st">"tanh"</span>)(state_out)</span>
-<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Action as input</span></span>
-<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a>    action_input <span class="op">=</span> layers.Input(shape<span class="op">=</span>(num_actions,))</span>
-<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a>    action_out <span class="op">=</span> layers.Dense(<span class="dv">32</span>, activation<span class="op">=</span><span class="st">"tanh"</span>)(action_input)</span>
-<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Both are passed through seperate layer before concatenating</span></span>
-<span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a>    concat <span class="op">=</span> layers.Concatenate()([state_out, action_out])</span>
-<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> layers.Dense(<span class="dv">1024</span>, activation<span class="op">=</span><span class="st">"tanh"</span>, kernel_regularizer<span class="op">=</span>ks.regularizers.l2(reg_str))(concat)</span>
-<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> layers.Dense(<span class="dv">512</span>, activation<span class="op">=</span><span class="st">"tanh"</span>, kernel_regularizer<span class="op">=</span>ks.regularizers.l2(reg_str))(concat)</span>
-<span id="cb13-41"><a href="#cb13-41" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> layers.Dense(<span class="dv">64</span>, activation<span class="op">=</span><span class="st">"tanh"</span>, kernel_regularizer<span class="op">=</span>ks.regularizers.l2(reg_str))(concat)</span>
-<span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> layers.Dense(<span class="dv">256</span>, activation<span class="op">=</span><span class="st">"tanh"</span>, kernel_regularizer<span class="op">=</span>ks.regularizers.l2(reg_str))(out)</span>
-<span id="cb13-43"><a href="#cb13-43" aria-hidden="true" tabindex="-1"></a>    outputs <span class="op">=</span> layers.Dense(<span class="dv">1</span>)(out)</span>
-<span id="cb13-44"><a href="#cb13-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-45"><a href="#cb13-45" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Outputs single value for give state-action</span></span>
-<span id="cb13-46"><a href="#cb13-46" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> tf.keras.Model([state_input, action_input], outputs)</span>
-<span id="cb13-47"><a href="#cb13-47" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> model</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tells a later cell to reset the weights (since we might have changed how we initialize them in this cell)</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>INIT_WEIGHTS <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>reg_str <span class="op">=</span> <span class="fl">.01</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_actor():</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Initialize weights</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># last_init = tf.random_uniform_initializer(minval=-env.shift_rate, maxval=env.shift_rate)</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># last_init = tf.random_uniform_initializer(minval=-3e-3, maxval=3e-3)</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    inputs <span class="op">=</span> layers.Input(shape<span class="op">=</span>(num_states,))</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> layers.Dense(<span class="dv">750</span>, activation<span class="op">=</span><span class="st">"tanh"</span>, kernel_regularizer<span class="op">=</span>ks.regularizers.l2(reg_str))(inputs)</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> layers.Dense(<span class="dv">1024</span>, activation<span class="op">=</span><span class="st">"tanh"</span>, kernel_regularizer<span class="op">=</span>ks.regularizers.l2(reg_str))(out)</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># I expiremented with making this layer have an exponential activation function</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> layers.Dense(<span class="dv">512</span>, activation<span class="op">=</span><span class="st">"tanh"</span>, kernel_regularizer<span class="op">=</span>ks.regularizers.l2(reg_str))(out)</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> layers.Dense(<span class="dv">64</span>, activation<span class="op">=</span><span class="st">"tanh"</span>, kernel_regularizer<span class="op">=</span>ks.regularizers.l2(reg_str))(out)</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> layers.Dense(<span class="dv">256</span>, activation<span class="op">=</span><span class="st">"tanh"</span>, kernel_regularizer<span class="op">=</span>ks.regularizers.l2(reg_str))(out)</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># outputs = layers.Dense(num_actions, activation='softsign', kernel_initializer=last_init)(out)</span></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>    outputs <span class="op">=</span> layers.Dense(num_actions, activation<span class="op">=</span><span class="st">'tanh'</span>)(out)</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This is rescale the output from between -1 - 1 to the appropriate action space scale</span></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>    outputs <span class="op">=</span> outputs <span class="op">*</span> upper_bound</span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> tf.keras.Model(inputs, outputs)</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> model</span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_critic():</span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># State as input</span></span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>    state_input <span class="op">=</span> layers.Input(shape<span class="op">=</span>(num_states,))</span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>    state_out <span class="op">=</span> layers.Dense(<span class="dv">16</span>, activation<span class="op">=</span><span class="st">"tanh"</span>)(state_input)</span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>    state_out <span class="op">=</span> layers.Dense(<span class="dv">32</span>, activation<span class="op">=</span><span class="st">"tanh"</span>)(state_out)</span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Action as input</span></span>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>    action_input <span class="op">=</span> layers.Input(shape<span class="op">=</span>(num_actions,))</span>
+<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a>    action_out <span class="op">=</span> layers.Dense(<span class="dv">32</span>, activation<span class="op">=</span><span class="st">"tanh"</span>)(action_input)</span>
+<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Both are passed through seperate layer before concatenating</span></span>
+<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a>    concat <span class="op">=</span> layers.Concatenate()([state_out, action_out])</span>
+<span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> layers.Dense(<span class="dv">1024</span>, activation<span class="op">=</span><span class="st">"tanh"</span>, kernel_regularizer<span class="op">=</span>ks.regularizers.l2(reg_str))(concat)</span>
+<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> layers.Dense(<span class="dv">512</span>, activation<span class="op">=</span><span class="st">"tanh"</span>, kernel_regularizer<span class="op">=</span>ks.regularizers.l2(reg_str))(concat)</span>
+<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> layers.Dense(<span class="dv">64</span>, activation<span class="op">=</span><span class="st">"tanh"</span>, kernel_regularizer<span class="op">=</span>ks.regularizers.l2(reg_str))(concat)</span>
+<span id="cb13-41"><a href="#cb13-41" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> layers.Dense(<span class="dv">256</span>, activation<span class="op">=</span><span class="st">"tanh"</span>, kernel_regularizer<span class="op">=</span>ks.regularizers.l2(reg_str))(out)</span>
+<span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a>    outputs <span class="op">=</span> layers.Dense(<span class="dv">1</span>)(out)</span>
+<span id="cb13-43"><a href="#cb13-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-44"><a href="#cb13-44" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Outputs single value for give state-action</span></span>
+<span id="cb13-45"><a href="#cb13-45" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> tf.keras.Model([state_input, action_input], outputs)</span>
+<span id="cb13-46"><a href="#cb13-46" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> model</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="cell-22" class="cell" data-execution_count="28">
 <details class="code-fold">
@@ -1542,8 +1515,8 @@ Min Value of an Action -&gt;</code></pre>
 </details>
 </div>
 </section>
-<section id="hyperparameters" class="level3">
-<h3 class="anchored" data-anchor-id="hyperparameters">Hyperparameters</h3>
+<section id="config" class="level3">
+<h3 class="anchored" data-anchor-id="config">Config</h3>
 <p>These are some of the easily tunable hyperparameters</p>
 <div id="cell-27" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a></span>
@@ -1710,125 +1683,124 @@ Min Value of an Action -&gt;</code></pre>
 <span id="cb22-50"><a href="#cb22-50" aria-hidden="true" tabindex="-1"></a>            sampled_actions <span class="op">=</span> tf.squeeze(actor_model(prev_state)).numpy()</span>
 <span id="cb22-51"><a href="#cb22-51" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-52"><a href="#cb22-52" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> add_noise:</span>
-<span id="cb22-53"><a href="#cb22-53" aria-hidden="true" tabindex="-1"></a>                <span class="co"># This should make the noise fade out over time (proportional to the actor learning</span></span>
-<span id="cb22-54"><a href="#cb22-54" aria-hidden="true" tabindex="-1"></a>                <span class="co"># rate)</span></span>
-<span id="cb22-55"><a href="#cb22-55" aria-hidden="true" tabindex="-1"></a>                <span class="co"># We want to fade the noise over time, *and* as we step through specific episodes</span></span>
-<span id="cb22-56"><a href="#cb22-56" aria-hidden="true" tabindex="-1"></a>                total_cooldown   <span class="op">=</span> <span class="bu">max</span>(std_dev <span class="op">-</span> (ep  <span class="op">*</span> noise_cooldown), <span class="dv">0</span>)</span>
-<span id="cb22-57"><a href="#cb22-57" aria-hidden="true" tabindex="-1"></a>                episode_cooldown <span class="op">=</span> <span class="bu">max</span>(std_dev <span class="op">-</span> (step_count <span class="op">*</span> noise_cooldown), <span class="dv">0</span>)</span>
-<span id="cb22-58"><a href="#cb22-58" aria-hidden="true" tabindex="-1"></a>                sampled_actions <span class="op">+=</span> noise((total_cooldown <span class="op">+</span> episode_cooldown) <span class="op">/</span> <span class="dv">2</span>)</span>
-<span id="cb22-59"><a href="#cb22-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-60"><a href="#cb22-60" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Make sure the action is in the action space</span></span>
-<span id="cb22-61"><a href="#cb22-61" aria-hidden="true" tabindex="-1"></a>            action <span class="op">=</span> np.clip(sampled_actions, lower_bound, upper_bound)</span>
-<span id="cb22-62"><a href="#cb22-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-63"><a href="#cb22-63" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Get the state and reward from environment</span></span>
-<span id="cb22-64"><a href="#cb22-64" aria-hidden="true" tabindex="-1"></a>            state, reward, done, _, info <span class="op">=</span> env.step(action)</span>
-<span id="cb22-65"><a href="#cb22-65" aria-hidden="true" tabindex="-1"></a>            state <span class="op">=</span> np.array([state])<span class="op">/</span>env.search_space</span>
-<span id="cb22-66"><a href="#cb22-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-67"><a href="#cb22-67" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Now stick the obvervation in the buffer so it can learn from it</span></span>
-<span id="cb22-68"><a href="#cb22-68" aria-hidden="true" tabindex="-1"></a>            <span class="bu">buffer</span>.record(prev_state, action, reward, state)</span>
-<span id="cb22-69"><a href="#cb22-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-70"><a href="#cb22-70" aria-hidden="true" tabindex="-1"></a>            <span class="co"># This is where the Bellman equation is implemented</span></span>
-<span id="cb22-71"><a href="#cb22-71" aria-hidden="true" tabindex="-1"></a>            actor_loss, critic_loss <span class="op">=</span> <span class="bu">buffer</span>.learn()</span>
-<span id="cb22-72"><a href="#cb22-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-73"><a href="#cb22-73" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Now update the NNs with the losses we just calculated</span></span>
-<span id="cb22-74"><a href="#cb22-74" aria-hidden="true" tabindex="-1"></a>            update_target(target_actor.variables, actor_model.variables, tau)</span>
-<span id="cb22-75"><a href="#cb22-75" aria-hidden="true" tabindex="-1"></a>            update_target(target_critic.variables, critic_model.variables, tau)</span>
-<span id="cb22-76"><a href="#cb22-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-77"><a href="#cb22-77" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Update the episodic variables</span></span>
-<span id="cb22-78"><a href="#cb22-78" aria-hidden="true" tabindex="-1"></a>            episodic_reward <span class="op">+=</span> reward</span>
-<span id="cb22-79"><a href="#cb22-79" aria-hidden="true" tabindex="-1"></a>            sum_actor_loss <span class="op">+=</span> actor_loss</span>
-<span id="cb22-80"><a href="#cb22-80" aria-hidden="true" tabindex="-1"></a>            sum_critic_loss <span class="op">+=</span> critic_loss</span>
-<span id="cb22-81"><a href="#cb22-81" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> best_reward_yet <span class="op">&lt;</span> reward:</span>
-<span id="cb22-82"><a href="#cb22-82" aria-hidden="true" tabindex="-1"></a>                best_state_yet <span class="op">=</span> state</span>
-<span id="cb22-83"><a href="#cb22-83" aria-hidden="true" tabindex="-1"></a>                best_reward_yet <span class="op">=</span> reward</span>
-<span id="cb22-84"><a href="#cb22-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-85"><a href="#cb22-85" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Print a bunch of information to the enviornment window about this step</span></span>
-<span id="cb22-86"><a href="#cb22-86" aria-hidden="true" tabindex="-1"></a>            <span class="co"># We have to index these, it doesn't matter with what, because that's how SimpleGym works</span></span>
-<span id="cb22-87"><a href="#cb22-87" aria-hidden="true" tabindex="-1"></a>            <span class="co"># It's very similar to why React components all need unique keys. Same concept.</span></span>
-<span id="cb22-88"><a href="#cb22-88" aria-hidden="true" tabindex="-1"></a>            env.<span class="bu">print</span>[<span class="st">'dd'</span>] <span class="op">=</span> <span class="st">'Episode Stats'</span></span>
-<span id="cb22-89"><a href="#cb22-89" aria-hidden="true" tabindex="-1"></a>            env.<span class="bu">print</span>[<span class="st">'step'</span>] <span class="op">=</span> <span class="ss">f'Step: </span><span class="sc">{</span>step_count<span class="sc">:.0f}</span><span class="ss">'</span></span>
-<span id="cb22-90"><a href="#cb22-90" aria-hidden="true" tabindex="-1"></a>            env.<span class="bu">print</span>[<span class="st">'reward'</span>] <span class="op">=</span> <span class="ss">f'Reward: </span><span class="sc">{</span>reward<span class="sc">:.0f}</span><span class="ss">'</span></span>
-<span id="cb22-91"><a href="#cb22-91" aria-hidden="true" tabindex="-1"></a>            env.<span class="bu">print</span>[<span class="st">'avg reward'</span>] <span class="op">=</span> <span class="ss">f'Avg. Reward for This Episode: </span><span class="sc">{</span>episodic_reward<span class="op">/</span>step_count<span class="sc">:.0f}</span><span class="ss">'</span></span>
-<span id="cb22-92"><a href="#cb22-92" aria-hidden="true" tabindex="-1"></a>            env.<span class="bu">print</span>[<span class="st">'overlap'</span>] <span class="op">=</span> <span class="ss">f'Overlap: </span><span class="sc">{</span>info[<span class="st">"overlap"</span>]<span class="sc">:.1f}</span><span class="ss">'</span></span>
-<span id="cb22-93"><a href="#cb22-93" aria-hidden="true" tabindex="-1"></a>            env.<span class="bu">print</span>[<span class="st">'len'</span>] <span class="op">=</span> <span class="ss">f'Side Length: </span><span class="sc">{</span>info[<span class="st">"len"</span>]<span class="sc">:.1f}</span><span class="ss">'</span></span>
-<span id="cb22-94"><a href="#cb22-94" aria-hidden="true" tabindex="-1"></a>            env.<span class="bu">print</span>[<span class="st">'wasted'</span>] <span class="op">=</span> <span class="ss">f'Wasted Space: </span><span class="sc">{</span>info[<span class="st">"wasted"</span>]<span class="sc">:.1f}</span><span class="ss">'</span></span>
-<span id="cb22-95"><a href="#cb22-95" aria-hidden="true" tabindex="-1"></a>            env.display(disp)</span>
-<span id="cb22-96"><a href="#cb22-96" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-97"><a href="#cb22-97" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> done: <span class="cf">break</span></span>
-<span id="cb22-98"><a href="#cb22-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-99"><a href="#cb22-99" aria-hidden="true" tabindex="-1"></a>            prev_state <span class="op">=</span> state</span>
-<span id="cb22-100"><a href="#cb22-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-101"><a href="#cb22-101" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Episode is done, now do some calculations</span></span>
-<span id="cb22-102"><a href="#cb22-102" aria-hidden="true" tabindex="-1"></a>        <span class="co"># These are all just for plotting, not actually important to the algorithm</span></span>
-<span id="cb22-103"><a href="#cb22-103" aria-hidden="true" tabindex="-1"></a>        ep_reward_list.append(episodic_reward)</span>
-<span id="cb22-104"><a href="#cb22-104" aria-hidden="true" tabindex="-1"></a>        avg_reward <span class="op">=</span> np.mean(ep_reward_list[<span class="op">-</span>avg_reward_episodes:]) <span class="co"># Mean of last `avg_reward_episodes` episodes</span></span>
-<span id="cb22-105"><a href="#cb22-105" aria-hidden="true" tabindex="-1"></a>        avg_reward_list.append(avg_reward)</span>
-<span id="cb22-106"><a href="#cb22-106" aria-hidden="true" tabindex="-1"></a>        ep_actor_loss.append(sum_actor_loss <span class="op">/</span> step_count)</span>
-<span id="cb22-107"><a href="#cb22-107" aria-hidden="true" tabindex="-1"></a>        ep_critic_loss.append(sum_critic_loss <span class="op">/</span> step_count)</span>
-<span id="cb22-108"><a href="#cb22-108" aria-hidden="true" tabindex="-1"></a>        ep_len_list.append(step_count)</span>
-<span id="cb22-109"><a href="#cb22-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-110"><a href="#cb22-110" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Print a bunch of information to the enviornment window about this episode</span></span>
-<span id="cb22-111"><a href="#cb22-111" aria-hidden="true" tabindex="-1"></a>        env.<span class="bu">print</span>[<span class="st">'--'</span>] <span class="op">=</span> <span class="st">'-'</span><span class="op">*</span><span class="dv">20</span></span>
-<span id="cb22-112"><a href="#cb22-112" aria-hidden="true" tabindex="-1"></a>        env.<span class="bu">print</span>[<span class="st">'ddd'</span>] <span class="op">=</span> <span class="st">'Run Stats'</span></span>
-<span id="cb22-113"><a href="#cb22-113" aria-hidden="true" tabindex="-1"></a>        env.<span class="bu">print</span>[<span class="st">'e'</span>] <span class="op">=</span> <span class="ss">f'Episode </span><span class="sc">{</span>env<span class="sc">.</span>reset_count<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>total_episodes<span class="sc">}</span><span class="ss">'</span></span>
-<span id="cb22-114"><a href="#cb22-114" aria-hidden="true" tabindex="-1"></a>        env.<span class="bu">print</span>[<span class="st">'f'</span>] <span class="op">=</span> <span class="ss">f'Last Episode lasted </span><span class="sc">{</span>step_count<span class="sc">}</span><span class="ss"> steps'</span></span>
-<span id="cb22-115"><a href="#cb22-115" aria-hidden="true" tabindex="-1"></a>        env.<span class="bu">print</span>[<span class="st">'g'</span>] <span class="op">=</span> <span class="ss">f'Last Episode Avg. Reward: </span><span class="sc">{</span>episodic_reward<span class="op">/</span>step_count<span class="sc">:.1f}</span><span class="ss">'</span></span>
-<span id="cb22-116"><a href="#cb22-116" aria-hidden="true" tabindex="-1"></a>        env.<span class="bu">print</span>[<span class="st">'h'</span>] <span class="op">=</span> <span class="ss">f'Avg. Reward of the last </span><span class="sc">{</span>avg_reward_episodes<span class="sc">}</span><span class="ss"> episodes: </span><span class="sc">{</span>avg_reward<span class="sc">:.1f}</span><span class="ss">'</span></span>
-<span id="cb22-117"><a href="#cb22-117" aria-hidden="true" tabindex="-1"></a>        env.<span class="bu">print</span>[<span class="st">'-'</span>] <span class="op">=</span> <span class="st">'-'</span><span class="op">*</span><span class="dv">20</span></span>
-<span id="cb22-118"><a href="#cb22-118" aria-hidden="true" tabindex="-1"></a>        env.<span class="bu">print</span>[<span class="st">'avg steps'</span>] <span class="op">=</span> <span class="ss">f'Avg. Steps / Episode: </span><span class="sc">{</span>np<span class="sc">.</span>mean(ep_len_list) <span class="sc">:.1f}</span><span class="ss">'</span></span>
-<span id="cb22-119"><a href="#cb22-119" aria-hidden="true" tabindex="-1"></a>        env.<span class="bu">print</span>[<span class="st">'i'</span>] <span class="op">=</span> <span class="ss">f'</span><span class="sc">{</span>((time.time_ns() <span class="op">-</span> start_time) <span class="op">/</span> <span class="dv">1000_000_000</span>) <span class="op">/</span> (ep<span class="op">+</span><span class="dv">1</span>)<span class="sc">:.1f}</span><span class="ss">s / Episode'</span></span>
-<span id="cb22-120"><a href="#cb22-120" aria-hidden="true" tabindex="-1"></a>        env.<span class="bu">print</span>[<span class="st">'j'</span>] <span class="op">=</span> <span class="ss">f'</span><span class="sc">{</span>((time.time_ns() <span class="op">-</span> start_time)<span class="op">/</span><span class="dv">1000_000</span>) <span class="op">/</span> <span class="bu">sum</span>(ep_len_list)<span class="sc">:.1f}</span><span class="ss">ms / step'</span></span>
-<span id="cb22-121"><a href="#cb22-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-122"><a href="#cb22-122" aria-hidden="true" tabindex="-1"></a><span class="cf">finally</span>:</span>
-<span id="cb22-123"><a href="#cb22-123" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Once we're finished with the simulation, clean up, make some graphs, and log everything we did</span></span>
-<span id="cb22-124"><a href="#cb22-124" aria-hidden="true" tabindex="-1"></a>    env.close()</span>
-<span id="cb22-125"><a href="#cb22-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-126"><a href="#cb22-126" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> best_reward_yet <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>: <span class="co"># If this is the case, there was an error somewhere</span></span>
-<span id="cb22-127"><a href="#cb22-127" aria-hidden="true" tabindex="-1"></a>        env.display()</span>
-<span id="cb22-128"><a href="#cb22-128" aria-hidden="true" tabindex="-1"></a>        fig, ax1 <span class="op">=</span> plt.subplots()</span>
-<span id="cb22-129"><a href="#cb22-129" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-130"><a href="#cb22-130" aria-hidden="true" tabindex="-1"></a>        ax1.plot(avg_reward_list, label<span class="op">=</span><span class="st">'Avg. Reward'</span>, color<span class="op">=</span><span class="st">'blue'</span>)</span>
-<span id="cb22-131"><a href="#cb22-131" aria-hidden="true" tabindex="-1"></a>        ax1.set_xlabel(<span class="st">"Episode"</span>)</span>
-<span id="cb22-132"><a href="#cb22-132" aria-hidden="true" tabindex="-1"></a>        ax1.set_ylabel(<span class="st">"Avg. Episodic Reward"</span>, color<span class="op">=</span><span class="st">'blue'</span>)</span>
-<span id="cb22-133"><a href="#cb22-133" aria-hidden="true" tabindex="-1"></a>        ax1.tick_params(axis<span class="op">=</span><span class="st">'y'</span>, labelcolor<span class="op">=</span><span class="st">'blue'</span>)</span>
-<span id="cb22-134"><a href="#cb22-134" aria-hidden="true" tabindex="-1"></a>        ax1.axhline(y<span class="op">=</span><span class="dv">0</span>, linestyle<span class="op">=</span><span class="st">'-'</span>)</span>
-<span id="cb22-135"><a href="#cb22-135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-136"><a href="#cb22-136" aria-hidden="true" tabindex="-1"></a>        ax2 <span class="op">=</span> ax1.twinx()</span>
-<span id="cb22-137"><a href="#cb22-137" aria-hidden="true" tabindex="-1"></a>        ax2.plot(ep_len_list, label<span class="op">=</span><span class="st">'Episode Length'</span>, color<span class="op">=</span><span class="st">'green'</span>, alpha<span class="op">=</span><span class="fl">.2</span>)</span>
-<span id="cb22-138"><a href="#cb22-138" aria-hidden="true" tabindex="-1"></a>        ax2.set_ylabel(<span class="st">"Episode Length"</span>, color<span class="op">=</span><span class="st">'green'</span>)</span>
-<span id="cb22-139"><a href="#cb22-139" aria-hidden="true" tabindex="-1"></a>        ax2.tick_params(axis<span class="op">=</span><span class="st">'y'</span>, labelcolor<span class="op">=</span><span class="st">'green'</span>)</span>
-<span id="cb22-140"><a href="#cb22-140" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-141"><a href="#cb22-141" aria-hidden="true" tabindex="-1"></a>        fig.tight_layout()</span>
-<span id="cb22-142"><a href="#cb22-142" aria-hidden="true" tabindex="-1"></a>        plt.show()</span>
-<span id="cb22-143"><a href="#cb22-143" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-144"><a href="#cb22-144" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Losses</span></span>
-<span id="cb22-145"><a href="#cb22-145" aria-hidden="true" tabindex="-1"></a>        fig, ax1 <span class="op">=</span> plt.subplots()</span>
-<span id="cb22-146"><a href="#cb22-146" aria-hidden="true" tabindex="-1"></a>        ax1.plot(ep_critic_loss, label<span class="op">=</span><span class="st">'Avg Critic Loss'</span>, color<span class="op">=</span><span class="st">'red'</span>)</span>
-<span id="cb22-147"><a href="#cb22-147" aria-hidden="true" tabindex="-1"></a>        ax2 <span class="op">=</span> ax1.twinx()</span>
-<span id="cb22-148"><a href="#cb22-148" aria-hidden="true" tabindex="-1"></a>        ax2.plot(ep_actor_loss, label<span class="op">=</span><span class="st">'Avg Actor Loss'</span>, color<span class="op">=</span><span class="st">'orange'</span>)</span>
-<span id="cb22-149"><a href="#cb22-149" aria-hidden="true" tabindex="-1"></a>        ax1.legend()</span>
-<span id="cb22-150"><a href="#cb22-150" aria-hidden="true" tabindex="-1"></a>        ax2.legend(loc<span class="op">=</span>(<span class="fl">.01</span>, <span class="fl">.8</span>))</span>
-<span id="cb22-151"><a href="#cb22-151" aria-hidden="true" tabindex="-1"></a>        plt.show()</span>
-<span id="cb22-152"><a href="#cb22-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-153"><a href="#cb22-153" aria-hidden="true" tabindex="-1"></a>        <span class="co"># These don't actually print, but get captured and put into the run log</span></span>
-<span id="cb22-154"><a href="#cb22-154" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Print the numbers for the best state yet</span></span>
-<span id="cb22-155"><a href="#cb22-155" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Best Reward yet: '</span>, best_reward_yet)</span>
-<span id="cb22-156"><a href="#cb22-156" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Best State:'</span>)</span>
-<span id="cb22-157"><a href="#cb22-157" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(best_state_yet)</span>
-<span id="cb22-158"><a href="#cb22-158" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-159"><a href="#cb22-159" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Show the best state yet</span></span>
-<span id="cb22-160"><a href="#cb22-160" aria-hidden="true" tabindex="-1"></a>        <span class="co"># I have no idea why this needs to be rescaled. It shouldn't, as far as I can tell</span></span>
-<span id="cb22-161"><a href="#cb22-161" aria-hidden="true" tabindex="-1"></a>        <span class="co"># But it's not super relevant. It just means we can't trust it to say whether we're</span></span>
-<span id="cb22-162"><a href="#cb22-162" aria-hidden="true" tabindex="-1"></a>        <span class="co"># overlapping or not</span></span>
-<span id="cb22-163"><a href="#cb22-163" aria-hidden="true" tabindex="-1"></a>        display(space2MultiPolygon(best_state_yet.reshape((env.N,<span class="dv">3</span>)), <span class="fl">.1</span>))</span>
-<span id="cb22-164"><a href="#cb22-164" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-165"><a href="#cb22-165" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Show the models we used</span></span>
-<span id="cb22-166"><a href="#cb22-166" aria-hidden="true" tabindex="-1"></a>        <span class="co"># The target models are identical to these</span></span>
-<span id="cb22-167"><a href="#cb22-167" aria-hidden="true" tabindex="-1"></a>        display(ks.utils.plot_model(actor_model,   show_layer_activations<span class="op">=</span><span class="va">True</span>, show_shapes<span class="op">=</span><span class="va">True</span>))</span>
-<span id="cb22-168"><a href="#cb22-168" aria-hidden="true" tabindex="-1"></a>        display(ks.utils.plot_model(critic_model,  show_layer_activations<span class="op">=</span><span class="va">True</span>, show_shapes<span class="op">=</span><span class="va">True</span>))</span>
-<span id="cb22-169"><a href="#cb22-169" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-170"><a href="#cb22-170" aria-hidden="true" tabindex="-1"></a>        <span class="co"># This saves the log to a directory named this</span></span>
-<span id="cb22-171"><a href="#cb22-171" aria-hidden="true" tabindex="-1"></a>        save_output(run, <span class="st">'run9'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-53"><a href="#cb22-53" aria-hidden="true" tabindex="-1"></a>                <span class="co"># This should make the noise fade out over time (proportional to the actor learning rate)</span></span>
+<span id="cb22-54"><a href="#cb22-54" aria-hidden="true" tabindex="-1"></a>                <span class="co"># We want to fade the noise over time, *and* as we step through specific episodes</span></span>
+<span id="cb22-55"><a href="#cb22-55" aria-hidden="true" tabindex="-1"></a>                total_cooldown   <span class="op">=</span> <span class="bu">max</span>(std_dev <span class="op">-</span> (ep  <span class="op">*</span> noise_cooldown), <span class="dv">0</span>)</span>
+<span id="cb22-56"><a href="#cb22-56" aria-hidden="true" tabindex="-1"></a>                episode_cooldown <span class="op">=</span> <span class="bu">max</span>(std_dev <span class="op">-</span> (step_count <span class="op">*</span> noise_cooldown), <span class="dv">0</span>)</span>
+<span id="cb22-57"><a href="#cb22-57" aria-hidden="true" tabindex="-1"></a>                sampled_actions <span class="op">+=</span> noise((total_cooldown <span class="op">+</span> episode_cooldown) <span class="op">/</span> <span class="dv">2</span>)</span>
+<span id="cb22-58"><a href="#cb22-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-59"><a href="#cb22-59" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Make sure the action is in the action space</span></span>
+<span id="cb22-60"><a href="#cb22-60" aria-hidden="true" tabindex="-1"></a>            action <span class="op">=</span> np.clip(sampled_actions, lower_bound, upper_bound)</span>
+<span id="cb22-61"><a href="#cb22-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-62"><a href="#cb22-62" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Get the state and reward from environment</span></span>
+<span id="cb22-63"><a href="#cb22-63" aria-hidden="true" tabindex="-1"></a>            state, reward, done, _, info <span class="op">=</span> env.step(action)</span>
+<span id="cb22-64"><a href="#cb22-64" aria-hidden="true" tabindex="-1"></a>            state <span class="op">=</span> np.array([state])<span class="op">/</span>env.search_space</span>
+<span id="cb22-65"><a href="#cb22-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-66"><a href="#cb22-66" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Now stick the obvervation in the buffer so it can learn from it</span></span>
+<span id="cb22-67"><a href="#cb22-67" aria-hidden="true" tabindex="-1"></a>            <span class="bu">buffer</span>.record(prev_state, action, reward, state)</span>
+<span id="cb22-68"><a href="#cb22-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-69"><a href="#cb22-69" aria-hidden="true" tabindex="-1"></a>            <span class="co"># This is where the Bellman equation is implemented</span></span>
+<span id="cb22-70"><a href="#cb22-70" aria-hidden="true" tabindex="-1"></a>            actor_loss, critic_loss <span class="op">=</span> <span class="bu">buffer</span>.learn()</span>
+<span id="cb22-71"><a href="#cb22-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-72"><a href="#cb22-72" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Now update the NNs with the losses we just calculated</span></span>
+<span id="cb22-73"><a href="#cb22-73" aria-hidden="true" tabindex="-1"></a>            update_target(target_actor.variables, actor_model.variables, tau)</span>
+<span id="cb22-74"><a href="#cb22-74" aria-hidden="true" tabindex="-1"></a>            update_target(target_critic.variables, critic_model.variables, tau)</span>
+<span id="cb22-75"><a href="#cb22-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-76"><a href="#cb22-76" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Update the episodic variables</span></span>
+<span id="cb22-77"><a href="#cb22-77" aria-hidden="true" tabindex="-1"></a>            episodic_reward <span class="op">+=</span> reward</span>
+<span id="cb22-78"><a href="#cb22-78" aria-hidden="true" tabindex="-1"></a>            sum_actor_loss <span class="op">+=</span> actor_loss</span>
+<span id="cb22-79"><a href="#cb22-79" aria-hidden="true" tabindex="-1"></a>            sum_critic_loss <span class="op">+=</span> critic_loss</span>
+<span id="cb22-80"><a href="#cb22-80" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> best_reward_yet <span class="op">&lt;</span> reward:</span>
+<span id="cb22-81"><a href="#cb22-81" aria-hidden="true" tabindex="-1"></a>                best_state_yet <span class="op">=</span> state</span>
+<span id="cb22-82"><a href="#cb22-82" aria-hidden="true" tabindex="-1"></a>                best_reward_yet <span class="op">=</span> reward</span>
+<span id="cb22-83"><a href="#cb22-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-84"><a href="#cb22-84" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Print a bunch of information to the enviornment window about this step</span></span>
+<span id="cb22-85"><a href="#cb22-85" aria-hidden="true" tabindex="-1"></a>            <span class="co"># We have to index these, it doesn't matter with what, because that's how SimpleGym works</span></span>
+<span id="cb22-86"><a href="#cb22-86" aria-hidden="true" tabindex="-1"></a>            <span class="co"># It's very similar to why React components all need unique keys. Same concept.</span></span>
+<span id="cb22-87"><a href="#cb22-87" aria-hidden="true" tabindex="-1"></a>            env.<span class="bu">print</span>[<span class="st">'dd'</span>] <span class="op">=</span> <span class="st">'Episode Stats'</span></span>
+<span id="cb22-88"><a href="#cb22-88" aria-hidden="true" tabindex="-1"></a>            env.<span class="bu">print</span>[<span class="st">'step'</span>] <span class="op">=</span> <span class="ss">f'Step: </span><span class="sc">{</span>step_count<span class="sc">:.0f}</span><span class="ss">'</span></span>
+<span id="cb22-89"><a href="#cb22-89" aria-hidden="true" tabindex="-1"></a>            env.<span class="bu">print</span>[<span class="st">'reward'</span>] <span class="op">=</span> <span class="ss">f'Reward: </span><span class="sc">{</span>reward<span class="sc">:.0f}</span><span class="ss">'</span></span>
+<span id="cb22-90"><a href="#cb22-90" aria-hidden="true" tabindex="-1"></a>            env.<span class="bu">print</span>[<span class="st">'avg reward'</span>] <span class="op">=</span> <span class="ss">f'Avg. Reward for This Episode: </span><span class="sc">{</span>episodic_reward<span class="op">/</span>step_count<span class="sc">:.0f}</span><span class="ss">'</span></span>
+<span id="cb22-91"><a href="#cb22-91" aria-hidden="true" tabindex="-1"></a>            env.<span class="bu">print</span>[<span class="st">'overlap'</span>] <span class="op">=</span> <span class="ss">f'Overlap: </span><span class="sc">{</span>info[<span class="st">"overlap"</span>]<span class="sc">:.1f}</span><span class="ss">'</span></span>
+<span id="cb22-92"><a href="#cb22-92" aria-hidden="true" tabindex="-1"></a>            env.<span class="bu">print</span>[<span class="st">'len'</span>] <span class="op">=</span> <span class="ss">f'Side Length: </span><span class="sc">{</span>info[<span class="st">"len"</span>]<span class="sc">:.1f}</span><span class="ss">'</span></span>
+<span id="cb22-93"><a href="#cb22-93" aria-hidden="true" tabindex="-1"></a>            env.<span class="bu">print</span>[<span class="st">'wasted'</span>] <span class="op">=</span> <span class="ss">f'Wasted Space: </span><span class="sc">{</span>info[<span class="st">"wasted"</span>]<span class="sc">:.1f}</span><span class="ss">'</span></span>
+<span id="cb22-94"><a href="#cb22-94" aria-hidden="true" tabindex="-1"></a>            env.display(disp)</span>
+<span id="cb22-95"><a href="#cb22-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-96"><a href="#cb22-96" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> done: <span class="cf">break</span></span>
+<span id="cb22-97"><a href="#cb22-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-98"><a href="#cb22-98" aria-hidden="true" tabindex="-1"></a>            prev_state <span class="op">=</span> state</span>
+<span id="cb22-99"><a href="#cb22-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-100"><a href="#cb22-100" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Episode is done, now do some calculations</span></span>
+<span id="cb22-101"><a href="#cb22-101" aria-hidden="true" tabindex="-1"></a>        <span class="co"># These are all just for plotting, not actually important to the algorithm</span></span>
+<span id="cb22-102"><a href="#cb22-102" aria-hidden="true" tabindex="-1"></a>        ep_reward_list.append(episodic_reward)</span>
+<span id="cb22-103"><a href="#cb22-103" aria-hidden="true" tabindex="-1"></a>        avg_reward <span class="op">=</span> np.mean(ep_reward_list[<span class="op">-</span>avg_reward_episodes:]) <span class="co"># Mean of last `avg_reward_episodes` episodes</span></span>
+<span id="cb22-104"><a href="#cb22-104" aria-hidden="true" tabindex="-1"></a>        avg_reward_list.append(avg_reward)</span>
+<span id="cb22-105"><a href="#cb22-105" aria-hidden="true" tabindex="-1"></a>        ep_actor_loss.append(sum_actor_loss <span class="op">/</span> step_count)</span>
+<span id="cb22-106"><a href="#cb22-106" aria-hidden="true" tabindex="-1"></a>        ep_critic_loss.append(sum_critic_loss <span class="op">/</span> step_count)</span>
+<span id="cb22-107"><a href="#cb22-107" aria-hidden="true" tabindex="-1"></a>        ep_len_list.append(step_count)</span>
+<span id="cb22-108"><a href="#cb22-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-109"><a href="#cb22-109" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Print a bunch of information to the enviornment window about this episode</span></span>
+<span id="cb22-110"><a href="#cb22-110" aria-hidden="true" tabindex="-1"></a>        env.<span class="bu">print</span>[<span class="st">'--'</span>] <span class="op">=</span> <span class="st">'-'</span><span class="op">*</span><span class="dv">20</span></span>
+<span id="cb22-111"><a href="#cb22-111" aria-hidden="true" tabindex="-1"></a>        env.<span class="bu">print</span>[<span class="st">'ddd'</span>] <span class="op">=</span> <span class="st">'Run Stats'</span></span>
+<span id="cb22-112"><a href="#cb22-112" aria-hidden="true" tabindex="-1"></a>        env.<span class="bu">print</span>[<span class="st">'e'</span>] <span class="op">=</span> <span class="ss">f'Episode </span><span class="sc">{</span>env<span class="sc">.</span>reset_count<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>total_episodes<span class="sc">}</span><span class="ss">'</span></span>
+<span id="cb22-113"><a href="#cb22-113" aria-hidden="true" tabindex="-1"></a>        env.<span class="bu">print</span>[<span class="st">'f'</span>] <span class="op">=</span> <span class="ss">f'Last Episode lasted </span><span class="sc">{</span>step_count<span class="sc">}</span><span class="ss"> steps'</span></span>
+<span id="cb22-114"><a href="#cb22-114" aria-hidden="true" tabindex="-1"></a>        env.<span class="bu">print</span>[<span class="st">'g'</span>] <span class="op">=</span> <span class="ss">f'Last Episode Avg. Reward: </span><span class="sc">{</span>episodic_reward<span class="op">/</span>step_count<span class="sc">:.1f}</span><span class="ss">'</span></span>
+<span id="cb22-115"><a href="#cb22-115" aria-hidden="true" tabindex="-1"></a>        env.<span class="bu">print</span>[<span class="st">'h'</span>] <span class="op">=</span> <span class="ss">f'Avg. Reward of the last </span><span class="sc">{</span>avg_reward_episodes<span class="sc">}</span><span class="ss"> episodes: </span><span class="sc">{</span>avg_reward<span class="sc">:.1f}</span><span class="ss">'</span></span>
+<span id="cb22-116"><a href="#cb22-116" aria-hidden="true" tabindex="-1"></a>        env.<span class="bu">print</span>[<span class="st">'-'</span>] <span class="op">=</span> <span class="st">'-'</span><span class="op">*</span><span class="dv">20</span></span>
+<span id="cb22-117"><a href="#cb22-117" aria-hidden="true" tabindex="-1"></a>        env.<span class="bu">print</span>[<span class="st">'avg steps'</span>] <span class="op">=</span> <span class="ss">f'Avg. Steps / Episode: </span><span class="sc">{</span>np<span class="sc">.</span>mean(ep_len_list) <span class="sc">:.1f}</span><span class="ss">'</span></span>
+<span id="cb22-118"><a href="#cb22-118" aria-hidden="true" tabindex="-1"></a>        env.<span class="bu">print</span>[<span class="st">'i'</span>] <span class="op">=</span> <span class="ss">f'</span><span class="sc">{</span>((time.time_ns() <span class="op">-</span> start_time) <span class="op">/</span> <span class="dv">1000_000_000</span>) <span class="op">/</span> (ep<span class="op">+</span><span class="dv">1</span>)<span class="sc">:.1f}</span><span class="ss">s / Episode'</span></span>
+<span id="cb22-119"><a href="#cb22-119" aria-hidden="true" tabindex="-1"></a>        env.<span class="bu">print</span>[<span class="st">'j'</span>] <span class="op">=</span> <span class="ss">f'</span><span class="sc">{</span>((time.time_ns() <span class="op">-</span> start_time)<span class="op">/</span><span class="dv">1000_000</span>) <span class="op">/</span> <span class="bu">sum</span>(ep_len_list)<span class="sc">:.1f}</span><span class="ss">ms / step'</span></span>
+<span id="cb22-120"><a href="#cb22-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-121"><a href="#cb22-121" aria-hidden="true" tabindex="-1"></a><span class="cf">finally</span>:</span>
+<span id="cb22-122"><a href="#cb22-122" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Once we're finished with the simulation, clean up, make some graphs, and log everything we did</span></span>
+<span id="cb22-123"><a href="#cb22-123" aria-hidden="true" tabindex="-1"></a>    env.close()</span>
+<span id="cb22-124"><a href="#cb22-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-125"><a href="#cb22-125" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> best_reward_yet <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>: <span class="co"># If this is the case, there was an error somewhere</span></span>
+<span id="cb22-126"><a href="#cb22-126" aria-hidden="true" tabindex="-1"></a>        env.display()</span>
+<span id="cb22-127"><a href="#cb22-127" aria-hidden="true" tabindex="-1"></a>        fig, ax1 <span class="op">=</span> plt.subplots()</span>
+<span id="cb22-128"><a href="#cb22-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-129"><a href="#cb22-129" aria-hidden="true" tabindex="-1"></a>        ax1.plot(avg_reward_list, label<span class="op">=</span><span class="st">'Avg. Reward'</span>, color<span class="op">=</span><span class="st">'blue'</span>)</span>
+<span id="cb22-130"><a href="#cb22-130" aria-hidden="true" tabindex="-1"></a>        ax1.set_xlabel(<span class="st">"Episode"</span>)</span>
+<span id="cb22-131"><a href="#cb22-131" aria-hidden="true" tabindex="-1"></a>        ax1.set_ylabel(<span class="st">"Avg. Episodic Reward"</span>, color<span class="op">=</span><span class="st">'blue'</span>)</span>
+<span id="cb22-132"><a href="#cb22-132" aria-hidden="true" tabindex="-1"></a>        ax1.tick_params(axis<span class="op">=</span><span class="st">'y'</span>, labelcolor<span class="op">=</span><span class="st">'blue'</span>)</span>
+<span id="cb22-133"><a href="#cb22-133" aria-hidden="true" tabindex="-1"></a>        ax1.axhline(y<span class="op">=</span><span class="dv">0</span>, linestyle<span class="op">=</span><span class="st">'-'</span>)</span>
+<span id="cb22-134"><a href="#cb22-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-135"><a href="#cb22-135" aria-hidden="true" tabindex="-1"></a>        ax2 <span class="op">=</span> ax1.twinx()</span>
+<span id="cb22-136"><a href="#cb22-136" aria-hidden="true" tabindex="-1"></a>        ax2.plot(ep_len_list, label<span class="op">=</span><span class="st">'Episode Length'</span>, color<span class="op">=</span><span class="st">'green'</span>, alpha<span class="op">=</span><span class="fl">.2</span>)</span>
+<span id="cb22-137"><a href="#cb22-137" aria-hidden="true" tabindex="-1"></a>        ax2.set_ylabel(<span class="st">"Episode Length"</span>, color<span class="op">=</span><span class="st">'green'</span>)</span>
+<span id="cb22-138"><a href="#cb22-138" aria-hidden="true" tabindex="-1"></a>        ax2.tick_params(axis<span class="op">=</span><span class="st">'y'</span>, labelcolor<span class="op">=</span><span class="st">'green'</span>)</span>
+<span id="cb22-139"><a href="#cb22-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-140"><a href="#cb22-140" aria-hidden="true" tabindex="-1"></a>        fig.tight_layout()</span>
+<span id="cb22-141"><a href="#cb22-141" aria-hidden="true" tabindex="-1"></a>        plt.show()</span>
+<span id="cb22-142"><a href="#cb22-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-143"><a href="#cb22-143" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Losses</span></span>
+<span id="cb22-144"><a href="#cb22-144" aria-hidden="true" tabindex="-1"></a>        fig, ax1 <span class="op">=</span> plt.subplots()</span>
+<span id="cb22-145"><a href="#cb22-145" aria-hidden="true" tabindex="-1"></a>        ax1.plot(ep_critic_loss, label<span class="op">=</span><span class="st">'Avg Critic Loss'</span>, color<span class="op">=</span><span class="st">'red'</span>)</span>
+<span id="cb22-146"><a href="#cb22-146" aria-hidden="true" tabindex="-1"></a>        ax2 <span class="op">=</span> ax1.twinx()</span>
+<span id="cb22-147"><a href="#cb22-147" aria-hidden="true" tabindex="-1"></a>        ax2.plot(ep_actor_loss, label<span class="op">=</span><span class="st">'Avg Actor Loss'</span>, color<span class="op">=</span><span class="st">'orange'</span>)</span>
+<span id="cb22-148"><a href="#cb22-148" aria-hidden="true" tabindex="-1"></a>        ax1.legend()</span>
+<span id="cb22-149"><a href="#cb22-149" aria-hidden="true" tabindex="-1"></a>        ax2.legend(loc<span class="op">=</span>(<span class="fl">.01</span>, <span class="fl">.8</span>))</span>
+<span id="cb22-150"><a href="#cb22-150" aria-hidden="true" tabindex="-1"></a>        plt.show()</span>
+<span id="cb22-151"><a href="#cb22-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-152"><a href="#cb22-152" aria-hidden="true" tabindex="-1"></a>        <span class="co"># These don't actually print, but get captured and put into the run log</span></span>
+<span id="cb22-153"><a href="#cb22-153" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Print the numbers for the best state yet</span></span>
+<span id="cb22-154"><a href="#cb22-154" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Best Reward yet: '</span>, best_reward_yet)</span>
+<span id="cb22-155"><a href="#cb22-155" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Best State:'</span>)</span>
+<span id="cb22-156"><a href="#cb22-156" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(best_state_yet)</span>
+<span id="cb22-157"><a href="#cb22-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-158"><a href="#cb22-158" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Show the best state yet</span></span>
+<span id="cb22-159"><a href="#cb22-159" aria-hidden="true" tabindex="-1"></a>        <span class="co"># I have no idea why this needs to be rescaled. It shouldn't, as far as I can tell</span></span>
+<span id="cb22-160"><a href="#cb22-160" aria-hidden="true" tabindex="-1"></a>        <span class="co"># But it's not super relevant. It just means we can't trust it to say whether we're</span></span>
+<span id="cb22-161"><a href="#cb22-161" aria-hidden="true" tabindex="-1"></a>        <span class="co"># overlapping or not</span></span>
+<span id="cb22-162"><a href="#cb22-162" aria-hidden="true" tabindex="-1"></a>        display(space2MultiPolygon(best_state_yet.reshape((env.N,<span class="dv">3</span>)), <span class="fl">.1</span>))</span>
+<span id="cb22-163"><a href="#cb22-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-164"><a href="#cb22-164" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Show the models we used</span></span>
+<span id="cb22-165"><a href="#cb22-165" aria-hidden="true" tabindex="-1"></a>        <span class="co"># The target models are identical to these</span></span>
+<span id="cb22-166"><a href="#cb22-166" aria-hidden="true" tabindex="-1"></a>        display(ks.utils.plot_model(actor_model,   show_layer_activations<span class="op">=</span><span class="va">True</span>, show_shapes<span class="op">=</span><span class="va">True</span>))</span>
+<span id="cb22-167"><a href="#cb22-167" aria-hidden="true" tabindex="-1"></a>        display(ks.utils.plot_model(critic_model,  show_layer_activations<span class="op">=</span><span class="va">True</span>, show_shapes<span class="op">=</span><span class="va">True</span>))</span>
+<span id="cb22-168"><a href="#cb22-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-169"><a href="#cb22-169" aria-hidden="true" tabindex="-1"></a>        <span class="co"># This saves the log to a directory named this</span></span>
+<span id="cb22-170"><a href="#cb22-170" aria-hidden="true" tabindex="-1"></a>        save_output(run, <span class="st">'run9'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="example-log" class="level3">
@@ -1856,35 +1828,35 @@ ML Config:<br>gamma: 0.99<br>tau: 0.005<br>Buffer Capacity: 10000<br>Buffer Batc
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-20-output-3.png" class="img-fluid figure-img"></p>
+<p><img src="Attempt4_files/figure-html/cell-20-output-3.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-20-output-4.png" class="img-fluid figure-img"></p>
+<p><img src="Attempt4_files/figure-html/cell-20-output-4.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-20-output-5.svg" class="img-fluid figure-img"></p>
+<p><img src="Attempt4_files/figure-html/cell-20-output-5.svg" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-20-output-6.png" class="img-fluid figure-img"></p>
+<p><img src="Attempt4_files/figure-html/cell-20-output-6.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-20-output-7.png" class="img-fluid figure-img"></p>
+<p><img src="Attempt4_files/figure-html/cell-20-output-7.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1936,385 +1908,9 @@ ML Config:<br>gamma: 0.99<br>tau: 0.005<br>Buffer Capacity: 10000<br>Buffer Batc
 </section>
 <section id="a-different-kind-of-hueristic-algorithm" class="level3">
 <h3 class="anchored" data-anchor-id="a-different-kind-of-hueristic-algorithm">A Different Kind of Hueristic Algorithm</h3>
-<p>If I had more time, and was willing to scrap everything and start over, I would try a more monte carlo/simulated annealing approach. Something like this:</p>
-<ol type="1">
-<li>randomly make discrete movements/rotations of <code>rot_rate</code>, <code>shift_rate</code></li>
-<li>decide if it’s better or not according to my reward function</li>
-<li>if it’s better, keep going, if it’s worse, undo it some of the time, and keep it anyway some of the time (<code>r</code>)</li>
-</ol>
-<p>Then, have <code>rot_rate</code>, <code>shift_rate</code>, and <code>r</code> decrease slowly as time goes on, to slowly anneal to a more optimal configuration.</p>
-<p>Credit where it’s due, the idea for this was inspired by <a href="https://www.youtube.com/watch?v=Lq-Y7crQo44&amp;pp=ygUVZ2VycnltYW5kZXJpbmcgYWxwaGEg">this YouTube video</a> on algorithmic gerrymandering</p>
-<section id="i-did-it" class="level4">
-<h4 class="anchored" data-anchor-id="i-did-it">I did it</h4>
-<p>I ended up implementing that algorithm after all. Here it is, I’ll only go into detail about the parts that I haven’t discussed above. I used the same environment and hardware to run it as I did above.</p>
-<p>I added cooldown to the variables <code>rand</code> (the chance that we make a bad move), <code>rot</code> (the max amount of rotation we can make in a single step), and <code>shift</code> (the max amount of translation we can make in a single step). You can see the graph below for the rates at which they decrease.</p>
-<p>Inspired by <a href="https://www.youtube.com/watch?v=Lq-Y7crQo44&amp;pp=ygUVZ2VycnltYW5kZXJpbmcgYWxwaGEg">the above YouTube video</a>, I tried adding an <code>overlap phase</code>. My thinking was that after it starts to approach a local minimum, a lower minimum may be blocked by say, the corner of a different square. If it could just get over there, it would be able to optimize further. This didn’t end up working, and seemed to just make squares overlap, which reduced the reward and had a hard time getting back.</p>
-<p>Note that this portion is independantly runnable, but you will need to run the <code>Dependant Code</code> section first for it to work.</p>
-<div id="cell-42" class="cell" data-execution_count="8">
-<details class="code-fold">
-<summary>Imports</summary>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> random <span class="im">import</span> randint</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> itertools <span class="im">as</span> it</span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co"># from Cope import percent</span></span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="co"># from SquareEnv2 import space2MultiPolygon, SquareEnv</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div id="cell-43" class="cell" data-execution_count="9">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Reward Function</strong></pre>
-</div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Modify the reward function</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> _get_reward(<span class="va">self</span>):</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># We generally prefer living longer</span></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    score <span class="op">=</span> <span class="dv">0</span> <span class="co"># Linear</span></span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    centered_importance <span class="op">=</span> <span class="fl">.5</span> <span class="co"># Exponential</span></span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>    score <span class="op">-=</span> <span class="va">self</span>.side_len</span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># We don't like it when they overlap at all</span></span>
-<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="va">self</span>.overlap_area <span class="op">&gt;</span> <span class="dv">0</span>:</span>
-<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>        score <span class="op">-=</span> <span class="dv">10</span></span>
-<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>        <span class="co"># We also want to disincentivize overlapping more, so we can tell if we're starting to</span></span>
-<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>        <span class="co"># un-overlap (which is better than overlapping more)</span></span>
-<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>        score <span class="op">-=</span> <span class="va">self</span>.overlap_area</span>
-<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># I don't want them to just push up against the edges</span></span>
-<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> centered_importance:</span>
-<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> x, y, _rot <span class="kw">in</span> <span class="va">self</span>.squares:</span>
-<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Remove boundary badness entirely for optimization</span></span>
-<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a>            <span class="co"># We want the squares to be close to the center</span></span>
-<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> centered_importance:</span>
-<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a>                score <span class="op">-=</span> dist([x, y], [<span class="va">self</span>.search_space <span class="op">/</span> <span class="dv">2</span>, <span class="va">self</span>.search_space <span class="op">/</span> <span class="dv">2</span>]) <span class="op">*</span> centered_importance</span>
-<span id="cb27-24"><a href="#cb27-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-25"><a href="#cb27-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> score</span>
-<span id="cb27-26"><a href="#cb27-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-27"><a href="#cb27-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-28"><a href="#cb27-28" aria-hidden="true" tabindex="-1"></a>SquareEnv._get_reward <span class="op">=</span> _get_reward</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<div id="cell-44" class="cell" data-execution_count="10">
-<details class="code-fold">
-<summary>modify the environment terminated function</summary>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> _get_terminated(<span class="va">self</span>):</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Optimal: 3.789, best known: 3.877084</span></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># There's no overlapping and we're better than the previous best</span></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="va">self</span>.N <span class="op">==</span> <span class="dv">11</span> <span class="kw">and</span> <span class="va">self</span>.side_len <span class="op">&lt;</span> <span class="fl">3.877084</span> <span class="kw">and</span> <span class="va">self</span>.is_valid():</span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Holy cow, we did it!!!'</span>)</span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Coordinates &amp; Rotations:'</span>)</span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="va">self</span>.squares)</span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">with</span> <span class="bu">open</span>(<span class="st">'~/SQUARE_PARAMETERS.txt'</span>, <span class="st">'w'</span>) <span class="im">as</span> f:</span>
-<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>            f.write(<span class="bu">str</span>(<span class="va">self</span>.squares))</span>
-<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">True</span></span>
-<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If we're almost entirely overlapping, just kill it</span></span>
-<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="va">self</span>.overlap_area <span class="op">&gt;</span> <span class="va">self</span>.max_overlap:</span>
-<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">True</span></span>
-<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Remove the deadlock detection, since it breaks when we only move 1 square at a time</span></span>
-<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">False</span></span>
-<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a>SquareEnv._get_terminated <span class="op">=</span> _get_terminated</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div id="cell-45" class="cell" data-execution_count="11">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Configuration &amp; Enviorment</strong></pre>
-</div>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>env <span class="op">=</span> SquareEnv(</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    N<span class="op">=</span><span class="dv">11</span>,</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># It can handle a smaller search space, it speeds things up a little</span></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    search_space<span class="op">=</span><span class="fl">5.5</span>,</span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    render_mode<span class="op">=</span><span class="st">"pygame"</span>,</span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># These are the upper bounds</span></span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    shift_rate<span class="op">=</span><span class="fl">.05</span>,</span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>    rot_rate<span class="op">=</span><span class="fl">.03</span>,</span>
-<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>    max_steps<span class="op">=</span><span class="dv">100_000</span>,</span>
-<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>    bound_method<span class="op">=</span><span class="st">'mixed'</span>,</span>
-<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This changes later</span></span>
-<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>    disallow_overlap<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>    boundary<span class="op">=</span><span class="dv">0</span>,</span>
-<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Arbitrarily high overlap: to allow for an "overlap phase" (see below)</span></span>
-<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>    max_overlap<span class="op">=</span><span class="dv">5</span>,</span>
-<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># I tried both `valid` and `array`</span></span>
-<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>    start_config<span class="op">=</span><span class="st">'valid'</span>,</span>
-<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a>    screen_size<span class="op">=</span>(<span class="dv">300</span>, <span class="dv">400</span>),</span>
-<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<div id="cell-46" class="cell" data-execution_count="12">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Hyperparameters</strong></pre>
-</div>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># How many resets we're running for.</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>total_episodes <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="co"># The starting constants</span></span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>rand <span class="op">=</span> <span class="fl">.4</span> <span class="co"># Percent</span></span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="co"># The starting rates will always be the highest</span></span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>rot <span class="op">=</span> env.rot_rate</span>
-<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>shift <span class="op">=</span> env.shift_rate</span>
-<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a><span class="co"># The smallest they're allowed to get</span></span>
-<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>_min_rand <span class="op">=</span> <span class="fl">.01</span> <span class="co"># percent</span></span>
-<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>_min_rot <span class="op">=</span> <span class="fl">.0001</span></span>
-<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>_min_shift <span class="op">=</span> <span class="fl">.0001</span></span>
-<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a><span class="co"># How much we allow the probability to be modified, based on the score difference</span></span>
-<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>rand_modify_limit <span class="op">=</span> <span class="kw">lambda</span> rand: rand <span class="op">*</span> <span class="fl">.5</span></span>
-<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a><span class="co"># The steps at which each phase starts and ends</span></span>
-<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a><span class="co"># This is disabled at the moment: I found it tended to hinder more than help</span></span>
-<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a>overlap_phase <span class="op">=</span> (env.max_steps <span class="op">*</span> <span class="dv">2</span>, <span class="op">-</span><span class="dv">1</span>)</span>
-<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Specify a manual rand value while in the overlap_phase (to encourage exploration)</span></span>
-<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a>overlap_phase_rand <span class="op">=</span> rand</span>
-<span id="cb30-24"><a href="#cb30-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-25"><a href="#cb30-25" aria-hidden="true" tabindex="-1"></a><span class="co"># The cooldown functions</span></span>
-<span id="cb30-26"><a href="#cb30-26" aria-hidden="true" tabindex="-1"></a><span class="co"># These specify how we want to "cooldown" or decrease the values rand, rot, and shift over steps</span></span>
-<span id="cb30-27"><a href="#cb30-27" aria-hidden="true" tabindex="-1"></a><span class="co"># There's a lot of oppritunity for tuning these functions. In particular, I want to expirement with</span></span>
-<span id="cb30-28"><a href="#cb30-28" aria-hidden="true" tabindex="-1"></a><span class="co"># rot and shift functions that are "hilly", and increase and decrease the movement rates cyclicly.</span></span>
-<span id="cb30-29"><a href="#cb30-29" aria-hidden="true" tabindex="-1"></a>cooldown <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb30-30"><a href="#cb30-30" aria-hidden="true" tabindex="-1"></a>rand_func  <span class="op">=</span> <span class="kw">lambda</span> step: (</span>
-<span id="cb30-31"><a href="#cb30-31" aria-hidden="true" tabindex="-1"></a>    overlap_phase_rand</span>
-<span id="cb30-32"><a href="#cb30-32" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> step <span class="op">&gt;</span> overlap_phase[<span class="dv">0</span>] <span class="kw">and</span> step <span class="op">&lt;</span> overlap_phase[<span class="dv">1</span>]</span>
-<span id="cb30-33"><a href="#cb30-33" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> np.clip(<span class="op">-</span><span class="fl">.000004</span><span class="op">*</span>step  <span class="op">+</span> rand,  _min_rand, rand)</span>
-<span id="cb30-34"><a href="#cb30-34" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb30-35"><a href="#cb30-35" aria-hidden="true" tabindex="-1"></a>rot_func   <span class="op">=</span> <span class="kw">lambda</span> step: np.clip(<span class="op">-</span><span class="fl">.0000006</span><span class="op">*</span>step <span class="op">+</span> rot,   _min_rot, rot)</span>
-<span id="cb30-36"><a href="#cb30-36" aria-hidden="true" tabindex="-1"></a>shift_func <span class="op">=</span> <span class="kw">lambda</span> step: np.clip(<span class="op">-</span><span class="fl">.0000008</span><span class="op">*</span>step <span class="op">+</span> shift, _min_shift, shift)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<div id="cell-47" class="cell" data-execution_count="13">
-<details class="code-fold">
-<summary>Make a graph of the cooldown rates</summary>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array(<span class="bu">range</span>(<span class="dv">1</span>, env.max_steps <span class="cf">if</span> env.max_steps <span class="op">&gt;</span> <span class="dv">1</span> <span class="cf">else</span> <span class="dv">100_000</span>))</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>plt.plot(x, <span class="bu">list</span>(<span class="bu">map</span>(rand_func, x)), label<span class="op">=</span><span class="st">'random cooldown'</span>)</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>plt.plot(x, rot_func(x), label<span class="op">=</span><span class="st">'rotation cooldown'</span>)</span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>plt.plot(x, shift_func(x), label<span class="op">=</span><span class="st">'shift cooldown'</span>)</span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-27-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<div id="cell-48" class="cell" data-execution_count="14">
-<details class="code-fold">
-<summary>Show our configuration in the window</summary>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>env.show_strings <span class="op">=</span> [</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'-------------------------'</span>,</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Env Config:'</span>,</span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'Number of Squares: </span><span class="sc">{</span>env<span class="sc">.</span>N<span class="sc">}</span><span class="ss">'</span>,</span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'Max Steps: </span><span class="sc">{</span>env<span class="sc">.</span>max_steps<span class="sc">}</span><span class="ss">'</span>,</span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'Max Overlap: </span><span class="sc">{</span>env<span class="sc">.</span>max_overlap<span class="sc">}</span><span class="ss">'</span>,</span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'Shift Rate: </span><span class="sc">{</span>env<span class="sc">.</span>shift_rate<span class="sc">}</span><span class="ss">'</span>,</span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'Rotation Rate: </span><span class="sc">{</span>env<span class="sc">.</span>rot_rate<span class="sc">}</span><span class="ss">'</span>,</span>
-<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'Start Config: </span><span class="sc">{</span>env<span class="sc">.</span>start_config<span class="sc">}</span><span class="ss">'</span>,</span>
-<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'Boundary: </span><span class="sc">{</span>env<span class="sc">.</span>boundary<span class="sc">}</span><span class="ss">'</span>,</span>
-<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'Bound Method: </span><span class="sc">{</span>env<span class="sc">.</span>bound_method<span class="sc">}</span><span class="ss">'</span>,</span>
-<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">'-------------------------'</span>,</span>
-<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div id="cell-49" class="cell" data-execution_count="15">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Main Loop</strong></pre>
-</div>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To store reward history of each episode (for plotting)</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>reward_lists <span class="op">=</span> []</span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>overlap_lists <span class="op">=</span> []</span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>best_state_yet <span class="op">=</span> <span class="va">None</span></span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>best_reward_yet <span class="op">=</span> <span class="op">-</span><span class="dv">10000000000</span></span>
-<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Ensure this is set at the beginning of each new run</span></span>
-<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>env.disallow_overlap <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
-<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Run through `total_episodes` number of enviorment resets</span></span>
-<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> ep <span class="kw">in</span> <span class="bu">range</span>(total_episodes):</span>
-<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>        prev_state, _ <span class="op">=</span> env.reset()</span>
-<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>        prev_reward <span class="op">=</span> env._get_reward()</span>
-<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>        episodic_reward <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a>        reward_lists.append([])</span>
-<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a>        overlap_lists.append([<span class="dv">0</span>])</span>
-<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a>        start_time <span class="op">=</span> time.time_ns()</span>
-<span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-19"><a href="#cb33-19" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Run/step through a single episodes</span></span>
-<span id="cb33-20"><a href="#cb33-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> step <span class="kw">in</span> it.count(<span class="dv">1</span>):</span>
-<span id="cb33-21"><a href="#cb33-21" aria-hidden="true" tabindex="-1"></a>            env.render()</span>
-<span id="cb33-22"><a href="#cb33-22" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Calculate the cooldown values for this step</span></span>
-<span id="cb33-23"><a href="#cb33-23" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Underscored variables here indicate variables that get reset each step</span></span>
-<span id="cb33-24"><a href="#cb33-24" aria-hidden="true" tabindex="-1"></a>            _rand <span class="op">=</span> rand_func(step) <span class="cf">if</span> cooldown <span class="cf">else</span> rand</span>
-<span id="cb33-25"><a href="#cb33-25" aria-hidden="true" tabindex="-1"></a>            _shift <span class="op">=</span> shift_func(step) <span class="cf">if</span> cooldown <span class="cf">else</span> shift</span>
-<span id="cb33-26"><a href="#cb33-26" aria-hidden="true" tabindex="-1"></a>            _rot <span class="op">=</span> rot_func(step) <span class="cf">if</span> cooldown <span class="cf">else</span> rot</span>
-<span id="cb33-27"><a href="#cb33-27" aria-hidden="true" tabindex="-1"></a>            _overlap_phase <span class="op">=</span> step <span class="op">&gt;</span> overlap_phase[<span class="dv">0</span>] <span class="kw">and</span> step <span class="op">&lt;</span> overlap_phase[<span class="dv">1</span>]</span>
-<span id="cb33-28"><a href="#cb33-28" aria-hidden="true" tabindex="-1"></a>            _rand_limit <span class="op">=</span> rand_modify_limit(_rand)</span>
-<span id="cb33-29"><a href="#cb33-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-30"><a href="#cb33-30" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Allow overlap, if we're in the overlap phase</span></span>
-<span id="cb33-31"><a href="#cb33-31" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> _overlap_phase:</span>
-<span id="cb33-32"><a href="#cb33-32" aria-hidden="true" tabindex="-1"></a>                env.disallow_overlap <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb33-33"><a href="#cb33-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-34"><a href="#cb33-34" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Make a random action</span></span>
-<span id="cb33-35"><a href="#cb33-35" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Only move one square at a time: if we move all at the same time, then 3 of them might</span></span>
-<span id="cb33-36"><a href="#cb33-36" aria-hidden="true" tabindex="-1"></a>            <span class="co"># be really good moves, but one is a bad move that invalidates all of them.</span></span>
-<span id="cb33-37"><a href="#cb33-37" aria-hidden="true" tabindex="-1"></a>            action <span class="op">=</span> np.zeros((env.N, <span class="dv">3</span>))</span>
-<span id="cb33-38"><a href="#cb33-38" aria-hidden="true" tabindex="-1"></a>            action[randint(<span class="dv">0</span>, env.N<span class="op">-</span><span class="dv">1</span>)] <span class="op">=</span> [</span>
-<span id="cb33-39"><a href="#cb33-39" aria-hidden="true" tabindex="-1"></a>                <span class="co"># </span><span class="al">TODO</span><span class="co">: Next, I want to try expirmenting with other statistical distrobutions</span></span>
-<span id="cb33-40"><a href="#cb33-40" aria-hidden="true" tabindex="-1"></a>                random.uniform(<span class="op">-</span>_shift, _shift),</span>
-<span id="cb33-41"><a href="#cb33-41" aria-hidden="true" tabindex="-1"></a>                random.uniform(<span class="op">-</span>_shift, _shift),</span>
-<span id="cb33-42"><a href="#cb33-42" aria-hidden="true" tabindex="-1"></a>                random.uniform(<span class="op">-</span>_rot, _rot),</span>
-<span id="cb33-43"><a href="#cb33-43" aria-hidden="true" tabindex="-1"></a>            ]</span>
-<span id="cb33-44"><a href="#cb33-44" aria-hidden="true" tabindex="-1"></a>            <span class="co"># </span><span class="al">TODO</span><span class="co">: optimization: we're flattening here to then immediately unflatten in the environment _step method</span></span>
-<span id="cb33-45"><a href="#cb33-45" aria-hidden="true" tabindex="-1"></a>            action <span class="op">=</span> action.flatten()</span>
-<span id="cb33-46"><a href="#cb33-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-47"><a href="#cb33-47" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Recieve state and reward from environment</span></span>
-<span id="cb33-48"><a href="#cb33-48" aria-hidden="true" tabindex="-1"></a>            state, reward, done, _, info <span class="op">=</span> env.step(action)</span>
-<span id="cb33-49"><a href="#cb33-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-50"><a href="#cb33-50" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Modify the chance of accepting the change based on the amount of reward difference: but limit to between</span></span>
-<span id="cb33-51"><a href="#cb33-51" aria-hidden="true" tabindex="-1"></a>            <span class="co"># +/- _rand_limit, since a negative percentage doesn't make much sense, and we still want some randomness</span></span>
-<span id="cb33-52"><a href="#cb33-52" aria-hidden="true" tabindex="-1"></a>            _chance <span class="op">=</span> _rand <span class="op">+</span> np.clip((prev_reward <span class="op">-</span> reward) <span class="op">*</span> <span class="dv">10</span>, <span class="op">-</span>_rand_limit, _rand_limit)</span>
-<span id="cb33-53"><a href="#cb33-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-54"><a href="#cb33-54" aria-hidden="true" tabindex="-1"></a>            <span class="co"># If we're overlapping more than we were before, minimize the odds that we'll keep the movement</span></span>
-<span id="cb33-55"><a href="#cb33-55" aria-hidden="true" tabindex="-1"></a>            <span class="co"># </span><span class="al">NOTE</span><span class="co">: We can't set _chance to 0 here, or else once we overlap during the overlap phase, we won't be able</span></span>
-<span id="cb33-56"><a href="#cb33-56" aria-hidden="true" tabindex="-1"></a>            <span class="co"># to get out</span></span>
-<span id="cb33-57"><a href="#cb33-57" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="kw">not</span> _overlap_phase <span class="kw">and</span> info[<span class="st">'overlap'</span>] <span class="op">&gt;</span> overlap_lists[ep][<span class="op">-</span><span class="dv">1</span>]:</span>
-<span id="cb33-58"><a href="#cb33-58" aria-hidden="true" tabindex="-1"></a>                _chance <span class="op">=</span> _rand <span class="op">-</span> _rand_limit</span>
-<span id="cb33-59"><a href="#cb33-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-60"><a href="#cb33-60" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> (</span>
-<span id="cb33-61"><a href="#cb33-61" aria-hidden="true" tabindex="-1"></a>                (</span>
-<span id="cb33-62"><a href="#cb33-62" aria-hidden="true" tabindex="-1"></a>                    <span class="co"># If we're overlaping at all, and it's not the overlap phase, or if our current state is worse than</span></span>
-<span id="cb33-63"><a href="#cb33-63" aria-hidden="true" tabindex="-1"></a>                    <span class="co"># the one before we made the move, undo the move we just took `_chance`% of the time.</span></span>
-<span id="cb33-64"><a href="#cb33-64" aria-hidden="true" tabindex="-1"></a>                    <span class="co"># We don't want to do it *all* the time, because we'd quickly only find the local minumum.</span></span>
-<span id="cb33-65"><a href="#cb33-65" aria-hidden="true" tabindex="-1"></a>                    <span class="co"># This is the premise of simulated annealing</span></span>
-<span id="cb33-66"><a href="#cb33-66" aria-hidden="true" tabindex="-1"></a>                    (info[<span class="st">'overlap'</span>] <span class="op">&gt;</span> <span class="dv">0</span> <span class="kw">and</span> <span class="kw">not</span> _overlap_phase)</span>
-<span id="cb33-67"><a href="#cb33-67" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">or</span></span>
-<span id="cb33-68"><a href="#cb33-68" aria-hidden="true" tabindex="-1"></a>                    reward <span class="op">&lt;</span> prev_reward</span>
-<span id="cb33-69"><a href="#cb33-69" aria-hidden="true" tabindex="-1"></a>                )</span>
-<span id="cb33-70"><a href="#cb33-70" aria-hidden="true" tabindex="-1"></a>                <span class="kw">and</span> <span class="kw">not</span> percent(_chance)</span>
-<span id="cb33-71"><a href="#cb33-71" aria-hidden="true" tabindex="-1"></a>            ):</span>
-<span id="cb33-72"><a href="#cb33-72" aria-hidden="true" tabindex="-1"></a>                <span class="co"># Step back - undo what we just did</span></span>
-<span id="cb33-73"><a href="#cb33-73" aria-hidden="true" tabindex="-1"></a>                state, reward, done, _, info <span class="op">=</span> env.step(<span class="op">-</span>action)</span>
-<span id="cb33-74"><a href="#cb33-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-75"><a href="#cb33-75" aria-hidden="true" tabindex="-1"></a>            <span class="co"># If we've finished the overlap phase, and we've gotten to a point where we're no longer overlapping,</span></span>
-<span id="cb33-76"><a href="#cb33-76" aria-hidden="true" tabindex="-1"></a>            <span class="co"># disable overlap again</span></span>
-<span id="cb33-77"><a href="#cb33-77" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="kw">not</span> env.disallow_overlap <span class="kw">and</span> <span class="kw">not</span> info[<span class="st">'overlap'</span>]:</span>
-<span id="cb33-78"><a href="#cb33-78" aria-hidden="true" tabindex="-1"></a>                env.disallow_overlap <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb33-79"><a href="#cb33-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-80"><a href="#cb33-80" aria-hidden="true" tabindex="-1"></a>            <span class="co"># ------------------ Not part of the algorithm --------------------</span></span>
-<span id="cb33-81"><a href="#cb33-81" aria-hidden="true" tabindex="-1"></a>            reward_lists[ep].append(reward)</span>
-<span id="cb33-82"><a href="#cb33-82" aria-hidden="true" tabindex="-1"></a>            overlap_lists[ep].append(info[<span class="st">'overlap'</span>])</span>
-<span id="cb33-83"><a href="#cb33-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-84"><a href="#cb33-84" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> best_reward_yet <span class="op">&lt;</span> reward:</span>
-<span id="cb33-85"><a href="#cb33-85" aria-hidden="true" tabindex="-1"></a>                best_state_yet <span class="op">=</span> state</span>
-<span id="cb33-86"><a href="#cb33-86" aria-hidden="true" tabindex="-1"></a>                best_reward_yet <span class="op">=</span> reward</span>
-<span id="cb33-87"><a href="#cb33-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-88"><a href="#cb33-88" aria-hidden="true" tabindex="-1"></a>            episodic_reward <span class="op">+=</span> reward</span>
-<span id="cb33-89"><a href="#cb33-89" aria-hidden="true" tabindex="-1"></a>            env.<span class="bu">print</span>[<span class="st">'e'</span>] <span class="op">=</span> <span class="ss">f'Episode </span><span class="sc">{</span>env<span class="sc">.</span>reset_count<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>total_episodes<span class="sc">}</span><span class="ss">:'</span></span>
-<span id="cb33-90"><a href="#cb33-90" aria-hidden="true" tabindex="-1"></a>            env.<span class="bu">print</span>[<span class="st">'step'</span>] <span class="op">=</span> <span class="ss">f'Step: </span><span class="sc">{</span>step<span class="sc">:.0f}</span><span class="ss">'</span></span>
-<span id="cb33-91"><a href="#cb33-91" aria-hidden="true" tabindex="-1"></a>            env.<span class="bu">print</span>[<span class="st">'reward'</span>] <span class="op">=</span> <span class="ss">f'Reward: </span><span class="sc">{</span>reward<span class="sc">:.3f}</span><span class="ss">'</span></span>
-<span id="cb33-92"><a href="#cb33-92" aria-hidden="true" tabindex="-1"></a>            env.<span class="bu">print</span>[<span class="st">'overlap'</span>] <span class="op">=</span> <span class="ss">f'Overlap: </span><span class="sc">{</span>info[<span class="st">"overlap"</span>]<span class="sc">:.5f}</span><span class="ss">'</span></span>
-<span id="cb33-93"><a href="#cb33-93" aria-hidden="true" tabindex="-1"></a>            env.<span class="bu">print</span>[<span class="st">'len'</span>] <span class="op">=</span> <span class="ss">f'Side Length: </span><span class="sc">{</span>info[<span class="st">"len"</span>]<span class="sc">:.1f}</span><span class="ss">'</span></span>
-<span id="cb33-94"><a href="#cb33-94" aria-hidden="true" tabindex="-1"></a>            env.<span class="bu">print</span>[<span class="st">'wasted'</span>] <span class="op">=</span> <span class="ss">f'Wasted Space: </span><span class="sc">{</span>info[<span class="st">"wasted"</span>]<span class="sc">:.1f}</span><span class="ss">'</span></span>
-<span id="cb33-95"><a href="#cb33-95" aria-hidden="true" tabindex="-1"></a>            env.<span class="bu">print</span>[<span class="st">'_rand'</span>] <span class="op">=</span> <span class="ss">f'annealing coeff: </span><span class="sc">{</span>_rand<span class="sc">:.5f}</span><span class="ss">'</span></span>
-<span id="cb33-96"><a href="#cb33-96" aria-hidden="true" tabindex="-1"></a>            env.<span class="bu">print</span>[<span class="st">'_shift'</span>] <span class="op">=</span> <span class="ss">f'shift rate: </span><span class="sc">{</span>_shift<span class="sc">:.5f}</span><span class="ss">'</span></span>
-<span id="cb33-97"><a href="#cb33-97" aria-hidden="true" tabindex="-1"></a>            env.<span class="bu">print</span>[<span class="st">'_rot'</span>] <span class="op">=</span> <span class="ss">f'rotation rate: </span><span class="sc">{</span>_rot<span class="sc">:.5f}</span><span class="ss">'</span></span>
-<span id="cb33-98"><a href="#cb33-98" aria-hidden="true" tabindex="-1"></a>            env.<span class="bu">print</span>[<span class="st">'avg reward'</span>] <span class="op">=</span> <span class="ss">f'Avg. Reward for This Episode: </span><span class="sc">{</span>episodic_reward<span class="op">/</span>step<span class="sc">:.2f}</span><span class="ss">'</span></span>
-<span id="cb33-99"><a href="#cb33-99" aria-hidden="true" tabindex="-1"></a>            env.<span class="bu">print</span>[<span class="st">'phase'</span>] <span class="op">=</span> <span class="ss">f"Phase: </span><span class="sc">{</span><span class="st">'Overlap'</span> <span class="cf">if</span> _overlap_phase <span class="cf">else</span> <span class="st">'Main'</span><span class="sc">}</span><span class="ss">"</span></span>
-<span id="cb33-100"><a href="#cb33-100" aria-hidden="true" tabindex="-1"></a>            env.<span class="bu">print</span>[<span class="st">'eee'</span>] <span class="op">=</span> <span class="ss">f'_rand: </span><span class="sc">{</span>_chance<span class="sc">:.2%}</span><span class="ss">'</span></span>
-<span id="cb33-101"><a href="#cb33-101" aria-hidden="true" tabindex="-1"></a>            env.<span class="bu">print</span>[<span class="st">'j'</span>] <span class="op">=</span> <span class="ss">f'</span><span class="sc">{</span>((time.time_ns() <span class="op">-</span> start_time)<span class="op">/</span><span class="dv">1000_000</span>) <span class="op">/</span> step<span class="sc">:.2f}</span><span class="ss">ms / step'</span></span>
-<span id="cb33-102"><a href="#cb33-102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-103"><a href="#cb33-103" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> done: <span class="cf">break</span></span>
-<span id="cb33-104"><a href="#cb33-104" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-105"><a href="#cb33-105" aria-hidden="true" tabindex="-1"></a>            prev_state <span class="op">=</span> state</span>
-<span id="cb33-106"><a href="#cb33-106" aria-hidden="true" tabindex="-1"></a>            prev_reward <span class="op">=</span> reward</span>
-<span id="cb33-107"><a href="#cb33-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-108"><a href="#cb33-108" aria-hidden="true" tabindex="-1"></a><span class="cf">finally</span>:</span>
-<span id="cb33-109"><a href="#cb33-109" aria-hidden="true" tabindex="-1"></a>    env.close()</span>
-<span id="cb33-110"><a href="#cb33-110" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> best_reward_yet <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
-<span id="cb33-111"><a href="#cb33-111" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Make the graph, and display some of the output</span></span>
-<span id="cb33-112"><a href="#cb33-112" aria-hidden="true" tabindex="-1"></a>        env.display()</span>
-<span id="cb33-113"><a href="#cb33-113" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-114"><a href="#cb33-114" aria-hidden="true" tabindex="-1"></a>        fig, ax1 <span class="op">=</span> plt.subplots()</span>
-<span id="cb33-115"><a href="#cb33-115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-116"><a href="#cb33-116" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> ep, i <span class="kw">in</span> <span class="bu">enumerate</span>(reward_lists):</span>
-<span id="cb33-117"><a href="#cb33-117" aria-hidden="true" tabindex="-1"></a>            ax1.plot(i, label<span class="op">=</span><span class="ss">f'Episode </span><span class="sc">{</span>ep<span class="sc">}</span><span class="ss"> reward'</span>)</span>
-<span id="cb33-118"><a href="#cb33-118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-119"><a href="#cb33-119" aria-hidden="true" tabindex="-1"></a>        ax2 <span class="op">=</span> ax1.twinx()</span>
-<span id="cb33-120"><a href="#cb33-120" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> np.array(<span class="bu">range</span>(<span class="bu">len</span>(<span class="bu">max</span>(reward_lists, key<span class="op">=</span><span class="bu">len</span>))))</span>
-<span id="cb33-121"><a href="#cb33-121" aria-hidden="true" tabindex="-1"></a>        ax2.plot(x, <span class="bu">list</span>(<span class="bu">map</span>(rand_func, x)), label<span class="op">=</span><span class="st">'random cooldown'</span>, alpha<span class="op">=</span><span class="fl">.4</span>)</span>
-<span id="cb33-122"><a href="#cb33-122" aria-hidden="true" tabindex="-1"></a>        ax2.plot(rot_func(x), label<span class="op">=</span><span class="st">'rotation cooldown'</span>, alpha<span class="op">=</span><span class="fl">.4</span>)</span>
-<span id="cb33-123"><a href="#cb33-123" aria-hidden="true" tabindex="-1"></a>        ax2.plot(shift_func(x), label<span class="op">=</span><span class="st">'shift cooldown'</span>, alpha<span class="op">=</span><span class="fl">.4</span>)</span>
-<span id="cb33-124"><a href="#cb33-124" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-125"><a href="#cb33-125" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> ep, i <span class="kw">in</span> <span class="bu">enumerate</span>(overlap_lists):</span>
-<span id="cb33-126"><a href="#cb33-126" aria-hidden="true" tabindex="-1"></a>            ax2.plot(i, label<span class="op">=</span><span class="ss">f'Episode </span><span class="sc">{</span>ep<span class="sc">}</span><span class="ss"> overlap'</span>)</span>
-<span id="cb33-127"><a href="#cb33-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-128"><a href="#cb33-128" aria-hidden="true" tabindex="-1"></a>        ax1.legend()</span>
-<span id="cb33-129"><a href="#cb33-129" aria-hidden="true" tabindex="-1"></a>        ax2.legend()</span>
-<span id="cb33-130"><a href="#cb33-130" aria-hidden="true" tabindex="-1"></a>        <span class="co"># ax1.vlines(overlap_phase, -22, -3)</span></span>
-<span id="cb33-131"><a href="#cb33-131" aria-hidden="true" tabindex="-1"></a>        plt.show()</span>
-<span id="cb33-132"><a href="#cb33-132" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Best Reward yet: '</span>, best_reward_yet)</span>
-<span id="cb33-133"><a href="#cb33-133" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Best State:'</span>)</span>
-<span id="cb33-134"><a href="#cb33-134" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(best_state_yet)</span>
-<span id="cb33-135"><a href="#cb33-135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-136"><a href="#cb33-136" aria-hidden="true" tabindex="-1"></a>        display(space2MultiPolygon(best_state_yet.reshape((env.N,<span class="dv">3</span>)), <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell-output cell-output-display">
--------------------------<br>Env Config:<br>Number of Squares: 11<br>Max Steps: 100000<br>Max Overlap: 5<br>Shift Rate: 0.05<br>Rotation Rate: 0.03<br>Start Config: valid<br>Boundary: 0<br>Bound Method: mixed<br>-------------------------<br>Episode 1/5:<br>Step: 52448<br>Reward: -11.539<br>Overlap: 0.00000<br>Side Length: 4.2<br>Wasted Space: 7.1<br>annealing coeff: 0.19021<br>shift rate: 0.00804<br>rotation rate: 0.00010<br>Avg. Reward for This Episode: -12.29<br>Phase: Main<br>_rand: 19.02%<br>3.54ms / step
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-29-output-2.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Best Reward yet:  -11.518891815106914
-Best State:
-[1.9067411  2.83410673 1.39932259 3.95335793 2.83240421 1.42926158
- 3.78150918 1.84111496 1.4200476  2.4121759  3.81671359 1.51180279
- 2.73599934 1.73772966 1.40386619 1.1487546  3.8650075  1.15148525
- 3.64682191 0.80297015 1.51465789 0.87717524 2.79445247 1.38501421
- 3.42983218 3.90110032 1.54120871 2.90532481 2.73212222 1.39834545
- 1.62427682 1.73232981 0.07133306]</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-29-output-4.svg" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output cell-output-error">
-<pre><code>SystemExit: 0</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>/home/zeke/Software/miniconda3/envs/tf2/lib/python3.11/site-packages/IPython/core/interactiveshell.py:3585: UserWarning: To exit: use 'exit', 'quit', or Ctrl-D.
-  warn("To exit: use 'exit', 'quit', or Ctrl-D.", stacklevel=1)</code></pre>
-</div>
-</div>
-<p>This is a graph of when I tried using the <code>overlap_phase</code>. In the reward function, I disincentivized overlapping at all, and then additionally disincentivized the amount of overlap. As you can see, once overlap is allowed, it starts doing so, and the reward plumets. I don’t want to stop disincentivizing overlap during the overlap phase, because then it would quickly all collapse to the center. I ended up removing the overlap phase entirely based on this graph, because you can see the reward increasing, and suddenly dropping, and then rising back up to along the same curve as you can see in the graph above.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-51-1-image.png" class="img-fluid figure-img"></p>
-<figcaption>With an overlap phase</figcaption>
-</figure>
-</div>
+<p>If I had more time, and was willing to scrap everything and start over (I’m not right now, maybe later), I would try something similar to what’s described in (this YouTube video)</p>
 
 
-</section>
 </section>
 </section>
 
