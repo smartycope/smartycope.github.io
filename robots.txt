@@ -1,1 +1,1 @@
-Sitemap: https://smartycope.github.io/sitemap.xml
+Sitemap: https://smartycope.org/sitemap.xml
