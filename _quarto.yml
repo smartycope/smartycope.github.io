@@ -5,6 +5,8 @@ project:
     - "Resumé v6.1.2.ds.pdf"
     - leaflet.html
     - interactive_dygraph.html
+    - familyGraphs.ipynb
+
 
 website:
   title: "smartycope"
@@ -36,7 +38,7 @@ website:
   repo-url: https://github.com/smartycope/smartycope.github.io
   repo-actions: issue
   search: true
-  site-url: https://smartycope.github.io
+  site-url: https://smartycope.org
   open-graph: true
   other-links:
     - text: GitHub Profile
@@ -57,7 +59,7 @@ website:
       # icon: regex
       icon: dash
     - text: GeoDoodle
-      href: https://smartycope.github.io/geodoodle/
+      href: https://smartycope.org/geodoodle/
       # icon: easel2-fill
       icon: dash
     - text: Signature GitHub Repos
@@ -85,5 +87,8 @@ format:
       light: flatly
     css: styles.css
     code-fold: true
+    highlight-style: breeze
+    code-block-bg: false
+    code-block-border-left: true
     # author: Copeland Carter
     code-link: true
