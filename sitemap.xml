@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://smartycope.org/index.html</loc>
-    <lastmod>2024-07-10T22:03:18.920Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smartycope.org/posts/InstallingTensorflow/index.html</loc>
-    <lastmod>2024-07-10T22:03:18.952Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smartycope.org/posts/Rose/index.html</loc>
-    <lastmod>2024-07-10T22:03:18.952Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smartycope.org/about.html</loc>
-    <lastmod>2024-07-10T22:03:18.856Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smartycope.org/familyGraphs.html</loc>
-    <lastmod>2024-07-10T22:03:18.920Z</lastmod>
+    <loc>https://smartycope.org/posts/SquarePacking/index.html</loc>
+    <lastmod>2024-06-12T22:24:51.451Z</lastmod>
   </url>
   <url>
     <loc>https://smartycope.org/posts/GeoDoodle/index.html</loc>
-    <lastmod>2024-07-10T22:03:18.952Z</lastmod>
+    <lastmod>2024-06-12T22:25:14.893Z</lastmod>
   </url>
   <url>
     <loc>https://smartycope.org/posts/SeniorProject/index.html</loc>
-    <lastmod>2024-07-10T22:03:18.956Z</lastmod>
+    <lastmod>2024-07-10T22:02:27.567Z</lastmod>
   </url>
   <url>
-    <loc>https://smartycope.org/posts/SquarePacking/index.html</loc>
-    <lastmod>2024-07-10T22:03:18.960Z</lastmod>
+    <loc>https://smartycope.org/about.html</loc>
+    <lastmod>2024-06-12T22:23:23.951Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smartycope.org/index.html</loc>
+    <lastmod>2024-06-12T22:25:24.642Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smartycope.org/familyGraphs.html</loc>
+    <lastmod>2024-07-10T22:00:45.204Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smartycope.org/posts/Rose/index.html</loc>
+    <lastmod>2024-06-12T22:24:59.200Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smartycope.org/posts/InstallingTensorflow/index.html</loc>
+    <lastmod>2024-06-12T22:25:03.916Z</lastmod>
   </url>
 </urlset>
