@@ -240,6 +240,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>I went though several different versions of the reward function. Here’s my final version, with explanations of what each part is doing:</p>
 <div id="cell-5" class="cell" data-execution_count="19">
 <div class="code-with-filename">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="code-with-filename-file">
 <pre><strong>Reward Function</strong></pre>
 </div>
@@ -305,6 +307,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>                score <span class="op">-=</span> (math.e <span class="op">**</span> dist([x, y], [<span class="va">self</span>.search_space <span class="op">/</span> <span class="dv">2</span>, <span class="va">self</span>.search_space <span class="op">/</span> <span class="dv">2</span>]) <span class="op">*</span> centered_importance) <span class="op">/</span> <span class="va">self</span>.N</span>
 <span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> score</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </div>
 </section>
@@ -1278,6 +1281,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="configuration-enviorment" class="level3">
 <h3 class="anchored" data-anchor-id="configuration-enviorment">Configuration &amp; Enviorment</h3>
 <div id="cell-17" class="cell" data-execution_count="25">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instead of setting the envioronment up as a local package, which seems to be the standard,</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># I just import directly from the file</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1331,6 +1336,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a>display(upper_bound)</span>
 <span id="cb8-52"><a href="#cb8-52" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Min Value of an Action -&gt;"</span>)</span>
 <span id="cb8-53"><a href="#cb8-53" aria-hidden="true" tabindex="-1"></a>display(lower_bound)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Size of State Space -&gt; 33
 Size of Action Space -&gt; 33
@@ -1449,6 +1455,8 @@ Min Value of an Action -&gt;</code></pre>
 <h3 class="anchored" data-anchor-id="define-actor-critic-models">Define Actor &amp; Critic Models</h3>
 <p>These are the main actor and critic neural nets</p>
 <div id="cell-21" class="cell" data-execution_count="27">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tells a later cell to reset the weights (since we might have changed how we initialize them in</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># this cell)</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>INIT_WEIGHTS <span class="op">=</span> <span class="va">False</span></span>
@@ -1496,6 +1504,7 @@ Min Value of an Action -&gt;</code></pre>
 <span id="cb13-45"><a href="#cb13-45" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Outputs single value for give state-action</span></span>
 <span id="cb13-46"><a href="#cb13-46" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> tf.keras.Model([state_input, action_input], outputs)</span>
 <span id="cb13-47"><a href="#cb13-47" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> model</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <div id="cell-22" class="cell" data-execution_count="28">
 <details class="code-fold">
@@ -1510,11 +1519,14 @@ Min Value of an Action -&gt;</code></pre>
 </div>
 <p>Initialize the actor and critic models</p>
 <div id="cell-24" class="cell" data-execution_count="29">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>actor_model <span class="op">=</span> get_actor()</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>critic_model <span class="op">=</span> get_critic()</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>target_actor <span class="op">=</span> get_actor()</span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>target_critic <span class="op">=</span> get_critic()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <div id="cell-25" class="cell" data-execution_count="30">
 <details class="code-fold">
@@ -1537,6 +1549,8 @@ Min Value of an Action -&gt;</code></pre>
 <h3 class="anchored" data-anchor-id="hyperparameters">Hyperparameters</h3>
 <p>These are some of the easily tunable hyperparameters</p>
 <div id="cell-27" class="cell" data-execution_count="31">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Learning rate for actor-critic models</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Previously: .002</span></span>
@@ -1567,6 +1581,7 @@ Min Value of an Action -&gt;</code></pre>
 <span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a>reset_weights <span class="op">=</span> <span class="va">False</span></span>
 <span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a>reset_weights_once <span class="op">=</span> <span class="va">True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <div id="cell-28" class="cell" data-execution_count="32">
 <details class="code-fold">
@@ -1649,6 +1664,8 @@ Min Value of an Action -&gt;</code></pre>
 <p>This is the loop that actually runs the RL agent in the enviornment</p>
 <p>Using the cell above and some cell magic, this logs everything to a directory, so all the information is saved and reproducible</p>
 <div id="cell-33" class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>capture run</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co">#! REMEMBER: Don't forget to increment the run name</span></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1820,6 +1837,7 @@ Min Value of an Action -&gt;</code></pre>
 <span id="cb21-169"><a href="#cb21-169" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-170"><a href="#cb21-170" aria-hidden="true" tabindex="-1"></a>        <span class="co"># This saves the log to a directory named this</span></span>
 <span id="cb21-171"><a href="#cb21-171" aria-hidden="true" tabindex="-1"></a>        save_output(run, <span class="st">'run9'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section>
 <section id="example-log" class="level3">
@@ -1956,6 +1974,8 @@ ML Config:<br>gamma: 0.99<br>tau: 0.005<br>Buffer Capacity: 10000<br>Buffer Batc
 </div>
 <div id="cell-43" class="cell" data-execution_count="23">
 <div class="code-with-filename">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="code-with-filename-file">
 <pre><strong>Reward Function</strong></pre>
 </div>
@@ -1987,6 +2007,7 @@ ML Config:<br>gamma: 0.99<br>tau: 0.005<br>Buffer Capacity: 10000<br>Buffer Batc
 <span id="cb26-26"><a href="#cb26-26" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-27"><a href="#cb26-27" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-28"><a href="#cb26-28" aria-hidden="true" tabindex="-1"></a>SquareEnv._get_reward <span class="op">=</span> _get_reward</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </div>
 <div id="cell-44" class="cell" data-execution_count="24">
@@ -2016,6 +2037,8 @@ ML Config:<br>gamma: 0.99<br>tau: 0.005<br>Buffer Capacity: 10000<br>Buffer Batc
 </div>
 <div id="cell-45" class="cell" data-execution_count="25">
 <div class="code-with-filename">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="code-with-filename-file">
 <pre><strong>Configuration &amp; Enviorment</strong></pre>
 </div>
@@ -2038,10 +2061,13 @@ ML Config:<br>gamma: 0.99<br>tau: 0.005<br>Buffer Capacity: 10000<br>Buffer Batc
 <span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>    start_config<span class="op">=</span><span class="st">'valid'</span>,</span>
 <span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>    screen_size<span class="op">=</span>(<span class="dv">300</span>, <span class="dv">400</span>),</span>
 <span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </div>
 <div id="cell-46" class="cell" data-execution_count="26">
 <div class="code-with-filename">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="code-with-filename-file">
 <pre><strong>Hyperparameters</strong></pre>
 </div>
@@ -2081,6 +2107,7 @@ ML Config:<br>gamma: 0.99<br>tau: 0.005<br>Buffer Capacity: 10000<br>Buffer Batc
 <span id="cb29-34"><a href="#cb29-34" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb29-35"><a href="#cb29-35" aria-hidden="true" tabindex="-1"></a>rot_func   <span class="op">=</span> <span class="kw">lambda</span> step: np.clip(<span class="op">-</span><span class="fl">.0000002</span><span class="op">*</span>step <span class="op">+</span> rot,   _min_rot, rot)</span>
 <span id="cb29-36"><a href="#cb29-36" aria-hidden="true" tabindex="-1"></a>shift_func <span class="op">=</span> <span class="kw">lambda</span> step: np.clip(<span class="op">-</span><span class="fl">.0000003</span><span class="op">*</span>step <span class="op">+</span> shift, _min_shift, shift)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </div>
 <div id="cell-47" class="cell" data-execution_count="27">
@@ -2121,6 +2148,8 @@ ML Config:<br>gamma: 0.99<br>tau: 0.005<br>Buffer Capacity: 10000<br>Buffer Batc
 </div>
 <div id="cell-49" class="cell" data-execution_count="29">
 <div class="code-with-filename">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="code-with-filename-file">
 <pre><strong>Main Loop</strong></pre>
 </div>
@@ -2263,6 +2292,7 @@ ML Config:<br>gamma: 0.99<br>tau: 0.005<br>Buffer Capacity: 10000<br>Buffer Batc
 <span id="cb32-137"><a href="#cb32-137" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(best_state_yet)</span>
 <span id="cb32-138"><a href="#cb32-138" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-139"><a href="#cb32-139" aria-hidden="true" tabindex="-1"></a>        display(space2MultiPolygon(best_state_yet.reshape((env.N,<span class="dv">3</span>)), <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <div class="cell-output cell-output-display">
 -------------------------<br>Env Config:<br>Number of Squares: 11<br>Max Steps: 100000<br>Max Overlap: 5<br>Shift Rate: 0.05<br>Rotation Rate: 0.03<br>Start Config: valid<br>Boundary: 0<br>Bound Method: mixed<br>-------------------------<br>Episode 1/1:<br>Step: 83921<br>Reward: -11.434<br>Overlap: 0.00000<br>Side Length: 4.3<br>Wasted Space: 7.8<br>annealing coeff: 0.24824<br>shift rate: 0.02482<br>rotation rate: 0.01322<br>Avg. Reward for This Episode: -12.34<br>Phase: Main<br>_rand: 29.67%<br>3.66ms / step
@@ -2313,7 +2343,7 @@ Best State:
 <h2 class="anchored" data-anchor-id="summary-part-2">Summary Part 2</h2>
 <p>Using the simulated annealing method ended up working significantly better than the DDPG algorithm. You can actually see it making progress while it’s running, and while the reward values aren’t comparable, the graphs clearly show improvement while using simulated annealing as opposed to the DDPG algorithm.</p>
 <p>I wasn’t able to find a better configuration than the best known, the best I could do was ~4.276. However, I feel like there’s still untapped potential here. I only started on the 2nd algorithm in the last couple of days, and plan to continue to fine-tune it going forward.</p>
-<div id="cell-55" class="cell" data-execution_count="79">
+<div id="cell-55" class="cell" data-execution_count="80">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
