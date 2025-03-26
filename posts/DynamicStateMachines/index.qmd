@@ -1,0 +1,18 @@
+---
+title: "Dynamic State Machine"
+author: "Copeland Carter"
+date: "2025-03-26"
+categories: [projects, open source, python, published, highlighted]
+---
+
+A bit ago I was writing a project to automate the workflow for my job. What it quickly evolved into was a textual TUI that was just a customizeable text editor, and what amounted to an automated flowchart. I had a text box I could add text to so I could quickly jump through the flowchart and have it do things for me as I reached certain steps, keep track of what I was doing, and follow preset lines of logic depending on what inputs I gave it. Naturally, it started off as a bunch of if & match statements. I kept a flowchart in sync with it just for documentation, but eventually it became unmaintainable. I would make minor tweaks to it almost daily, and keeping the flowchart in pace with it was a huge headache.
+
+Of course my next step is to go see what other people have done. I found [transitions](https://pypi.org/project/transitions/) and [python-statemachine](https://pypi.org/project/python-statemachine/), both very good, mature projects. What they don't do however (as far as I could tell), is let you easily decide what state to go to next based on parameters given to the advancement function. It's possible in at least one of them (I don't remember which), but it was clunky, frustating, and less elegant that what I was already doing.
+
+So I made my own.
+
+I couldn't think up a witty name, so it's simply called [DynamicStateMachine](https://github.com/smartycope/DynamicStateMachine). I won't go into details on exactly how it works (see the README for that), but it basically lets you implement a state machine (flowchart) where you can use complex logic to decide which state to go to next. You define a bunch of states, which have values of any type, then you define an initial state, and then the transitions of how you go from one state to the next. Each state goes to either another state, or a function which returns which state (or other function) to go to next. You can also add before_* and after_* functions to allow states to have side effects. Then any parameters passed to the advancement function (`.next()`) get passed onto both the transition functions and the side effect functions.
+
+It works pretty well, and the best part is, it auto-generates flow charts for you, which is a huge help not only for documentation, but also debugging. If you generate a flowchart and there's steps not going anywhere, or by themselves, you know you forgot to connect something.
+
+It's still in beta, and it needs more tests, but it works for my current implementation!

@@ -2,7 +2,7 @@ project:
   type: website
   output-dir: docs
   resources:
-    - "Resumé v6.1.2.ds.pdf"
+    - "Resumé v6.5.0.se.pdf"
     - leaflet.html
     - interactive_dygraph.html
     - familyGraphs.ipynb
