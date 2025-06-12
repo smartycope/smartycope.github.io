@@ -3,9 +3,10 @@
     "listing": "/index.html",
     "items": [
       "/posts/InstallingTensorflow/index.html",
+      "/posts/DynamicStateMachines/index.html",
       "/posts/GeoDoodle/index.html",
-      "/posts/SeniorProject/index.html",
       "/posts/SquarePacking/index.html",
+      "/posts/SeniorProject/index.html",
       "/posts/Rose/index.html"
     ]
   }
