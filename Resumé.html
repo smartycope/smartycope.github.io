@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Copeland Carter - Resume</title>
+  <style>
+    * {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'xkcd-script';
+    /* src: url('./fonts/xkcd-script.ttf') format('truetype'); */
+    src: url('xkcd-script.ttf') format('truetype');
+}
+
+
+body {
+    /* font-family: Arial, sans-serif; */
+    /* font-family: 'Georgia', serif; */
+    /* font-family: 'xkcd-script', sans-serif; */
+    font-family: 'Lato', sans-serif;
+    font-size: 10pt;
+    /* margin: 0 auto; */
+    /* margin: 0 auto; */
+    /* padding: 2em; */
+    margin: 1cm;
+    max-width: 850px;
+    color: #000;
+}
+
+h1, h2, h3 {
+    font-family: 'xkcd-script', sans-serif;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+    border-bottom: 2px solid #000;
+    padding-bottom: 4px;
+    margin-top: 1.15em;
+}
+
+/* h3 { */
+    /* font-size: 1.5em; */
+    /* margin-top: 1.5em; */
+/* } */
+
+.header {
+    width: 100%;
+    margin: 0em;
+}
+
+.header img {
+    width: 80px;
+    height: 80px;
+}
+
+#personal-icon{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 95px;
+    height: 95px;
+    /* opacity: 0.9; */
+}
+
+.mini-icon{
+    width: 20px;
+    height: 20px;
+    translate: 0px 5px;
+}
+
+.skill-desc-icon{
+    /* translate: 0px 5px; */
+    width: 18px;
+    height: 18px;
+    /* Wrap words around them */
+    /* float: left; */
+    margin-right: 4px;
+    margin-left: 4px;
+    vertical-align: middle;
+}
+
+.contact-info {
+    margin-top: 0.5em;
+    font-size: 1em;
+    text-align: center;
+}
+
+.section {
+    margin-bottom: 1.5em;
+}
+
+#skills-section {
+    margin-top: 1em;
+}
+
+.section-title{
+    font-size: 1.15em;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+#geodoodle-icon{
+    float: left;
+}
+
+#github-icon2{
+    /* float: inline-start; */
+    /* position: ab; */
+    
+}
+
+
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding-left: 1.2em;
+}
+
+li {
+    margin-bottom: 0.3em;
+}
+
+.skills-columns {
+    display: grid;
+    /* I don't know how this works, but it does */
+    /* grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); */
+    grid-template-columns: 50% 50%;
+    gap: 0.5em 1.5em;
+    margin-top: 0.5em;
+}
+
+.skills-columns div {
+    white-space: pre-wrap;
+}
+
+#name{
+    font-family: 'Cambria Math', serif;
+    font-size: 28pt;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 0.1em;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+#title{
+    font-size: 14pt; 
+    text-align: center;
+    font-weight: normal;
+    margin-bottom: 0.1em;
+    margin-top: 0.1em;
+    color: #d6d4d4;
+}
+
+.section-desc{
+    /* text-align: right; */
+    float: right;
+    font-weight: normal;
+    color: #494747;
+    /* italicize */
+    font-style: italic;
+}
+
+.soft-skill-bullets{
+
+}
+
+@media print {
+    body {
+        padding: 0;
+    }
+
+    .page-break {
+        page-break-before: always;
+    }
+}
+
+@page {
+    /* size: a6 portrait; */
+    size: 8.5in 11in;
+    /* The margin, if any, is handled by the body */
+    margin: 0cm;
+}
+
+  </style>
+</head>
+<body>
+  <img id="personal-icon" src="https://github.com/smartycope/geodoodle/blob/master/logo512.png?raw=true" alt="Personal Icon">
+
+  <div class="header">
+    <h1 id="name">Copeland Carter</h1>
+    <h2 id="title">Software Engineer | Backend Developer</h2>
+  </div>
+
+  <div class="contact-info">
+    <svg class="mini-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02z"></path></svg>
+    (208) 513-0110 |
+    <svg class="mini-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m0 4-8 5-8-5V6l8 5 8-5z"></path></svg>
+    <a href="mailto:smartycope@gmail.com">smartycope@gmail.com</a> |
+    <svg class="mini-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg>
+    <a href="https://github.com/smartycope">github.com/smartycope</a> |
+    <svg class="mini-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2m6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56M12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96M4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56m2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8M12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96M14.34 14H9.66c-.09-.66-.16-1.32-.16-2s.07-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2m.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56M16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2z"></path></svg>
+    <a href="https://smartycope.org">smartycope.org</a>
+  </div>
+
+  <div class="section" id="skills-section">
+    <h2>Skills</h2>
+    <ul class="skills-columns">
+      <li><strong>Languages</strong>: Python, TypeScript, R, HTML/CSS</li>
+<li><strong>CI/CD</strong>: Git, Bash Scripting, Jira, Docker</li>
+<li><strong>Backend</strong>: Django, Databases, Linux, REST APIs</li>
+<li><strong>Frontend</strong>: React/JSX, UI/UX, GitHub Pages</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Education</h2>
+    <p class="section-title"><strong>Brigham Young University - Idaho</strong>  <span class="section-desc">Student | April 2019 - July 2024</span><br>
+    <p style="font-style: italic;">Graduated with a Bachelor's in <strong>Computer Engineering</strong> with a <strong>Machine Learning</strong> Certificate</p>
+  </div>
+
+  <div class="section">
+    <h2>Experience</h2>
+    
+    <p class="section-title"><strong>EZRegex</strong> <span class="section-desc"><img class="skill-desc-icon" src="https://ezregex.org/favicon.png" alt="EZRegex Icon"> <a href="https://ezregex.org">ezregex.org</a> | <span><img class="skill-desc-icon" src="https://docs.python.org/3/_static/py.svg" alt="Python Icon"></span> <a href="https://pypi.org/project/ezregex/">pypi.org/project/ezregex</a></span></p>
+    <ul>
+    <li>Developed EZRegex from scratch, a <strong>Python</strong> library that greatly simplifies Regular Expression syntax</li>
+<li>Includes a web frontend which hosts a suite of tools to aid the development of <strong>Regular Expressions</strong></li>
+    </ul>
+    
+
+    <p class="section-title"><strong>GeoDoodle</strong> <span class="section-desc"><img id="geodoodle-icon" class="skill-desc-icon" src="https://github.com/smartycope/geodoodle/blob/master/logo192.png?raw=true" alt="GeoDoodle Icon"> <a href="https://smartycope.org/geodoodle">smartycope.org/geodoodle</a> | <span><svg id="github-icon2" class="skill-desc-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></span> <a href="https://github.com/smartycope/geodoodle">github.com/smartycope/geodoodle</a></span></p>
+    <ul>
+    <li>Developed a <strong>web app</strong> allowing users to create unique patterns on a graph paper-like interface</li>
+<li>Designed an intuitive frontend with features like drawing, repeating, and seamless pattern export</li>
+    </ul>
+    
+
+    <p class="section-title"><strong>Senior Project</strong> <span class="section-desc">Custom Machine Learning Environment and Algorithms</span></p>
+    <ul>
+    <li>Designed a custom gym environment from scratch to attempt to solve the Square Packing problem</li>
+<li>Developed 2 <strong>custom algorithms</strong>, using ML and simulated annealing to attempt to find a better configuration than the best-known configuration for N=11 squares</li>
+    </ul>
+    
+  </div>
+
+  <div class="section">
+    <h2>Work Experience</h2>
+    
+    <p class="section-title"><strong>Acer Service Corporation</strong> <span class="section-desc">Certified Repair Technician | December 2024 - June 2025</span></p>
+    <ul>
+    <li>Fixed iRobot Roombas, diagnosing problems, debugging <strong>firmware</strong>, and writing detailed reports</li>
+<li>Wrote <strong>custom software</strong> to streamline my daily workflow, increasing efficiency by more than 30%</li>
+<li>Communicate effectively with clients while efficiently managing data between several internal platforms</li>
+    </ul>
+    
+
+    <p class="section-title"><strong>Accendero Software</strong> <span class="section-desc">Software Engineering Intern | February 2024 - July 2024</span></p>
+    <ul>
+    <li>Worked as part of a team of engineers to develop both the frontend and backend of a research-oriented pharmaceutical software suite for clients</li>
+<li>Developed a complex Python <strong>Django</strong> API framework and successfully tested it to meet client requirements</li>
+<li>Developed and tested a large <strong>React</strong> TypeScript web application using CI/CD to maintain client satisfaction</li>
+    </ul>
+    
+  </div>
+
+  <div class="section">
+    <h2>Soft Skills</h2>
+    <ul class="soft-skill-bullets">
+    <li><strong>Quick Learner</strong>: Contributed meaningful JavaScript commits at Accendero after a single week of learning the language</li>
+<li><strong>Technical Writing</strong>: Generated dozens of detailed repair summaries daily, ensuring traceability and transparency of work</li>
+<li><strong>Honesty</strong>: While proficient in AI tools, all projects listed above were completed independently, without AI assistance</li>
+    </ul>
+  </div>
+</body>
+</html>

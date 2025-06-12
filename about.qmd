@@ -11,7 +11,7 @@ about:
       text: Github
       href: https://github.com/smartycope
     - text: Resumé
-      href: "Resumé v6.5.0.ds.pdf"
+      href: "Resumé.html"
       icon: file-earmark-person
     - icon: envelope
       href: emailto:smartycope@gmail.com

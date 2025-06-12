@@ -2,7 +2,7 @@ project:
   type: website
   output-dir: docs
   resources:
-    - "Resumé v6.5.0.se.pdf"
+    - "Resumé.html"
     - leaflet.html
     - interactive_dygraph.html
     - familyGraphs.ipynb
@@ -48,7 +48,7 @@ website:
       href: https://www.linkedin.com/in/smartycope/
       icon: linkedin
     - text: My Resumé
-      href: "Resumé v6.1.2.ds.pdf"
+      href: "Resumé.html"
       # href: resume.pdf
       icon: file-earmark-person
     - text: Live Projects
