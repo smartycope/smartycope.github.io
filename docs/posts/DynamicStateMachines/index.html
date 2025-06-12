@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Copeland Carter">
+<meta name="dcterms.date" content="2025-03-26">
 
-<title>Copeland Carter’s Blog – smartycope</title>
+<title>Dynamic State Machine – smartycope</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,28 +25,26 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./profile.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-52a0159e1581fd4d72d8415155fb0da6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-ea1927976867d204696f42d67f09f72e.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3d36704cff58eb79fe9e17b1f93c390c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-7bcb0394d5602b37c1ac0b9e81147cca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../profile.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-52a0159e1581fd4d72d8415155fb0da6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-ea1927976867d204696f42d67f09f72e.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-e2c6de07ac4b5c80ae9c74f472e9cbf7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-facce4ec0b8cd62d1f2eff0552d5e1ff.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -72,69 +72,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Copeland Carter’s Blog – smartycope">
-<meta property="og:image" content="https://smartycope.org/posts/InstallingTensorflow/image.jpg">
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Dynamic State Machine – smartycope">
+<meta property="og:description" content="Test description">
+<meta property="og:image" content="https://smartycope.org/posts/DynamicStateMachines/profile.png">
 <meta property="og:site_name" content="smartycope">
 </head>
 
@@ -305,7 +248,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">smartycope</span>
     </a>
   </div>
@@ -316,7 +259,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -335,301 +278,63 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Copeland Carter’s Blog</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">Dynamic State Machine</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">projects</div>
+                <div class="quarto-category">open source</div>
+                <div class="quarto-category">python</div>
+                <div class="quarto-category">published</div>
+                <div class="quarto-category">highlighted</div>
+              </div>
+                  </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Copeland Carter </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">March 26, 2025</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(6)</span></div><div class="category" data-category="aGlnaGxpZ2h0ZWQ=">highlighted <span class="quarto-category-count">(5)</span></div><div class="category" data-category="amF2YXNjcmlwdA==">javascript <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TUw=">ML <span class="quarto-category-count">(3)</span></div><div class="category" data-category="b3BlbiUyMHNvdXJjZQ==">open source <span class="quarto-category-count">(3)</span></div><div class="category" data-category="cHJvamVjdHM=">projects <span class="quarto-category-count">(5)</span></div><div class="category" data-category="cHVibGlzaGVk">published <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cHl0aG9u">python <span class="quarto-category-count">(5)</span></div></div><div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="https://github.com/smartycope"><i class="bi bi-github"></i>GitHub Profile</a></li><li><a href="https://www.linkedin.com/in/smartycope/"><i class="bi bi-linkedin"></i>LinkedIn Profile</a></li><li><a href="Resumé.html"><i class="bi bi-file-earmark-person"></i>My Resumé</a></li><li><a href="/"><i class="bi bi-wifi"></i>Live Projects</a></li><li><a href="https://ezregex.org/"><i class="bi bi-dash"></i>EZRegex</a></li><li><a href="https://smartycope.org/geodoodle/"><i class="bi bi-dash"></i>GeoDoodle</a></li><li><a href="https://github.com/smartycope"><i class="bi bi-github"></i>Signature GitHub Repos</a></li><li><a href="https://github.com/smartycope/ezregex"><i class="bi bi-dash"></i>EZRegex Repo</a></li><li><a href="https://github.com/smartycope/geodoodle"><i class="bi bi-dash"></i>GeoDoodle Repo</a></li><li><a href="https://pypi.org/project/ezregex/"><i class="bi bi-box"></i>Published Packages</a></li><li><a href="https://pypi.org/project/ezregex/"><i class="bi bi-dash"></i>EZRegex Package</a></li></ul></div></div>
+    <div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="https://github.com/smartycope"><i class="bi bi-github"></i>GitHub Profile</a></li><li><a href="https://www.linkedin.com/in/smartycope/"><i class="bi bi-linkedin"></i>LinkedIn Profile</a></li><li><a href="../../Resumé.html"><i class="bi bi-file-earmark-person"></i>My Resumé</a></li><li><a href="/"><i class="bi bi-wifi"></i>Live Projects</a></li><li><a href="https://ezregex.org/"><i class="bi bi-dash"></i>EZRegex</a></li><li><a href="https://smartycope.org/geodoodle/"><i class="bi bi-dash"></i>GeoDoodle</a></li><li><a href="https://github.com/smartycope"><i class="bi bi-github"></i>Signature GitHub Repos</a></li><li><a href="https://github.com/smartycope/ezregex"><i class="bi bi-dash"></i>EZRegex Repo</a></li><li><a href="https://github.com/smartycope/geodoodle"><i class="bi bi-dash"></i>GeoDoodle Repo</a></li><li><a href="https://pypi.org/project/ezregex/"><i class="bi bi-box"></i>Published Packages</a></li><li><a href="https://pypi.org/project/ezregex/"><i class="bi bi-dash"></i>EZRegex Package</a></li></ul></div></div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
 
-<script src="index.js"></script>
-<!--
-Posts to add:
-    Rose
-    Mathland
-    pyquation
-    AntAI
-    Sonix
-    About client graphs
-    A combined post about all the little projects?
-        Abusive error messages?
-        Cope package?
-        Autofiller?
-    Lenny?
-    My CopeScript idea
-    Doornifer!
-    DnD character Sheet?
-    Mindustry compiler?
--->
+<p>A bit ago I was writing a project to automate the workflow for my job. What it quickly evolved into was a textual TUI that was just a customizeable text editor, and what amounted to an automated flowchart. I had a text box I could add text to so I could quickly jump through the flowchart and have it do things for me as I reached certain steps, keep track of what I was doing, and follow preset lines of logic depending on what inputs I gave it. Naturally, it started off as a bunch of if &amp; match statements. I kept a flowchart in sync with it just for documentation, but eventually it became unmaintainable. I would make minor tweaks to it almost daily, and keeping the flowchart in pace with it was a huge headache.</p>
+<p>Of course my next step is to go see what other people have done. I found <a href="https://pypi.org/project/transitions/">transitions</a> and <a href="https://pypi.org/project/python-statemachine/">python-statemachine</a>, both very good, mature projects. What they don’t do however (as far as I could tell), is let you easily decide what state to go to next based on parameters given to the advancement function. It’s possible in at least one of them (I don’t remember which), but it was clunky, frustating, and less elegant that what I was already doing.</p>
+<p>So I made my own.</p>
+<p>I couldn’t think up a witty name, so it’s simply called <a href="https://github.com/smartycope/DynamicStateMachine">DynamicStateMachine</a>. I won’t go into details on exactly how it works (see the README for that), but it basically lets you implement a state machine (flowchart) where you can use complex logic to decide which state to go to next. You define a bunch of states, which have values of any type, then you define an initial state, and then the transitions of how you go from one state to the next. Each state goes to either another state, or a function which returns which state (or other function) to go to next. You can also add before_* and after_* functions to allow states to have side effects. Then any parameters passed to the advancement function (<code>.next()</code>) get passed onto both the transition functions and the side effect functions.</p>
+<p>It works pretty well, and the best part is, it auto-generates flow charts for you, which is a huge help not only for documentation, but also debugging. If you generate a flowchart and there’s steps not going anywhere, or by themselves, you know you forgot to connect something.</p>
+<p>It’s still in beta, and it needs more tests, but it works for my current implementation!</p>
 
 
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-    <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-    <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-      <option value="" disabled="" selected="" hidden="">Order By</option>
-      <option value="index" data-direction="asc">Default</option>
-      <option value="listing-title" data-direction="asc">
-        Title
-      </option>
-      <option value="listing-date-sort" data-direction="asc">
-        Date - Oldest
-      </option>
-      <option value="listing-date-sort" data-direction="desc">
-        Date - Newest
-      </option>
-      <option value="listing-author" data-direction="asc">
-        Author
-      </option>
-    </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="cHl0aG9uJTJDTUw=" data-listing-date-sort="1790226000000" data-listing-file-modified-sort="1743018848996" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="460">
-<div class="thumbnail"><a href="./posts/InstallingTensorflow/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/InstallingTensorflow/image.jpg" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/InstallingTensorflow/index.html" class="no-external">Installing Tensorflow</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">python</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('TUw='); return false;">ML</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/InstallingTensorflow/index.html" class="no-external">
-Getting tensorflow to use hardware acceleration is challenging. There’s plenty of tutorials to show you how to do it, but I’ve found that most of them lack sufficient…
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/InstallingTensorflow/index.html" class="no-external">
-<div class="listing-date">
-Sep 24, 2026
-</div>
-<div class="listing-author">
-Copeland Carter
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="cHJvamVjdHMlMkNvcGVuJTIwc291cmNlJTJDcHl0aG9uJTJDcHVibGlzaGVkJTJDaGlnaGxpZ2h0ZWQ=" data-listing-date-sort="1742965200000" data-listing-file-modified-sort="1743020076596" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="421">
-<div class="thumbnail"><a href="./posts/DynamicStateMachines/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/DynamicStateMachines/index.html" class="no-external">Dynamic State Machine</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHJvamVjdHM='); return false;">projects</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('b3BlbiUyMHNvdXJjZQ=='); return false;">open source</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">python</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHVibGlzaGVk'); return false;">published</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('aGlnaGxpZ2h0ZWQ='); return false;">highlighted</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/DynamicStateMachines/index.html" class="no-external">
-A bit ago I was writing a project to automate the workflow for my job. What it quickly evolved into was a textual TUI that was just a customizeable text editor, and what…
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/DynamicStateMachines/index.html" class="no-external">
-<div class="listing-date">
-Mar 26, 2025
-</div>
-<div class="listing-author">
-Copeland Carter
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="cHJvamVjdHMlMkNvcGVuJTIwc291cmNlJTJDamF2YXNjcmlwdCUyQ2hpZ2hsaWdodGVk" data-listing-date-sort="1715749200000" data-listing-file-modified-sort="1743018848994" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1422">
-<div class="thumbnail"><a href="./posts/GeoDoodle/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/GeoDoodle/thumbnail.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/GeoDoodle/index.html" class="no-external">GeoDoodle</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHJvamVjdHM='); return false;">projects</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('b3BlbiUyMHNvdXJjZQ=='); return false;">open source</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('amF2YXNjcmlwdA=='); return false;">javascript</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('aGlnaGxpZ2h0ZWQ='); return false;">highlighted</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/GeoDoodle/index.html" class="no-external">
-I love doodling on graph paper.
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/GeoDoodle/index.html" class="no-external">
-<div class="listing-date">
-May 15, 2024
-</div>
-<div class="listing-author">
-Copeland Carter
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="cHJvamVjdHMlMkNweXRob24lMkNNTCUyQ2hpZ2hsaWdodGVk" data-listing-date-sort="1714453200000" data-listing-file-modified-sort="1743018849000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="549">
-<div class="thumbnail"><a href="./posts/SquarePacking/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/SquarePacking/wiki_snip.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/SquarePacking/index.html" class="no-external">Square Packing</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHJvamVjdHM='); return false;">projects</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">python</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('TUw='); return false;">ML</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('aGlnaGxpZ2h0ZWQ='); return false;">highlighted</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/SquarePacking/index.html" class="no-external">
-My senior project is to attempt to use a reinforcement learning algorithm based on a Deep Deterministic Policy Gradient model for use with a continuous observation <em>and</em> action…
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/SquarePacking/index.html" class="no-external">
-<div class="listing-date">
-Apr 30, 2024
-</div>
-<div class="listing-author">
-Copeland Carter
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="cHJvamVjdHMlMkNweXRob24lMkNNTCUyQ2hpZ2hsaWdodGVk" data-listing-date-sort="1714453200000" data-listing-file-modified-sort="1749740017706" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1363">
-<div class="thumbnail"><a href="./posts/SeniorProject/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/SeniorProject/index.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/SeniorProject/index.html" class="no-external">Senior Project</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHJvamVjdHM='); return false;">projects</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">python</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('TUw='); return false;">ML</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('aGlnaGxpZ2h0ZWQ='); return false;">highlighted</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/SeniorProject/index.html" class="no-external">
-My senior project was attempting to use a reinforcement learning algorithm based on a Deep Deterministic Policy Gradient model for use with a continuous observation <em>and</em> actio…
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/SeniorProject/index.html" class="no-external">
-<div class="listing-date">
-Apr 30, 2024
-</div>
-<div class="listing-author">
-Copeland Carter
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="cHl0aG9uJTJDb3BlbiUyMHNvdXJjZSUyQ3Byb2plY3RzJTJDaGlnaGxpZ2h0ZWQ=" data-listing-date-sort="1688187600000" data-listing-file-modified-sort="1749739990307" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1876">
-<div class="thumbnail"><a href="./posts/Rose/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/Rose/roseIcon.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/Rose/index.html" class="no-external">Rose (The Relationship Evaluation Algorithm)</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">python</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('b3BlbiUyMHNvdXJjZQ=='); return false;">open source</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHJvamVjdHM='); return false;">projects</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('aGlnaGxpZ2h0ZWQ='); return false;">highlighted</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/Rose/index.html" class="no-external">
-Being single is hard. At least, it was for me. Some people are jerks. Some people are your future relationships. Hopefully, one person is your future spouse. How can you…
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/Rose/index.html" class="no-external">
-<div class="listing-date">
-Jul 1, 2023
-</div>
-<div class="listing-author">
-Copeland Carter
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
