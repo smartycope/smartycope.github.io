@@ -4,8 +4,6 @@ author: "Copeland Carter"
 date: "7-1-23"
 categories: [python, open source, projects, highlighted]
 image: "roseIcon.png"
-format: html
-execute: false
 ---
 
 
