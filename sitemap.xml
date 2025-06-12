@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://smartycope.org/posts/SeniorProject/index.html</loc>
-    <lastmod>2025-06-12T14:53:37.706Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smartycope.org/posts/InstallingTensorflow/index.html</loc>
-    <lastmod>2025-03-26T19:54:08.996Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smartycope.org/posts/SquarePacking/index.html</loc>
-    <lastmod>2025-03-26T19:54:09.000Z</lastmod>
-  </url>
-  <url>
     <loc>https://smartycope.org/familyGraphs.html</loc>
-    <lastmod>2025-03-26T19:54:08.972Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smartycope.org/about.html</loc>
-    <lastmod>2025-06-12T14:47:08.959Z</lastmod>
+    <lastmod>2025-06-12T15:00:01.522Z</lastmod>
   </url>
   <url>
     <loc>https://smartycope.org/posts/DynamicStateMachines/index.html</loc>
-    <lastmod>2025-03-26T20:14:36.596Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smartycope.org/posts/Rose/index.html</loc>
-    <lastmod>2025-06-12T14:53:10.307Z</lastmod>
+    <lastmod>2025-06-12T15:00:01.527Z</lastmod>
   </url>
   <url>
     <loc>https://smartycope.org/posts/GeoDoodle/index.html</loc>
-    <lastmod>2025-03-26T19:54:08.994Z</lastmod>
+    <lastmod>2025-06-12T15:00:01.550Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smartycope.org/posts/SquarePacking/index.html</loc>
+    <lastmod>2025-06-12T15:00:01.557Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smartycope.org/about.html</loc>
+    <lastmod>2025-06-12T15:00:01.462Z</lastmod>
   </url>
   <url>
     <loc>https://smartycope.org/index.html</loc>
-    <lastmod>2025-03-26T19:54:08.972Z</lastmod>
+    <lastmod>2025-06-12T15:00:01.522Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smartycope.org/posts/SeniorProject/index.html</loc>
+    <lastmod>2025-06-12T15:00:01.556Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smartycope.org/posts/InstallingTensorflow/index.html</loc>
+    <lastmod>2025-06-12T15:00:01.552Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smartycope.org/posts/Rose/index.html</loc>
+    <lastmod>2025-06-12T15:00:01.552Z</lastmod>
   </url>
 </urlset>
