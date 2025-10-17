@@ -2,8 +2,9 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/InstallingTensorflow/index.html",
+      "/posts/EZRegex/index.html",
       "/posts/DynamicStateMachines/index.html",
+      "/posts/InstallingTensorflow/index.html",
       "/posts/GeoDoodle/index.html",
       "/posts/SquarePacking/index.html",
       "/posts/SeniorProject/index.html",

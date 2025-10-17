@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Copeland Carter">
-<meta name="dcterms.date" content="2024-05-15">
+<meta name="dcterms.date" content="2025-10-17">
 
-<title>GeoDoodle – smartycope</title>
+<title>EZRegex – smartycope</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -75,12 +75,11 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="GeoDoodle – smartycope">
-<meta property="og:description" content="Test description">
-<meta property="og:image" content="https://smartycope.org/posts/GeoDoodle/thumbnail.png">
+<meta property="og:title" content="EZRegex – smartycope">
+<meta property="og:image" content="https://smartycope.org/posts/EZRegex/image.png">
 <meta property="og:site_name" content="smartycope">
-<meta property="og:image:height" content="1028">
-<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="200">
+<meta property="og:image:width" content="207">
 </head>
 
 <body class="nav-fixed quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
@@ -281,11 +280,12 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">GeoDoodle</h1>
+      <h1 class="title">EZRegex</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">projects</div>
                 <div class="quarto-category">open source</div>
-                <div class="quarto-category">javascript</div>
+                <div class="quarto-category">python</div>
+                <div class="quarto-category">published</div>
                 <div class="quarto-category">highlighted</div>
               </div>
                   </div>
@@ -304,7 +304,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">May 15, 2024</p>
+        <p class="date">October 17, 2025</p>
       </div>
     </div>
     
@@ -326,38 +326,73 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p><img src="thumbnail.png" width="400"></p>
-<p>I love doodling on graph paper.</p>
-<p>It’s just something I’ve done for a long time, since I was a kid. It’s something to keep my hands busy while I sit in church or class. It occupies just enough of my mind to keep me entertained, but not too much that I can’t pay attention. It’s perfect.</p>
-<p>And over the years, I’ve gotten pretty good, if I don’t say so myself. I have something like 3 or 4 notebooks full of these sorts of patterns:</p>
-<p><img src="double.jpeg" width="200"> <img src="good.jpeg" width="200"> <img src="hole.jpeg" width="200"> <img src="isolated.jpeg" width="200"> <img src="newest.jpeg" width="200"></p>
-<p>But that’s the problem, isn’t it. They’re in notebooks. I’m not even sure where they are. I don’t look at them or add to them anymore.</p>
-<section id="history" class="level3">
-<h3 class="anchored" data-anchor-id="history">History</h3>
-<p>Ever since my very 2nd programming class (the first class was all terminal based), I had the idea for “automated graph paper”. All the lines line up with the dots. It wouldn’t be that difficult to make a program that had a bunch of dots and let you draw lines between them. Back then I had grand ideas of mirroring, selecting, copy/pasting, and repeating lines, but I didn’t have any way to execute them. I had an old, outdated, unsupported (even back then) freeGLUT C++ framework that my class gave me that I hacked together to show an array of dots on the screen, and was barely able to connect lines between them. And then the house of cards that was my code fell apart and I moved onto other things.</p>
-<p>About a year later, after starting many other projects, and knowing way, way more, I discovered Python. I realized that my old idea I loved so much was still a cool idea, and I got excited and I ended up scrapping the entire codebase and rewriting the entire thing from scratch in Python (using pygame). I got it roughtly to where it was before, in about 4 hours. It’s pretty cool to see yourself improve in such an obvious way. I then added a bunch more features and made everything a lot nicer (pygame is an excellent API), including adding menus and options and a better repeating system. I eventually got stymied by the GUI though. At that point I hadn’t really done much with GUI’s, and I tried using pygame-gui, which isn’t a bad API, it’s just really not meant for what I wanted. I ended up writing huge, very nasty wrappers around their classes and it just wasn’t worth it. It again, became a house of cards and I saw that.</p>
-<p>A couple months later, I had the idea to use Qt. It was something I’d wanted to learn for a while, but I never really had a project suited to it, until I realized this was perfect. Turns out, Qt is fantastic. There’s a reason it’s so popular. It definitely takes some getting used to, but it’s all very clean, and QtCreator is super handy. Using Qt allowed me to expand even further, and add more features far more intuitively.</p>
-<p>A few months after that, I took a linear algebra course and had the realization that a bunch of the problems I had with repeating patterns and keeping track of coordinates could all be solved by using matrices for coordinates and multiplying by a transformation matrix. I then rewrote the whole codebase (again) to use numpy to represent dots and lines instead. That solved a ton of conceptual problems, and allowed me to add a bunch of features like mirroring and rotating and scaling. It also cleaned a the code up a ton too. That time it wasn’t a <em>total</em> rewrite, because I was able to re-use a lot of the PyQt GUI elements.</p>
-<p>This is the last working version of GeoDoodle I had in Python <img src="PyQt.jpg" width="800"></p>
-<p>All these versions had a few shared, fundemental problems, however:</p>
-<ol type="1">
-<li>The coordinate systems where complicated. Even after I switched to using proper linear algebra, it was still complicated to keep track of, and involved writing my own coordinate system &amp; utilies, essentially.</li>
-<li>Deployment. I love Python to pieces, and it’s the optimal programming language for a lot of things, but it really doesn’t deploy to other platforms very well. I always wanted to show my friends &amp; family my cool program, but I never could, because trying to say “go into the terminal, git clone my repo, install python, and run the main.py file” really isn’t possible for my non-tech savvy mother. I tried a few things like pyqt5deploy and the Qt for Android tutorials, but I couldn’t get them to work</li>
-<li>Efficiency. When a pattern we want to repeat is small enough (meaning that more of them fit on the screen), and has too many lines in it, that means we could be drawing up to hundreds or thousands of lines on the screen, and if I want the user to be able to move around or add lines, depending on how I do it, that could mean they have to update in real-time. This was obviously a problem for freeGLUT (where I had to make raw OpenGL commands, which I didn’t know how to do correctly), and pygame (which isn’t really optimized for that sort of thing), but for PyQt you might not think it would be a problem. It was certainly better than the first 2, but it still got unusably slow under those conditions. I tried optimizing using OpenGL, but that only led down a deeper rabit hole I didn’t really want to go down.</li>
-</ol>
+<section id="ezregex" class="level1">
+<h1>EZRegex</h1>
+<section id="origins" class="level2">
+<h2 class="anchored" data-anchor-id="origins">Origins</h2>
+<p>Once upon a time, I had a project that required a bunch of regular expressions. I kept getting annoyed with the archaic syntax. It’s annoying to work with, and it’s never gonna change, since it’s built into <em>everything</em> nowadays. It’s unreadable, hard to learn, the backslashes mess up string escaping, and <a href="https://xkcd.com/208/">you always end up forgetting to escape a space</a>.</p>
 </section>
-<section id="enter-javascript" class="level3">
-<h3 class="anchored" data-anchor-id="enter-javascript">Enter: JavaScript</h3>
-<p>Recently (as of this post) I got an internship writing TypeScript React code. I previously didn’t know Java/TypeScript, so I had a couple week long crash course on JS programming before I started. After I started, I immediately realized the potential JavaScript holds. Not because it’s <em>good</em> or <em>proper</em> (I think JS is terribly janky sometimes), but because it’s not. JS is geared towards writing UIs, which it does well. And part of UIs seems to be inherent jankiness, it seems. Lambda’s galore, strange, optional syntax (semicolons aren’t required, but everyone uses them anyway??), and objects that don’t act like objects in any other language I’d learned. It’s almost as if JS isn’t Object-Oriented, but instead Event-Oriented.</p>
-<p>However it has a number of key advantages. Aside from being made for making UIs, like I mentioned, it’s supported everywhere and is <em>made</em> for deployment. Very quickly after learning it I made a couple projects, including <a href="https://smartycope.github.io/debate-tracker/">Debate-Tracker</a>, and <a href="https://ezregex.org/">EZRegex</a>. I then realized: my favorite project, my “<em>unique</em>” idea (I haven’t researched if it actually is, and I don’t intend to), GeoDoodle, is perfect for JS. The project is largely UI elements, once the base part is done, I wanted to use it from both my computer and my phone, and SVG is the natural format for the project. Given that HTML integrates seemlessly with SVG, React was perfect.</p>
-<p>So of course, I started from scratch and rewrote the whole thing again from the ground up in another language. It’s a lot easier the 4th (5th?) time you do it, because you know beforehand what a lot of the problems you’re going to run into are, and how to solve them, and you also know what you need to do in order to generalize things for future features so you don’t end up refactoring your code too many times.</p>
-<p>I quickly got an MVP working (after a weekend of working on it obsessively), and kept adding to it. It now has multiple menus, including a controls menu instead of just using keyboard shortcuts, a help menu with a guided tour (surprisingly easy to make), multiple kinds of mirroring (you’d think it would be simple, but it’s more complex than you think), file saving, either natively to SVG files or to the local storage, basic repeating (is what I’m working on right now), and more. You can check it out at <a href="https://smartycope.github.io/geodoodle/">smartycope.github.io/geodoodle</a>. I have it hosted on GitHub pages, and eventually I’ll probably by a URL for it to live at.</p>
-<p>This time, I think I finally got it right. The code is clean and maintainable enough that I think when I inevitably come back to it in a year or so after I lose intrest, I’ll be able to pick it up again and just add features to it instead of rewriting it again. And the fact that I actually know how to use git now helps with that as well.</p>
-<p>You can try it here, if you’d like:</p>
-<iframe src="https://smartycope.github.io/geodoodle/" title="GeoDoodle" width="800" height="600">
-</iframe>
+<section id="the-solution" class="level2">
+<h2 class="anchored" data-anchor-id="the-solution">The Solution</h2>
+<p>The solution: write my own Python library, of course!</p>
+<p>I wrote a quick library that overloaded operators to let you do things like <code>word() + number() + literal("stuff")</code> and it would “compile” that expression into <code>\w+\d+stuff</code>.</p>
+<p>As I learned more I of course rewrote it a bunch of times, and now you can do things like <code>word + number + anyof('a', 'b', 'c') + 'stuff'</code>. There’s also a bunch of utilities for debugging, like a test() method, an invert() function (whcih I’ll get to), and it even supports multiple Regex dialects, since Python regex is slightly different than R, which is slightly different than Perl, etc. Granted, only a few dialects are implemented so far, but the framework is there.</p>
+</section>
+<section id="do-your-research-first-not-last" class="level2">
+<h2 class="anchored" data-anchor-id="do-your-research-first-not-last">Do Your Research First, not Last</h2>
+<p>It’s around this point (3 or 4 full-project rewrites in) that I decided maybe I should do some research and find out if this project already exists.</p>
+<p>“Shouldn’t you do that at the start”, you ask? Yes. Yes you should. Because not only did a similar project exist, and not only did <em>several</em> similar projects exist, but an <strong>entire Github repo</strong> existed which is just a collection an explanation of similar projects.</p>
+<p>This was disappointing (I thought <em>I</em> had that idea), but it also let me take inspiration from other projects and improve my own (for instance, instead of only using the <code>+</code> operator, do things like <code>word.group() + ...</code>).</p>
+</section>
+<section id="why-am-i-special" class="level2">
+<h2 class="anchored" data-anchor-id="why-am-i-special">Why am I special?</h2>
+<p>So what makes EZRegex different than the dozens of others?</p>
+<p>Well, none of the others (that I could find) supported other Regex dialects other than Python. They also didn’t support <em>inverting</em> regular expressions…</p>
+</section>
+<section id="inverting" class="level2">
+<h2 class="anchored" data-anchor-id="inverting">Inverting</h2>
+<p>Ever have a regular expression, and you look at it and go “what the crap is that supposed to match?”? Well EZRegex is here to help! I wrote a funciton where you give it a regular expression, and it returns a string guarenteed to match the given regex.</p>
+<p>Finally learning my lesson from before, I did find a couple libraries out there (xeger, sre-yield) which did similar things, but both fell short of what I wanted: * xeger (regex backwards) is obscure, and tends to return unprintable characters, which is suboptimal for debugging * sre-yield is decent, but is more focused on efficiency, and covering the whole space of things the expression could match</p>
+<p>I specifically wanted strings that were easy to debug: for instance, if you pass “+” (a sequence of word characters, for the uninitiated) to it, I don’t want it to return <code>afdslkjlcv</code>, I want it to return an actual word. There were also a number of other improvements, such as limiting the number of characters given for <code>*</code> and <code>+</code>.</p>
+<p>Luckily, I didn’t have to parse the Regex myself: you can just import the Python regex parser from the <code>re</code> module. From there, I just had to traverse the Abstract Syntax Tree (AST) and substitute my own debugging replacements. It took a lot of code, but ended up being fairly straightforward.</p>
+</section>
+<section id="the-frontend" class="level2">
+<h2 class="anchored" data-anchor-id="the-frontend">The Frontend</h2>
+<p>Being able to do <code>word + number + '-' + group(digit)</code> is pretty nice, but what’s even better than that? A GUI! It started off using streamlit (ah, we love streamlit), which worked pretty well, but I eventually ended up spending more time trying to hack it to do my bidding than actually using it. It also had several small, unfixable bugs, due to how it worked.</p>
+</section>
+<section id="enter-pyodide" class="level2">
+<h2 class="anchored" data-anchor-id="enter-pyodide">Enter: pyodide</h2>
+<p>In case you haven’t heard of <a href="https://pyodide.org/en/stable/">pyodide</a>, someone had the bright idea of compiling the Python interpreter to WebAssembly, so you can run Python code client-side in the browser. While this isn’t actually as useful as you would think, it’s absolutely <em>perfect</em> for this project. I was able to write a custom React frontend, host it on Github pages, and have it make calls to my Python library without the added overhead of a custom backend, or having to wait for network calls (enabling me to do things like update the output in real time as you type).</p>
+</section>
+<section id="again-why-am-i-special" class="level2">
+<h2 class="anchored" data-anchor-id="again-why-am-i-special">Again, why am I special?</h2>
+<p>There’s plenty of other websites that can help you write regular expressions. I would know, I took inspiration from a bunch of them. So what makes mine special? Well for one, it directly connects to a python library, so you can copy/paste code back and forth easily, and guarentee that it works the same. But mostly it’s:</p>
+</section>
+<section id="blockly" class="level2">
+<h2 class="anchored" data-anchor-id="blockly">Blockly</h2>
+<p>You every play with <a href="https://scratch.mit.edu/">Scratch</a>? It’s the thing that taught a lot of my generation about programming. Turns out, the JS library it’s built on is called <a href="https://developers.google.com/blockly">Blockly</a>, and it’s published (open source, I believe) by Google. It’s wonderful, I was able to embed Regex bubble code blocks directly into the page. Which, if you think about it, Regex is optimal canidate for bubble coding. Blocks that you can easily visualize and snap together, some of which can take parameters &amp; scope? It’s perfect! Here’s a snapshot:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="blockly.png" class="img-fluid figure-img"></p>
+<figcaption>blockly</figcaption>
+</figure>
+</div>
+<p>You have to admit, that’s easier to understand than <code>\w+(?P&lt;things&gt;\s+[^\-]stuff)</code>. If you want to check it out, it’s live at <a href="https://ezregex.org">ezregex.com</a>.</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>In the end, I’m a little bit saddened, simply because while this project is great, it’s made a little bit more niche by modern LLMs. If you need a large, deterministic regular expression that you can debug, EZRegex is perfect. But for most small, simple patterns, you can probably just ask ChatGPT and it’ll generate you a working expression. Still, it’s my go to any time I need to think through an expression.</p>
+</section>
+<section id="links" class="level2">
+<h2 class="anchored" data-anchor-id="links">Links</h2>
+<ul>
+<li><a href="https://ezregex.org">EZRegex</a></li>
+<li><a href="https://github.com/smartycope/ezregex">Github</a></li>
+<li><a href="https://pypi.org/project/ezregex/">PyPI</a></li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
