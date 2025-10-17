@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -60,7 +60,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -70,16 +70,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="./profile.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-52a0159e1581fd4d72d8415155fb0da6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-ea1927976867d204696f42d67f09f72e.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-8d579c7e4cb5e38eaddfdf7e7f03f655.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-47b75a9c3e776dba669e04826f69cd3f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3d36704cff58eb79fe9e17b1f93c390c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-7bcb0394d5602b37c1ac0b9e81147cca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-1c8bd0d18214818fd1ca291cf5b44c4e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-9d8eccccb2edb105fabfaff5f4ffcb6f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -107,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
@@ -287,6 +288,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">smartycope</span>
     </a>
@@ -370,23 +373,23 @@ This file is making some graphs and stats (sometimes *intentionally* bad, for co
 <div id="cell-4" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}" data-execution_count="492">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># data = gsheet2tbl('https://docs.google.com/spreadsheets/d/1oUMIpE_Elh_CYD7DFbT1vbYxFZNYUDK2QxFqFDk4xII/edit#gid=2008169700') # Original Data</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">=</span> <span class="fu">gsheet2tbl</span>(<span class="st">'https://docs.google.com/spreadsheets/d/1oUMIpE_Elh_CYD7DFbT1vbYxFZNYUDK2QxFqFDk4xII/edit?gid=0#gid=0'</span>) <span class="co"># Manually cleaned data (it was easier to edit it in the spreadsheet)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># data = gsheet2tbl('https://docs.google.com/spreadsheets/d/1oUMIpE_Elh_CYD7DFbT1vbYxFZNYUDK2QxFqFDk4xII/edit#gid=2008169700') # Original Data</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">=</span> <span class="fu">gsheet2tbl</span>(<span class="st">'https://docs.google.com/spreadsheets/d/1oUMIpE_Elh_CYD7DFbT1vbYxFZNYUDK2QxFqFDk4xII/edit?gid=0#gid=0'</span>) <span class="co"># Manually cleaned data (it was easier to edit it in the spreadsheet)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <div id="cell-5" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}" data-execution_count="493">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>questions <span class="ot">=</span> <span class="fu">colnames</span>(data)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>questions <span class="ot">=</span> <span class="fu">colnames</span>(data)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(data) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">'timestamp'</span>, <span class="st">'name'</span>, <span class="st">'birthday'</span>, <span class="st">'parents'</span>, <span class="st">'names.indexed'</span>, <span class="st">'ordinances.self'</span>, <span class="st">'ordinances.dead'</span>, <span class="st">'fav.recipe'</span>, <span class="st">'gen'</span>, <span class="st">'tech.savviness'</span>, <span class="st">'injuries'</span>, <span class="st">'num.trips'</span>, <span class="st">'trips'</span>, <span class="st">'num.pets'</span>, <span class="st">'pets'</span>, <span class="st">'fav.part'</span>, <span class="st">'suggested.activity'</span>, <span class="st">'suggested.reunion.location'</span>, <span class="st">'jobs'</span>, <span class="st">'most.told.story'</span>, <span class="st">'oldest'</span>, <span class="st">'rating'</span>, <span class="st">'fav.game'</span>, <span class="st">'secret'</span>, <span class="st">'best.advice'</span>, <span class="st">'worst.advice'</span>, <span class="st">'coming'</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>age <span class="ot">=</span> <span class="fu">floor</span>((<span class="fu">today</span>() <span class="sc">-</span> <span class="fu">mdy</span>(data<span class="sc">$</span>birthday)) <span class="sc">/</span> <span class="dv">365</span>) <span class="sc">|&gt;</span> <span class="fu">as.integer</span>()</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>first.name.raw <span class="ot">=</span> <span class="fu">str_split</span>(data<span class="sc">$</span>name, <span class="at">pattern=</span><span class="st">' '</span>) <span class="sc">|&gt;</span> <span class="fu">map</span>(<span class="sc">~</span> .x[[<span class="dv">1</span>]]) <span class="sc">|&gt;</span> <span class="fu">as.character</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>first.name.raw <span class="ot">=</span> <span class="fu">str_split</span>(data<span class="sc">$</span>name, <span class="at">pattern=</span><span class="st">' '</span>) <span class="sc">|&gt;</span> <span class="fu">map</span>(<span class="sc">~</span> .x[[<span class="dv">1</span>]]) <span class="sc">|&gt;</span> <span class="fu">as.character</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <div id="cell-6" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}" data-execution_count="494">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to make names unique</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to make names unique</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>make_names_unique <span class="ot">&lt;-</span> <span class="cf">function</span>(names) {</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create a data frame to store the unique names and their counts</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    name_counts <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(names, <span class="at">count =</span> <span class="fu">ave</span>(names, names, <span class="at">FUN =</span> seq_along))</span>
@@ -398,23 +401,23 @@ This file is making some graphs and stats (sometimes *intentionally* bad, for co
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(name_counts<span class="sc">$</span>unique_names)</span>
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>first.name <span class="ot">=</span> <span class="fu">make_names_unique</span>(data<span class="sc">$</span>first.name.raw)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>first.name <span class="ot">=</span> <span class="fu">make_names_unique</span>(data<span class="sc">$</span>first.name.raw)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <div id="cell-7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}" data-execution_count="495">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Some people (the Hardy's) put in ridiculous data</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Some people (the Hardy's) put in ridiculous data</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This is fun for some graphs, but not others</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>serious_data <span class="ot">=</span> data <span class="sc">|&gt;</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(tech.savviness <span class="sc">!=</span> <span class="dv">10</span> <span class="sc">|</span> first.name <span class="sc">==</span> <span class="st">'Copeland'</span>) <span class="sc">|&gt;</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span>(first.name.raw <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'Bethany'</span>, <span class="st">'Trump'</span>, <span class="st">'Biden'</span>, <span class="st">'Wuss'</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span>(first.name.raw <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'Bethany'</span>, <span class="st">'Trump'</span>, <span class="st">'Biden'</span>, <span class="st">'Wuss'</span>)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <div id="cell-8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}" data-execution_count="496">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_xkcd</span>())</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_xkcd</span>())</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_update</span>(</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">'#222222'</span>),</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major =</span> <span class="fu">element_line</span>(<span class="at">color=</span><span class="st">'#807f7f'</span>),</span>
@@ -428,13 +431,13 @@ This file is making some graphs and stats (sometimes *intentionally* bad, for co
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># axis.text.y = text,</span></span>
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">text=</span><span class="fu">element_text</span>(<span class="at">color=</span><span class="st">'gray90'</span>, <span class="at">size=</span><span class="dv">20</span>),</span>
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>color <span class="ot">=</span> <span class="st">'#226796'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>color <span class="ot">=</span> <span class="st">'#226796'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <div id="cell-9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}" data-execution_count="497">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># I got sick of repeatedly doing this by hand</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># I got sick of repeatedly doing this by hand</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>geom_arrow <span class="ot">=</span> <span class="cf">function</span>(x, y, dx, dy, <span class="at">text=</span><span class="st">''</span>, <span class="at">head=</span><span class="st">'closed'</span>, <span class="at">text_dx=</span><span class="dv">0</span>, <span class="at">text_dy=</span><span class="dv">0</span>, <span class="at">arrow_head_len_in=</span>.<span class="dv">15</span>){</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">list</span>(</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">annotate</span>(<span class="st">'segment'</span>, <span class="at">xend=</span>x, <span class="at">yend=</span>y, <span class="at">x=</span>x<span class="sc">+</span>dx, <span class="at">y=</span>y<span class="sc">+</span>dy,</span>
@@ -448,13 +451,13 @@ This file is making some graphs and stats (sometimes *intentionally* bad, for co
 <span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span><span class="fu">theme_get</span>()<span class="sc">$</span>text<span class="sc">$</span>colour,</span>
 <span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>        )</span>
 <span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    ))</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <div id="cell-10" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}" data-execution_count="533">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>mean.age <span class="ot">=</span> <span class="fu">mean</span>((data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(., <span class="sc">!</span><span class="fu">is.na</span>(age)))<span class="sc">$</span>age)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>mean.age <span class="ot">=</span> <span class="fu">mean</span>((data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(., <span class="sc">!</span><span class="fu">is.na</span>(age)))<span class="sc">$</span>age)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x=</span>age)) <span class="sc">+</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">color=</span><span class="st">'white'</span>) <span class="sc">+</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_histogram</span>(<span class="at">bins=</span><span class="dv">25</span>, <span class="at">fill=</span>color, <span class="at">color=</span><span class="fu">theme_get</span>()<span class="sc">$</span>panel.background<span class="sc">$</span>fill) <span class="sc">+</span></span>
@@ -467,7 +470,7 @@ This file is making some graphs and stats (sometimes *intentionally* bad, for co
 <span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">title=</span><span class="st">'The Distrobution of Ages at the Family Reunion'</span>,</span>
 <span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">y=</span><span class="st">'Number of People'</span>,</span>
 <span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">x=</span><span class="st">'Age'</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -480,18 +483,18 @@ This file is making some graphs and stats (sometimes *intentionally* bad, for co
 <div id="cell-11" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}" data-execution_count="499">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(age)) <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">8</span>) <span class="sc">|&gt;</span> <span class="fu">select</span>(name, age) <span class="sc">|&gt;</span> clipr<span class="sc">::</span><span class="fu">write_clip</span>(<span class="at">allow_non_interactive =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(age)) <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">8</span>) <span class="sc">|&gt;</span> <span class="fu">select</span>(name, age) <span class="sc">|&gt;</span> clipr<span class="sc">::</span><span class="fu">write_clip</span>(<span class="at">allow_non_interactive =</span> T)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <div id="cell-12" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}" data-execution_count="500">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(rating)) <span class="sc">|&gt;</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>rating)) <span class="sc">+</span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_histogram</span>(<span class="at">bins=</span><span class="dv">11</span>, <span class="at">color=</span><span class="fu">theme_get</span>()<span class="sc">$</span>panel.background<span class="sc">$</span>fill, <span class="at">fill=</span>color) <span class="sc">+</span></span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_binned</span>(<span class="at">breaks =</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">10</span>) <span class="sc">+</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"How much Everyone Enjoys the Family Reunion"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"How much Everyone Enjoys the Family Reunion"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -504,13 +507,13 @@ This file is making some graphs and stats (sometimes *intentionally* bad, for co
 <div id="cell-13" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}" data-execution_count="501">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>serious_data <span class="sc">%&gt;%</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>serious_data <span class="sc">%&gt;%</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(injuries <span class="sc">&gt;</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(first.name, <span class="fu">desc</span>(injuries)), <span class="at">y=</span>injuries)) <span class="sc">+</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_col</span>(<span class="at">fill=</span>color) <span class="sc">+</span></span>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_arrow</span>(<span class="at">x=</span><span class="fl">3.5</span>, <span class="at">y=</span><span class="dv">8</span>, <span class="at">dx=</span><span class="dv">3</span>, <span class="at">dy=</span><span class="sc">-</span>.<span class="dv">5</span>, <span class="at">text=</span><span class="st">'Clearly, I underestimated how much some people get hurt (TYLER)'</span>, <span class="at">text_dy=</span><span class="sc">-</span>.<span class="dv">2</span>) <span class="sc">+</span></span>
 <span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle=</span><span class="dv">45</span>,<span class="at">vjust =</span> .<span class="dv">7</span>)) <span class="sc">+</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title=</span><span class="st">'People who were Injured the Most in the Last Year'</span>, <span class="at">x=</span><span class="st">''</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title=</span><span class="st">'People who were Injured the Most in the Last Year'</span>, <span class="at">x=</span><span class="st">''</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -523,11 +526,11 @@ This file is making some graphs and stats (sometimes *intentionally* bad, for co
 <div id="cell-14" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}" data-execution_count="502">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(serious_data <span class="sc">|&gt;</span> <span class="fu">filter</span>(num.trips <span class="sc">&gt;</span> <span class="dv">2</span>), <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(first.name, <span class="fu">desc</span>(num.trips)), <span class="at">y=</span>num.trips)) <span class="sc">+</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(serious_data <span class="sc">|&gt;</span> <span class="fu">filter</span>(num.trips <span class="sc">&gt;</span> <span class="dv">2</span>), <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(first.name, <span class="fu">desc</span>(num.trips)), <span class="at">y=</span>num.trips)) <span class="sc">+</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_col</span>(<span class="at">fill=</span>color) <span class="sc">+</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle=</span><span class="dv">45</span>, <span class="at">vjust =</span> .<span class="dv">9</span>, <span class="at">hjust =</span> .<span class="dv">5</span>)) <span class="sc">+</span></span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">9</span>, <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">'Who takes the Most Trips'</span>, <span class="at">x=</span><span class="st">''</span>, <span class="at">y=</span><span class="st">'Number of trips'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">'Who takes the Most Trips'</span>, <span class="at">x=</span><span class="st">''</span>, <span class="at">y=</span><span class="st">'Number of trips'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -540,7 +543,7 @@ This file is making some graphs and stats (sometimes *intentionally* bad, for co
 <div id="cell-15" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># eval: false</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># eval: false</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># echo: false</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># I cannot for the life of me figure out why it's doing this. It just started doing it randomly. I'm starting</span></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># to seriously suspect a bug in ggplot2.</span></span>
@@ -556,13 +559,13 @@ This file is making some graphs and stats (sometimes *intentionally* bad, for co
 <span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span><span class="dv">0</span><span class="sc">:</span><span class="dv">6</span>) <span class="sc">+</span></span>
 <span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">annotate</span>(<span class="st">'text'</span>, <span class="at">x=</span><span class="dv">3</span>, <span class="at">y=</span><span class="fl">10.7</span>, <span class="at">label=</span><span class="st">'Honorable Mentions'</span>) <span class="sc">+</span></span>
 <span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">10.5</span>, <span class="at">color=</span><span class="st">'#cc312c'</span>) <span class="sc">+</span></span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">'Everyone</span><span class="sc">\'</span><span class="st">s Favorite Family Recipies'</span>, <span class="at">y=</span><span class="st">''</span>, <span class="at">x=</span><span class="st">'Number of people who say it</span><span class="sc">\'</span><span class="st">s their favorite'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">'Everyone</span><span class="sc">\'</span><span class="st">s Favorite Family Recipies'</span>, <span class="at">y=</span><span class="st">''</span>, <span class="at">x=</span><span class="st">'Number of people who say it</span><span class="sc">\'</span><span class="st">s their favorite'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <div id="cell-16" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}" data-execution_count="504">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(first.name.raw) <span class="sc">%&gt;%</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">order =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(order <span class="sc">&gt;</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
@@ -570,7 +573,7 @@ This file is making some graphs and stats (sometimes *intentionally* bad, for co
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y=</span><span class="fu">reorder</span>(first.name.raw, order))) <span class="sc">+</span></span>
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="at">fill=</span>color) <span class="sc">+</span></span>
 <span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_arrow</span>(<span class="at">x=</span><span class="fl">3.5</span>, <span class="at">y=</span><span class="fl">2.6</span>, <span class="at">dx=</span><span class="sc">-</span>.<span class="dv">5</span>, <span class="at">dy=</span><span class="sc">-</span>.<span class="dv">7</span>, <span class="at">text=</span><span class="st">'Bethany is REALLY coming'</span>, <span class="at">text_dy =</span> <span class="sc">-</span>.<span class="dv">08</span>) <span class="sc">+</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">'How Many of Us Share the Same First Name'</span>, <span class="at">y=</span><span class="st">''</span>, <span class="at">x=</span><span class="st">'How many times someone with that first name took the survey'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">'How Many of Us Share the Same First Name'</span>, <span class="at">y=</span><span class="st">''</span>, <span class="at">x=</span><span class="st">'How many times someone with that first name took the survey'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -583,7 +586,7 @@ This file is making some graphs and stats (sometimes *intentionally* bad, for co
 <div id="cell-17" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}" data-execution_count="535">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_split</span>(<span class="fu">na.omit</span>(serious_data<span class="sc">$</span>ordinances.self), <span class="st">','</span>) <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_split</span>(<span class="fu">na.omit</span>(serious_data<span class="sc">$</span>ordinances.self), <span class="st">','</span>) <span class="sc">|&gt;</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">flatten</span>() <span class="sc">|&gt;</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tibble</span>() <span class="sc">|&gt;</span></span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rename</span>(<span class="at">Ordinance=</span><span class="dv">1</span>) <span class="sc">|&gt;</span></span>
@@ -595,7 +598,7 @@ This file is making some graphs and stats (sometimes *intentionally* bad, for co
 <span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_col</span>(<span class="at">fill=</span>color) <span class="sc">+</span></span>
 <span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_arrow</span>(<span class="at">x=</span><span class="dv">3</span>, <span class="at">y=</span><span class="dv">0</span>, <span class="at">dx=</span><span class="dv">0</span>, <span class="at">dy=</span>.<span class="dv">5</span>, <span class="st">"I totally know how to spell initiatiories"</span>, <span class="at">text_dy=</span>.<span class="dv">05</span>) <span class="sc">+</span></span>
 <span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># scale_y_continuous(breaks = 0:6) +</span></span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">'How many live ordinances have happened this year?'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">'How many live ordinances have happened this year?'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -608,14 +611,14 @@ This file is making some graphs and stats (sometimes *intentionally* bad, for co
 <div id="cell-18" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}" data-execution_count="506">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>serious_data <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>serious_data <span class="sc">|&gt;</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(age <span class="sc">&lt;</span> <span class="dv">200</span>) <span class="sc">|&gt;</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(age) <span class="sc">|&gt;</span></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>age, <span class="at">y=</span>tech.savviness)) <span class="sc">+</span></span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">color=</span>color, <span class="at">size=</span><span class="dv">3</span>) <span class="sc">+</span></span>
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">'lm'</span>, <span class="at">se=</span>F, <span class="at">na.rm=</span>T) <span class="sc">+</span></span>
 <span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">annotate</span>(<span class="st">'text'</span>, <span class="at">x=</span><span class="dv">92</span>, <span class="at">y=</span><span class="fl">4.6</span>, <span class="at">label=</span><span class="st">'Surprisingly, there doesn</span><span class="sc">\'</span><span class="st">t seem to be a significant correlation between age and tech savviness'</span>, <span class="at">size=</span><span class="dv">5</span>, <span class="at">family=</span><span class="fu">theme_get</span>()<span class="sc">$</span>text<span class="sc">$</span>family, <span class="at">color=</span><span class="fu">theme_get</span>()<span class="sc">$</span>text<span class="sc">$</span>colour) <span class="sc">+</span></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">y=</span><span class="st">"Tech Savviness"</span>, <span class="at">title=</span><span class="st">'Tech Savviness vs. Age'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">y=</span><span class="st">"Tech Savviness"</span>, <span class="at">title=</span><span class="st">'Tech Savviness vs. Age'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -628,7 +631,7 @@ This file is making some graphs and stats (sometimes *intentionally* bad, for co
 <div id="cell-19" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}" data-execution_count="519">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># No idea why it's adding bars unless I size it just right</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">repr.plot.width=</span><span class="fl">7.56</span>,</span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">repr.plot.height=</span><span class="dv">8</span></span>
@@ -652,7 +655,7 @@ This file is making some graphs and stats (sometimes *intentionally* bad, for co
 <span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
 <span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_text</span>(<span class="at">position=</span><span class="fu">position_stack</span>(<span class="at">vjust=</span>.<span class="dv">5</span>), <span class="at">family=</span><span class="fu">theme_get</span>()<span class="sc">$</span>text<span class="sc">$</span>family, <span class="at">size=</span><span class="dv">7</span>) <span class="sc">+</span></span>
 <span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_polar</span>(<span class="at">theta=</span><span class="st">'y'</span>) <span class="sc">+</span></span>
-<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x=</span><span class="st">''</span>, <span class="at">y=</span><span class="st">''</span>, <span class="at">title=</span><span class="st">'How many People did Indexing this Year'</span>, <span class="at">caption=</span><span class="st">"Sorry, I used the wrong input on the survey"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x=</span><span class="st">''</span>, <span class="at">y=</span><span class="st">''</span>, <span class="at">title=</span><span class="st">'How many People did Indexing this Year'</span>, <span class="at">caption=</span><span class="st">"Sorry, I used the wrong input on the survey"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -665,7 +668,7 @@ This file is making some graphs and stats (sometimes *intentionally* bad, for co
 <div id="cell-20" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}" data-execution_count="524">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># No idea why it's adding bars unless I size it just right</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">repr.plot.width=</span><span class="fl">7.59</span>,</span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">repr.plot.height=</span><span class="dv">8</span></span>
@@ -689,7 +692,7 @@ This file is making some graphs and stats (sometimes *intentionally* bad, for co
 <span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
 <span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_text_repel</span>(<span class="at">position=</span><span class="fu">position_stack</span>(<span class="at">vjust=</span>.<span class="dv">5</span>), <span class="at">family=</span><span class="fu">theme_get</span>()<span class="sc">$</span>text<span class="sc">$</span>family, <span class="at">size=</span><span class="dv">6</span>) <span class="sc">+</span></span>
 <span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_polar</span>(<span class="at">theta=</span><span class="st">'y'</span>) <span class="sc">+</span></span>
-<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x=</span><span class="st">''</span>, <span class="at">y=</span><span class="st">''</span>, <span class="at">subtitle=</span><span class="st">'Blair is 83% the oldest sibling'</span>, <span class="at">title=</span><span class="st">'Who is the oldest sibling?'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x=</span><span class="st">''</span>, <span class="at">y=</span><span class="st">''</span>, <span class="at">subtitle=</span><span class="st">'Blair is 83% the oldest sibling'</span>, <span class="at">title=</span><span class="st">'Who is the oldest sibling?'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -704,20 +707,20 @@ This file is making some graphs and stats (sometimes *intentionally* bad, for co
 <div id="cell-22" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}" data-execution_count="509">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>lists <span class="ot">=</span> data <span class="sc">|&gt;</span> <span class="fu">select</span>(<span class="st">'name'</span>, <span class="st">'worst.advice'</span>, <span class="st">'best.advice'</span>, <span class="st">'secret'</span>, <span class="st">'fav.game'</span>, <span class="st">'most.told.story'</span>, <span class="st">'suggested.reunion.location'</span>, <span class="st">'suggested.activity'</span>, <span class="st">'fav.part'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>lists <span class="ot">=</span> data <span class="sc">|&gt;</span> <span class="fu">select</span>(<span class="st">'name'</span>, <span class="st">'worst.advice'</span>, <span class="st">'best.advice'</span>, <span class="st">'secret'</span>, <span class="st">'fav.game'</span>, <span class="st">'most.told.story'</span>, <span class="st">'suggested.reunion.location'</span>, <span class="st">'suggested.activity'</span>, <span class="st">'fav.part'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <div id="cell-23" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}" data-execution_count="510">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">repr.matrix.max.rows=</span><span class="dv">200</span>,</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">repr.matrix.max.cols=</span><span class="dv">200</span></span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>lists</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>lists</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<table class="dataframe caption-top table table-sm table-striped small">
 <caption>A tibble: 56 × 9</caption>
 <thead>
 <tr class="header">
@@ -1433,13 +1436,14 @@ This file is making some graphs and stats (sometimes *intentionally* bad, for co
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
