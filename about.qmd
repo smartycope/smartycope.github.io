@@ -18,10 +18,8 @@ about:
       text: Email
 ---
 
-<script src="../../index.js"></script>
-
 # Copeland Carter
-### Data Scientist | Software Engineer | Full Stack Developer
+Data Scientist | Software Engineer | Full Stack Developer
 ---
 <!-- Check out my projects [on GitHub](https://github.com/smartycope), or some of my published projects:
 
@@ -30,4 +28,4 @@ about:
 
 <!-- Feel free to email me at [smartycope@gmail.com](emailto:smartycope@gmail.com) -->
 
-Copeland Carter (smartycope) loves his wife, his [personal programming projects](https://github.com/smartycope), [Brandon Sanderson novels](https://brandonsanderson.com), rollerblading, and data science.
+Copeland Carter (smartycope) loves his wife, his [personal programming projects](https://github.com/smartycope), [Brandon Sanderson novels](https://brandonsanderson.com), rollerblading, and data science (especially really well made graphs).

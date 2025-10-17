@@ -1,39 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://smartycope.org/posts/SeniorProject/index.html</loc>
-    <lastmod>2025-06-12T14:53:37.706Z</lastmod>
-  </url>
-  <url>
     <loc>https://smartycope.org/posts/InstallingTensorflow/index.html</loc>
-    <lastmod>2025-03-26T19:54:08.996Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smartycope.org/posts/SquarePacking/index.html</loc>
-    <lastmod>2025-03-26T19:54:09.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smartycope.org/familyGraphs.html</loc>
-    <lastmod>2025-03-26T19:54:08.972Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smartycope.org/about.html</loc>
-    <lastmod>2025-06-12T14:47:08.959Z</lastmod>
+    <lastmod>2025-10-17T21:41:22.072Z</lastmod>
   </url>
   <url>
     <loc>https://smartycope.org/posts/DynamicStateMachines/index.html</loc>
     <lastmod>2025-03-26T20:14:36.596Z</lastmod>
   </url>
   <url>
-    <loc>https://smartycope.org/posts/Rose/index.html</loc>
-    <lastmod>2025-06-12T14:53:10.307Z</lastmod>
+    <loc>https://smartycope.org/posts/SquarePacking/index.html</loc>
+    <lastmod>2025-03-26T19:54:09.000Z</lastmod>
   </url>
   <url>
     <loc>https://smartycope.org/posts/GeoDoodle/index.html</loc>
     <lastmod>2025-03-26T19:54:08.994Z</lastmod>
   </url>
   <url>
+    <loc>https://smartycope.org/about.html</loc>
+    <lastmod>2025-10-17T21:35:17.056Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smartycope.org/familyGraphs.html</loc>
+    <lastmod>2025-03-26T19:54:08.972Z</lastmod>
+  </url>
+  <url>
     <loc>https://smartycope.org/index.html</loc>
     <lastmod>2025-03-26T19:54:08.972Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smartycope.org/posts/EZRegex/index.html</loc>
+    <lastmod>2025-10-17T21:37:18.557Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smartycope.org/posts/Rose/index.html</loc>
+    <lastmod>2025-06-12T14:53:10.307Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smartycope.org/posts/SeniorProject/index.html</loc>
+    <lastmod>2025-06-12T14:53:37.706Z</lastmod>
   </url>
 </urlset>

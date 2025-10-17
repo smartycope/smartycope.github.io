@@ -80,6 +80,9 @@ website:
       href: https://pypi.org/project/ezregex/
       # icon: filetype-py
       icon: dash
+    - text: Dynamic State Machine
+      href: https://pypi.org/project/DynamicStateMachine/
+      icon: dash
 format:
   html:
     theme:
